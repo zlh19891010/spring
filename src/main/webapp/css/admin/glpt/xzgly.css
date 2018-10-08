@@ -1,0 +1,267 @@
+.hp-glpt-xzgly{
+	text-align: center;
+}
+.hp-glpt-xzgly *{
+	font-size: 14px;
+	font-family: "黑体";
+}
+.hp-glpt-xzgly i{
+	display: inline-block;
+	width: 14px;
+	vertical-align: middle;
+}
+.hp-glpt-xzgly h1{
+	height: 48px;
+	line-height: 48px;
+	font-size: 20px;
+	font-weight: normal;
+	background: #c8cdd1;
+}
+.hp-glpt-xzglycon{
+	margin: 100px auto 0px;
+	width: 720px;
+}
+.hp-glpt-xzgly dl{
+	width: 560px;
+}
+.hp-glpt-xzgly dt,
+.hp-glpt-xzgly dd{
+	display: inline-block;
+	line-height: 4;
+}
+.hp-glpt-xzgly dt{
+	width: 130px;
+	padding-right: 20px;
+	letter-spacing: 2px;
+	text-align: left;
+	vertical-align: top;
+}
+.hp-glpt-xzgly dd{
+	width: 420px;
+	text-align: left;
+}
+.hp-glpt-xzgly input[type="text"]:not("Wdate"),input[type="password"]{
+	margin-right: 20px;
+	padding: 0px 5px;
+	width: 280px;
+	height: 40px;
+	border-radius: 10px;
+	background: #F5F6F5;
+}
+.hp-glpt-check{
+	position: relative;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	vertical-align: top;
+}
+.hp-glpt-check .hp-glpt-checkbox{
+	position: absolute;
+	opacity: 0;
+	width: 20px;
+	height: 20px;
+}
+.hp-glpt-checki{
+	display: block;
+	height: 100%;
+	background: url(../../../img/admin/checkbox.png) no-repeat;
+}
+.hp-glpt-check .hp-glpt-checkbox:checked + i{
+	background-image: url(../../../img/admin/checkbox_checked.png);
+}
+.hp-glpt-xzgly label{
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 30px;
+	line-height: 3.5;
+	font-size: 14px;
+}
+.hp-glpt-xzgly p{
+	font-size: 12px;
+}
+.hp-glpt-qxcz{
+	padding: 0px 10px;
+}
+.hp-glpt-qxcz a{
+	margin: 0px 20px;
+	display: inline-block;
+	text-indent: 20px;
+	font-size: 14px;
+}
+.hp-glpt-qxcz a:hover{
+	color: #2aa9fb;
+}
+.hp-glpt-ckqx{
+	background: url(../../../img/admin/ck.png) no-repeat left center;
+}
+
+.hp-glpt-qxbg{
+	background: url(../../../img/admin/bg.png) no-repeat left center;
+}
+.hp-btns{
+	margin-right: 80px;
+	width: 100px;
+	height: 40px;
+}
+.hp-glpt-save{
+	background: url(../../../img/admin/save.png);
+}
+
+.hp-glpt-cancel{
+	background: url(../../../img/admin/cancel.png);
+}
+/*新增角色*/
+.hp-glpt-qxfp{
+	width: 282px;
+	height: 40px;
+	background: url(../../../img/qxfp.png) no-repeat;
+}
+.hp-black{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	background: rgba(0, 0, 0, .2);
+}
+.hp-show{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0px 0px 3px 1px #999;
+	overflow: hidden;
+}
+.hp-glpt-qxfpc{
+	margin-top: -200px;
+	margin-left: -260px;
+	width: 525px;
+	height: 396px;
+}
+.hp-show-title{
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	background: linear-gradient(#f7fbfb, #ebefef);
+	border-bottom: solid 1px #999;
+}
+.hp-show-title span{
+	font-size: 16px;
+}
+.hp-show-close{
+	margin: 20px 20px 0px 10px;
+	display: block;
+	width: 11px;
+	height: 11px;
+	background: url(../../../img/close.png) no-repeat;
+	cursor: pointer;
+}
+.hp-show-con{
+	padding: 20px;
+}
+.hp-qxfp-left, .hp-qxfp-right{
+	margin: 10px;
+	width: 215px;
+	box-shadow: 0px 0px 1px 1px #ccc;
+	border-radius: 5px;
+	overflow: hidden;
+}
+.hp-show-con h3{
+	height: 35px;
+	line-height: 35px;
+	text-indent: 10px;
+	font-size: 14px;
+	font-weight: normal;
+	background: #68b3e3;
+	color: #fff;
+}
+.hp-qxfp-xz, .hp-qxfp-sc{
+	margin: 5px 5px 0px 0px;
+	display: block;
+	width: 25px;
+	height: 25px;
+	background: url(../../../img/new.png) no-repeat;
+}
+.hp-qxfp-sc{
+	background: url(../../../img/delete.png) no-repeat;
+}
+.hp-show-con h3 + ul{
+	padding: 5px 10px;
+}
+.hp-qxfp-con ul li{
+	padding: 10px 0px 0px;
+	font-size: 14px;
+}
+.hp-qxfp-con ul li > ul li label{
+	padding-left: 20px;
+}
+.hp-qxfp-czlb{
+	padding: 10px 0px 0px 10px;
+}
+.hp-qxfp-czlb label{
+	margin-right: 20px;
+}
+.hp-show-btns{
+	text-align: center;
+}
+.hide{
+	display: none;
+}
+
+.hp-xzyh-sctp{
+	padding: 10px 0px;
+}
+.hp-xzyh-tp{
+	width: 140px;
+	height: 140px;
+	box-shadow: 0px 0px 1px #aaa;
+	
+}
+.hp-xzyh-sctp p{
+	line-height: 3;
+	letter-spacing: 3px;
+	font-size: 16px;
+}
+.hp-xzyh-sctp p a{
+	text-decoration: underline;
+	font-size: 16px;
+}
+
+/*次级*/
+.cj-content .hp-glpt-qxcz a:hover{
+	color: #40baa8;
+}
+/*新增用户*/
+.hp-glpt-xzyh{
+	position: relative;
+}
+.hp-glpt-xzyh dl{
+	width: 100%;
+}
+.hp-glpt-xzyh dd{
+	width: 580px;
+}
+.hp-glpt-xzyh .hp-xzyh-sctp{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+
+.hp-radio-label{
+	display: inline-block;
+	width: 100px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	vertical-align: top;
+	margin-right: 0px !important;
+}
+.hp-glpt-save-op {
+		background: url(../../../img/admin/cj_save.png);
+	}
+.kxbtn-blue {
+    background-color: #1e9fff;
+    color: #FFFFFF;
+}

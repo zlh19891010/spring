@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link href="../../components/layer/skin/layer.css" type="text/css" rel="stylesheet">
+		<link href="../../components/sdui/sdui.css" type="text/css" rel="stylesheet">
+		<link href="../../css/common/common.css" type="text/css" rel="stylesheet">
+		<link href="../../css/admin/admin_common.css" type="text/css" rel="stylesheet">
+		</li>
+	</head>
+
+	<body>
+		<!--
+        	作者：tangli2050@qq.com
+        	时间：2017-03-03
+        	描述：
+		<div class="lm-box">
+			<a class="return" onclick="history.back(-1)">返回</a>
+			<h4>管理员</h4>
+		</div>-->
+		<div class="lm-box">
+			<h4>角色权限管理</h4>
+		</div>
+
+		<div class="sdui-form full-screen">
+			<div class="top-area _clear">
+
+			</div>
+			<div class="content sdGrid">
+				<div class="col-3">
+					<a class="sdui-btn sdui-btn-warm xzbtn none" href="xzjs.html">新增</a>
+				</div>
+				<div id="customtable">
+
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../../components/sdui/js/jquery-1.9.1.min.js"></script>
+	<script src="../../components/sdui/js/bootstrap.min.js"></script>
+	<script src="../../components/sdui/js/bootstrap-paginator.js"></script>
+	<script src="../../components/layer/layer.js"></script>
+	<script src="../../components/sdui/sdui.js"></script>
+	<script src="../../components/ractivejs/ractive.js"></script>
+	<script src="../../js/common/constants.js"></script>
+	<script src="../../js/common/common.js"></script>
+	<script src="../../js/admin/jsgl/jsgl.js"></script>
+
+	<script id="main-template" type="text/ractive">
+		<div class="col-3">
+			<label class="sdui-label">角色名称</label>
+			<input type="text" class="sdui-input" value="{{jsmc}}" />
+		</div>
+		<!--
+		<div class="col-3">
+			<label class="sdui-label">角色状态</label>
+			<select class="sdui-select" value="{{jszt}}">
+				<option value="">全部</option>
+				{{#jsztList}}
+				<option value="{{code}}">{{name}}</option>
+				{{/jsztList}}
+			</select>
+		</div>
+		<div class="col-3">
+			<label class="sdui-label">角色归属</label>
+			<select class="sdui-select" value="{{jsgs}}">
+				<option value="">全部</option>
+				{{#jsgsList}}
+				<option value="{{code}}">{{name}}</option>
+				{{/jsgsList}}
+			</select>
+		</div>-->
+		<div class="col-2">
+			<span class="sdui-btn sdui-btn-blue" on-click="search">查询</span>
+		</div>
+
+	</script>
+
+</html>

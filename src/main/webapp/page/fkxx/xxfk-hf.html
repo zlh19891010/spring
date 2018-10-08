@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>信息反馈</title>
+	<link rel="stylesheet" type="text/css" href="../../css/common/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/operation/sbyy.css"/>
+</head>
+<body>
+<div class="cj-content">
+	<h1 class="hp-title "><a href="javascript:void(0)" class="return  pull-left" onclick="history.back(-1)"> 返回</a>信息反馈</h1>
+	<div class="hp-sbyy" id="fkxxhf">
+	</div>
+</div>
+	<script src="../../components/sdui/js/jquery-1.9.1.min.js"></script>
+	<script src="../../components/sdui/js/bootstrap.min.js"></script>
+	<script src="../../components/sdui/js/bootstrap-paginator.js"></script>
+	<script src="../../components/layer/layer.js"></script>
+	<script src="../../components/sdui/js/jquery.validate.js"></script>
+	<script src="../../components/sdui/js/messages_cn.js"></script>
+	<script src="../../components/sdui/sdui.js"></script>
+	<script src="../../components/ractivejs/ractive.js"></script>
+	<script src="../../js/common/constants.js"></script>
+	<script src="../../js/common/common.js"></script>
+	<script id="test-template" type="text/ractive">
+		<div class="hp-sbyy-item">
+			<h2 class="glpt">信息反馈</h2>
+			<ul>
+				<li class="yysm">信息标题：<span class="hf-xxfk-hfnr">{{fkxx.xxbt}}</span></li>
+				<li>反馈类型：<span class="hf-xxfk-hfnr">{{fkxx.fklx}}</span></li>
+				<li>反馈时间：<span class="hf-xxfk-hfnr">{{fkxx.createTime}}</span></li>
+				<li class="yysm">反馈人：<span class="hf-xxfk-hfnr">{{fkxx.fkrmc}}</span></li>
+				<li class="yysm">反馈内容：<span class="hf-xxfk-hfnr">{{fkxx.fknr}}</span></li>
+			</ul>
+		</div>
+		<form id="form-hffk">
+		<div class="hp-sbyy-item">
+			<h2 class="sbxx">回复</h2>
+			<ul>
+				<!--<li><span>回复人：</span>vr-123-03</li>
+				<li><span>回复时间：</span>20102333  </li>-->
+				<li class="yysm"><span>回复内容：</span><textarea onpropertychange="if(this.value.length>1000){this.value=this.value.substr(0,1000)}" class="hf-xxfk-textarea" name="hfnr" maxlength="1000" value="{{fkxx.hfnr}}"></textarea></li>
+			</ul>
+		</div>
+		</form>
+		<div class="hp-center">
+			<input type="button" class="hp-btns hp-glpt-save" on-click="save" value="提交"/>
+			<input type="button" class="hp-btns hp-glpt-cancel" on-click="cancel" value="取消"/>
+		</div>
+	</script>
+	<script src="../../js/admin/fkxx/fkxxhf.js"></script>
+</body>
+</html>

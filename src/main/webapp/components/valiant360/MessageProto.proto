@@ -1,0 +1,267 @@
+
+// 定义信息类型枚举
+enum Types {
+	HEARTBEAT =0; //心跳
+	REGISTER  =1; //设备注册	
+    CTRL_DICTATE =2;//控制指令
+	DOWNLOAD=3; //下载
+	DELETE=4;   //删除
+	RECONNECT=5; //重连
+	PLAY_PROGRESS=6;   //播放
+	CTRL_DICTATE_NOTICE=7; //控制指令通知
+	DOWNLOAD_NOTICE =8;  //下载通知
+	DELETE_NOTICE=9;	//删除通知
+	DOWNLOAD_ACK=10;   //下载确认 
+	PLAY_PROGRESS_NOTICE=11; //播放通知
+	GET_PLAY_PROGRESS=12;  //获取播放进度
+	SET_PLAY_PROGRESS=13;  //设置播放进度
+}
+
+
+// 定义响应状态枚举
+enum RespStatus {
+	SUCCESS = 0;		//成功	
+	FAILURE = 1;		//失败
+}
+
+//定义指令枚举
+enum Dictate{
+	START=0;//开始
+	PLAY=1; //播放
+	STOP=2; //暂停	
+	END=3;  //结束
+	CLOSE=4;  //关闭播放器
+}
+
+
+
+// 定义请求信息体
+message MessageRequest {
+	
+	required Types type = 1 [default = HEARTBEAT];	// 请求信息类型
+	
+	//心跳
+	optional HeartBeatRequest  heartBeatRequest =2;
+
+	//设备注册
+	optional RegisterRequest registerRequest =3;
+
+	//控制指令
+	optional CtrlDictateRequest ctrlDictateRequest = 4;
+
+	//下载
+	optional DownLoadRequest downLoadRequest =5;
+
+	//删除
+	optional DeleteRequest deleteRequest =6;
+
+	//重连
+	optional ReConnectRequest reConnectRequest =7;
+
+	//播放
+	optional PlayProgressRequest playProgressRequest =8;
+	
+	//设置播放进度
+	optional SetPlayProgressRequest setPlayProgressRequest =9;
+	
+	//下载确认事件
+	optional DownloadAck downloadAck =10;
+
+	   
+}
+
+//心跳通知
+message  HeartBeatRequest{
+
+}
+
+//设备注册
+message  RegisterRequest {
+	required string eventId =1;       //事件ID
+	required string equipmentId=2;     //设备唯一标示
+	optional string registerType=3;    //注册类型
+}
+
+//控制指令
+message  CtrlDictateRequest {
+	required string eventId =1;       //事件ID
+	required Dictate dictate=2;       //指令
+	required string  position=3;      //文件时间位置
+	required string  fileId=4;	  //文件ID
+}
+
+//下载
+message  DownLoadRequest {
+	required string  eventId =1;      //事件ID
+	required string  fileIds=2;	      //文件IDS
+	required string  fileSize=3;	  //文件大小
+}
+
+//删除
+message  DeleteRequest {
+	required string eventId =1;       //事件ID
+	required string  fileName =2;      //文件名
+	required string  fileId=3;	  //文件ID
+
+}
+
+//重连
+message  ReConnectRequest {
+	required string eventId =1;       //事件ID
+	required string equipmentId=2;     //设备唯一标示
+
+}
+
+//播放
+message  PlayProgressRequest {
+	required string eventId =1;       //事件ID
+	required string equipmentId=2;     //设备唯一标示
+
+}
+
+//设置播放播放
+message  SetPlayProgressRequest {
+	required string eventId =1;       //事件ID
+	required string equipmentId=2;     //设备唯一标示
+	required string position=3;      //文件时间位置
+	required string fileId=4;      //文件ID
+}
+
+//下载确认事件
+message  DownloadAck {
+	required string eventId =1;       //事件ID
+	required string equipmentId=2;     //设备唯一标示
+	required string  fileId=3;	  //文件ID
+	required string  fileName =4;      //文件名
+}
+
+
+
+// 定义响应信息体
+message MessageResponse {
+	
+	// 返回用户操作对应的请求类型
+	required Types type = 1;
+	
+	// 返回成功失败状态
+	required RespStatus status = 2;
+	
+	// 返回相应状态码
+	optional string statusCode = 3; 
+	
+	// 返回响应提示信息
+	optional string statusDesc = 4;
+
+	//设备注册
+	optional RegisterResponse registerResponse =5;
+
+	//控制指令
+	optional CtrlDictateResponse ctrlDictateResponse = 6;
+
+	//下载
+	optional DownLoadResponse downLoadResponse =7;
+
+	//删除
+	optional DeleteResponse deleteResponse =8;
+	
+	//重连响应
+	optional ReConnectResponse reConnectResponse =9;
+
+	//播放进度响应
+	optional PlayProgressResponse playProgressResponse =10;
+
+	//控制指令通知
+	optional CtrlDictateNotice ctrlDictateNotice = 11;
+
+
+	//下载通知
+	optional DownLoadNotice downLoadNotice =12;
+
+	//删除通知
+	optional DeleteNotice deleteNotice =13;
+
+	//播放通知
+	optional PlayProgressNotice playProgressNotice =14;
+	
+	
+	//获取播放通知
+	optional GetPlayProgressNotice getPlayProgressNotice =15;
+	
+}
+
+//设备注册返回
+message RegisterResponse {
+	required string eventId =1;        //事件类型Id
+	required string equipmentId=2;     //设备唯一标示
+
+}
+
+//控制指令返回
+message CtrlDictateResponse {
+	required string eventId =1;        //事件类型Id
+
+}
+
+//下载返回
+message DownLoadResponse {
+	required string eventId =1;        //事件类型Id
+
+}
+
+//删除返回
+message DeleteResponse {
+	required string eventId =1;        //事件类型Id
+
+}
+
+//重连返回
+message ReConnectResponse {
+	required string eventId =1;        //事件类型Id
+	required string equipmentId=2;     //设备唯一标示
+}
+
+//播放进度返回
+message PlayProgressResponse{
+	required string  eventId =1;       //事件ID
+	required string  fileId=2;	  //文件ID
+	required string  position=3;      //文件时间位置
+}
+
+
+//控制指令通知
+message CtrlDictateNotice {
+	required string eventId =1;       //事件ID
+	required Dictate dictate=2;       //指令
+	required string  position=3;      //文件时间位置
+	required string  fileId=4;	  //文件ID
+}
+
+//下载通知
+message DownLoadNotice {
+	required string  eventId =1;      //事件ID
+	required string  fileIds=2;	      //文件IDS
+	required string  fileSize=3;	  //文件大小
+}
+
+//删除通知
+message DeleteNotice {
+	required string eventId =1;       //事件ID
+	required string  fileName =2;      //文件名
+	required string  fileId=3;	  //文件ID
+
+}
+
+//播放通知
+message PlayProgressNotice {
+	required string  eventId =1;       //事件ID
+	required string equipmentId=2;     //设备唯一标示
+	required string  fileId=3;	  //文件ID
+	required string  position=4;      //文件时间位置
+}
+
+//获取播放通知
+message GetPlayProgressNotice {
+	required string  eventId =1;       //事件ID
+	required string equipmentId=2;     //设备唯一标示
+	required string  fileId=3;	  //文件ID
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <title></title>
+    <link href="../../components/layer/skin/layer.css" type="text/css" rel="stylesheet">
+    <link href="../../components/sdui/sdui.css" type="text/css" rel="stylesheet">
+    <link href="../../css/common/common.css" type="text/css" rel="stylesheet">
+    <link href="../../css/admin/admin_common.css" type="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+<div class="lm-box">
+    <h4>房间信息</h4>
+</div>
+<div class="sdui-form full-screen">
+    <div class="top-area _clear" id="test">
+
+    </div>
+    <div class="content sdGrid">
+        <div class="sdGrid" id="customtable">
+
+        </div>
+    </div>
+</div>
+</body>
+
+<script src="../../components/sdui/js/jquery-1.9.1.min.js"></script>
+<script src="../../components/sdui/js/bootstrap.min.js"></script>
+<script src="../../components/sdui/js/bootstrap-paginator.js"></script>
+<script src="../../components/layer/layer.js"></script>
+<script src="../../components/sdui/sdui.js"></script>
+<script src="../../components/ractivejs/ractive.js"></script>
+<script src="../../js/common/constants.js"></script>
+<script type="text/javascript" src="../../components/datepicker/WdatePicker.js"></script>
+<script src="../../js/common/common.js"></script>
+
+<script id="test-template" type="text/ractive">
+        <div class="hp-rzxx-czsj">
+					<label class="sdui-label">时间</label>
+					<input type="text" id="sckssj" class="sdui-input Wdate" value="{{param.czkssj}}" readonly="readonly" onClick="WdatePicker({maxDate:'#F{$dp.$D(\'scjssj\')}'})" />
+					<label class="sdui-label">至</label>
+					<input type="text" id="scjssj" class="sdui-input Wdate" value="{{param.czjssj}}" readonly="readonly" onClick="WdatePicker({minDate:'#F{$dp.$D(\'sckssj\')}'})" />
+		</div>
+        <span class="sdui-btn sdui-btn-blue" on-click="cx">查询</span>
+</script>
+<script src="../../js/admin/room/room.js"></script>
+</html>

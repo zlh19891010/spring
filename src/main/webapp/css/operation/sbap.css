@@ -1,0 +1,160 @@
+#customtable> .hp-glpt-check {
+	margin-top: -10px!important;
+	position: relative!important;
+	display: inline-block!important;
+	width: 20px!important;
+	height: 20px!important;
+	vertical-align: middle!important;
+}
+
+.hp-glpt-check .hp-glpt-checkbox {
+	position: absolute;
+	opacity: 0;
+	width: 20px;
+	height: 20px;
+}
+
+.hp-glpt-checki {
+	display: block;
+	height: 100%;
+	background: url(../../img/operation/checkbox.png) no-repeat;
+}
+
+.hp-glpt-check .hp-glpt-checkbox:checked+ i {
+	background-image: url(../../img/operation/checkbox_checked.png);
+}
+
+.hp-nrgl-tab {
+	padding: 0px 20px;
+}
+
+.hp-nrgl-tab a {
+	color: rgba(245, 249, 249, 0.49);
+	display: inline-block;
+	padding: 0px 10px;
+	height: 50px;
+	font-size: 16px;
+}
+
+.hp-nrgl-tab a.active {
+	border-bottom: solid 4px rgba(208, 228, 227, 0.49);
+	color: #fff;
+}
+
+#yykssj {
+	width: 191px!important;
+}
+
+#yyjssj {
+	width: 191px!important;
+}
+
+.yyjsg {
+	width: 10px!important;
+	margin-left: -68px!important;
+}
+
+
+/*****************处理预约**************/
+
+.hp-glpt-xzgly input[type="text"] {
+	width: 206px;
+}
+
+.hp-glpt-xzgly dt {
+	text-align: center;
+	margin-right: -16px;
+	letter-spacing: 0px;
+	padding-right: 17px;
+}
+
+.hp-sbyy-item li {
+	width: 433px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.hp-sbyy-item ul {
+	margin-left: 391px;
+}
+
+.hp-sbyy-item li> span {
+	text-align: center;
+	min-width: 105px;
+}
+
+.hp-sbyy-item li> span>label {
+	width: 115px;
+}
+
+
+/**********设备安排新增*******/
+
+.hp-sbyy-item li:nth-child(3n) {
+	width: 300px!important;
+}
+
+.hp-sbyy-item ul {
+	margin-left: 81px
+}
+
+#yysb {
+	padding-top: 33px;
+}
+
+.top-area {
+	background: #fff;
+}
+
+
+/**************调整时间安排弹框***************/
+
+#tzsjtk> input[type='text'] {
+	width: 190px;
+}
+
+
+/*************radio框**********/
+
+#customtable table tr td {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width: 200px;
+}
+
+.li2-cls {
+	margin-left: 100px;
+	margin-top: 3px;
+}
+
+.li2-tab {
+	width: 600px!important;
+}
+
+.top-area {
+    background: rgb(239, 243, 243);
+    padding: 20px 30px;
+}
+
+
+.btn-tab{
+	border:none;
+}
+.sbxx-tj-cls{
+	background: #fff;
+}
+
+.xllb-cls{
+    max-height: 450px;
+    overflow: auto;
+}
+
+.div-sb-tab{
+	width: 120px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

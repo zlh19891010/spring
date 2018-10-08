@@ -1,0 +1,14 @@
+.sctx {
+	width: 140px;
+	height: 140px;
+	text-align: center;
+}
+
+.ellips {
+	height: 30px;
+	width: 150px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	display: inline-block;
+}

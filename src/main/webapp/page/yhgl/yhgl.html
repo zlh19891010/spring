@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link href="../../components/layer/skin/layer.css" type="text/css" rel="stylesheet">
+		<link href="../../components/sdui/sdui.css" type="text/css" rel="stylesheet">
+		<link href="../../css/common/common.css" type="text/css" rel="stylesheet">
+		<link href="../../css/admin/admin_common.css" type="text/css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class="lm-box">
+			<!--<a class="return" onclick="history.back(-1)">返回</a>-->
+			<h4>用户管理</h4>
+		</div>
+		<div class="sdui-form full-screen">
+			<div class="top-area _clear" id="test">
+
+			</div>
+			<div class="content sdGrid">
+
+				<div><span id="addBtn" class="sdui-btn sdui-btn-warm" onclick="addYh()">新增</span></div>
+				<div class="sdGrid" id="customtable">
+
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../../components/sdui/js/jquery-1.9.1.min.js"></script>
+	<script src="../../components/sdui/js/bootstrap.min.js"></script>
+	<script src="../../components/sdui/js/bootstrap-paginator.js"></script>
+	<script src="../../components/layer/layer.js"></script>
+	<script src="../../components/sdui/sdui.js"></script>
+	<script src="../../components/ractivejs/ractive.js"></script>
+	<script src="../../js/common/constants.js"></script>
+	<script src="../../js/common/common.js"></script>
+	<script id="test-template" type="text/ractive">
+		<div class="col-4">
+			<label class="sdui-label">用户名称</label>
+			<input type="text" class="sdui-input" value="{{yhmc}}" />
+		</div>
+		<div class="col-4">
+			<label class="sdui-label">用户状态</label>
+			<select class="sdui-select" value="{{yhzt}}">
+				<option value="">全部</option>
+				{{#yhztlist}}
+				<option value="{{code}}">{{name}}</option>
+				{{/yhztlist}}
+			</select>
+		</div>
+		<div class="col-3">
+			<span class="sdui-btn sdui-btn-blue" on-click="query">查询</span>
+		</div>
+	</script>
+	<script src="../../js/admin/yhgl/yhgl.js"></script>
+
+</html>

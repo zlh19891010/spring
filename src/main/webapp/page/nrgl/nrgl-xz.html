@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>新增内容</title>
+		<link rel="stylesheet" href="../../css/common/common.css" />
+		<link rel="stylesheet" href="../../components/sdui/sdui.css" type="text/css">
+		<link rel="stylesheet" href="../../css/admin/nrgl.css" />
+		<link rel="stylesheet" type="text/css" href="../../components/webuploader-0.1.5/webuploader.css" />
+	</head>
+
+	<body>
+		<div>
+			<h1 class="hp-title">
+				<a href="javascript:void(0)" class="return pull-left" onclick="fh()"> 返回</a>
+				<span id="bt">创建内容</span>
+			</h1>
+			<div class="hp-nrgl-con hp-box" id="nrform">
+
+			</div>
+		</div>
+	</body>
+	<script src="../../components/sdui/js/jquery-1.9.1.min.js"></script>
+	<script src="../../components/sdui/js/bootstrap.min.js"></script>
+	<script src="../../components/sdui/js/bootstrap-paginator.js"></script>
+	<script src="../../components/layer/layer.js"></script>
+	<script src="../../components/sdui/sdui.js"></script>
+	<script src="../../components/sdui/js/jquery.validate.js"></script>
+	<script src="../../components/sdui/js/messages_cn.js"></script>
+	<script src="../../js/common/common.js"></script>
+	<script src="../../components/webuploader-0.1.5/webuploader.js"></script>
+	<script src="../../components/ractivejs/ractive.js"></script>
+	<script src="../../js/common/constants.js"></script>
+	<script src="../../components/store/storejson2.min.js"></script>
+
+	<script id="first-select" type="text/ractive">
+		<form id="form-nrxx">
+			<dl>
+				<dt><span class="red">*</span>内容标题</dt>
+				<dd><input type="text" class="sdui-input" name="nrbt" value="{{nrxx.nrbt}}" maxlength="100" onkeyup="dlmCheck(this)" /></dd>
+			</dl>
+			<div id="selectQy">
+				<dl id="first">
+					<dt><span class="red">*</span>{{mc}}</dt>
+					<dd>
+						<select class="sdui-select" value="{{first}}" on-change="firstChange">
+							<option value=""></option>
+							{{#list}}
+							<option value="{{id}}">{{flmc}}</option>
+							{{/list}}
+						</select>
+					</dd>
+				</dl>
+			</div>
+			<dl>
+				<!--<dt></dt>
+				<dd>
+					<div id="selectQy">
+						<div id="first">
+							<label class="sdui-label"><span class="red">*</span>{{mc}}</label>
+							<select class="sdui-select" value="{{first}}" on-change="firstChange">
+								<option value=""></option>
+								{{#list}}
+								<option value="{{id}}">{{flmc}}</option>
+								{{/list}}
+							</select>
+						</div>
+					</div>
+				</dd>-->
+				<dt><span class="red">*</span>内容说明</dt>
+				<dd>
+					<textarea class="sdui-textarea" name="nrsm" onpropertychange="if(this.value.length>500){this.value=this.value.substr(0,500)}" maxlength="500" >{{nrxx.nrsm}}</textarea>
+
+					<div id="uploader" class="wu-example">
+						<div class="btns">
+							<div id="picker" class="hp-btn hp-btn-scsp">上传视频</div>
+							<a href="javascript:void(0)" class="hp-btn hp-btn-tjfj ml-20" onclick="lsfj()">&nbsp;&nbsp;&nbsp;历史附件</a>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>已上传附件总数：<i class="pink" id="pink">{{nrxx.fjzs}}</i></span>
+						</div>
+						
+						<!--用来存放文件信息-->
+						<div class="uploader-list">
+							<div>
+								<ul class="hp-nrxz-splb" id="thelist">
+								</ul>
+							</div>
+						</div>
+					</div>
+
+				</dd>
+				<dt>备注</dt>
+				<dd><textarea class="sdui-textarea" name="bz" onpropertychange="if(this.value.length>500){this.value=this.value.substr(0,500)}" maxlength="500" >{{nrxx.bz}}</textarea></dd>
+				<dt></dt>
+				<input type="hidden" id="xlcx" />
+				<dd class="hp-nrxz-btns">
+					<input type="button" class="sdui-btn sdui-btn-qx" id="bccgBtn" on-click="cg" value="保存草稿">
+					<input type="button" class="sdui-btn sdui-btn-qx" id="tjBtn" on-click="tj" value="提交">
+					<input type="button" class="sdui-btn sdui-btn-qx" id="sjBtn" on-click="sj" value="上架">
+					<input type="button" class="sdui-btn sdui-btn-qx" onclick="fh()" value="取消">
+				</dd>
+			</dl>
+		</form>
+	</script>
+	<script src="../../js/admin/nrgl/nrxz.js"></script>
+
+</html>

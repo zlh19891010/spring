@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <title></title>
+    <link href="../../components/layer/skin/layer.css" type="text/css" rel="stylesheet">
+    <link href="../../components/sdui/sdui.css" type="text/css" rel="stylesheet">
+    <link href="../../css/common/common.css" type="text/css" rel="stylesheet">
+    <link href="../../css/admin/admin_common.css" type="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+<div class="lm-box">
+    <h4>用户管理</h4>
+</div>
+<div class="sdui-form full-screen">
+    <div class="top-area _clear" id="test">
+
+    </div>
+    <div class="content sdGrid">
+        <div><span id="addBtn" class="sdui-btn sdui-btn-warm" onclick="addGly()">新增</span></div>
+        <div class="sdGrid" id="customtable">
+
+        </div>
+    </div>
+</div>
+
+</body>
+
+<script src="../../components/sdui/js/jquery-1.9.1.min.js"></script>
+<script src="../../components/sdui/js/bootstrap.min.js"></script>
+<script src="../../components/sdui/js/bootstrap-paginator.js"></script>
+<script src="../../components/layer/layer.js"></script>
+<script src="../../components/sdui/sdui.js"></script>
+<script src="../../components/ractivejs/ractive.js"></script>
+<script src="../../js/common/constants.js"></script>
+<script src="../../js/common/common.js"></script>
+<script id="test-template" type="text/ractive">
+        <div class="search-col">
+            <label class="sdui-label">名称</label>
+            <input type="text" class="sdui-input" value="{{param.loginId}}"/>
+        </div>
+        <div class="search-col">
+            <label class="sdui-label">角色名称</label>
+            <input type="text" class="sdui-input" value="{{param.jsmc}}"/>
+        </div>
+        <div id="test" class="search-col">
+            <label class="sdui-label">状态</label>
+            <select class="sdui-select sdSelect-input" value="{{param.yhzt}}">
+                <option value="">全部</option>
+                {{#yhztlist}}
+                <option value="{{code}}">{{name}}</option>
+                {{/yhztlist}}
+            </select>
+        </div>
+        <span class="sdui-btn sdui-btn-blue" on-click="cx">查询</span>
+</script>
+<script src="../../js/admin/glygl/glygl.js"></script>
+<script>
+</script>
+
+</html>

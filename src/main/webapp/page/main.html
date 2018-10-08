@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>管理后台</title>
+		<link href="../css/common/common.css" type="text/css" rel="stylesheet">
+		<link href="../components/sdui/sdui.css" type="text/css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div id="memu-content"></div>
+		<script src="../components/ractivejs/ractive.js"></script>
+		<script src="../components/sdui/js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="../components/layer/layer.js"></script>
+		<script type="text/javascript" src="../components/sdui/sdui.js"></script>
+		<script src="../js/common/common.js"></script>
+		<script src="../js/common/constants.js"></script>
+		<script id="memu-template" type="text/ractive">
+			<div class="commonHead _clear">
+				<div class="top-logo pull-left toplog">
+					管理后台
+				</div>
+				<div class="right-cnt _clear">
+					<ul class="pull-left">
+                         
+					</ul>
+					<ul class="pull-right">
+						<li>
+                            {{#if !isAdmin}}
+                            <lable style="color:red;">授权码：{{sAuthCode}} </lable>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<lable style="color:red;">点卡余额：<span id="card_">{{cards}}</span></lable>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							{{/if}}           
+                            <lable class="xgmm-icon" title="修改密码" onclick="modifymm()"></lable>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a class="log-out"><img src="{{yhtx}}" onerror="getDefaultImg(this, '../img/common/user.png')" /><span style="cursor: pointer;" onclick="logOut()">退出</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="contentView pull-right _clear" id="wrapper">
+				<div class="sideView" style="height: 914px;">
+					<div class="nav-bar pull-left">
+						<div class="nav-main">
+							<ul>
+								{{#if menuList}} {{#menuList:i}} 
+								<li class="{{cssPath}}">
+								{{#if menuList[i].viewListMoudle}}
+										<a><i></i>{{menuList[i].moduleName}}<em></em></a>
+										<ul class="hide">
+											{{#menuList[i].viewListMoudle:j}}
+											<li>
+												<a target="contentFrame"  href="{{menuAddress+treePath}}?id={{menuList[i].viewListMoudle[j].id}}">{{menuList[i].viewListMoudle[j].moduleName}}</a>
+											</li>
+											{{/menuList[i].viewListMoudle}}
+										</ul>
+										{{else}}
+										<a target="contentFrame" class="{{#if i==0}}cur {{/if}}" href="{{menuAddress+treePath}}?id={{menuList[i].id}}"><i></i>{{menuList[i].moduleName}}</a> {{/if}}
+									</li>
+									{{/menuList}} {{/if}}
+
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div id="page-wrapper">
+					<iframe src="{{initPage}}" name="contentFrame" id="contentFrame" scrolling="no"></iframe>
+				</div>
+			</div>
+		</script>
+
+		<script src="../js/admin/menu/menu.js"></script>
+	</body>
+
+</html>

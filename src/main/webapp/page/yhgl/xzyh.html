@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>新增用户</title>
+	<link rel="stylesheet" type="text/css" href="../../components/webuploader-0.1.5/webuploader.css" />
+	<link rel="stylesheet" href="../../css/common/common.css" />
+	<link href="../../components/sdui/sdui.css" type="text/css" rel="stylesheet">
+	<link rel="stylesheet" href="../../components/ztree/css/zTreeStyle.css">
+	<link rel="stylesheet" href="../../css/admin/glpt/xzgly.css" />
+	<link rel="stylesheet" href="../../css/admin/glyyh.css" />
+</head>
+<body>
+	<div class="hp-glpt-xzgly">
+		<h1 class="hp-title">
+			<a href="javascript:void(0)" class="return pull-left" onclick="history.back(-1)"> 返回</a>
+			新增用户
+		</h1>
+		<div class="hp-glpt-xzglycon hp-glpt-xzyh" id="yhxx-form">
+			
+		</div>
+	</div>
+</body>
+
+	<script src="../../components/sdui/js/jquery-1.9.1.min.js"></script>
+	<script src="../../components/sdui/js/bootstrap.min.js"></script>
+	<script src="../../components/sdui/js/bootstrap-paginator.js"></script>
+	<script src="../../components/layer/layer.js"></script>
+	<script src="../../components/sdui/js/jquery.validate.js"></script>
+	<script src="../../components/sdui/js/messages_cn.js"></script>
+	<script src="../../components/sdui/sdui.js"></script>
+	<script src="../../components/ractivejs/ractive.js"></script>
+	<script src="../../js/common/constants.js"></script>
+	<script src="../../js/common/common.js"></script>
+	<script type="text/javascript" src="../../components/webuploader-0.1.5/webuploader.js"></script>
+	<script src="../../components/ztree/js/jquery.ztree.core-3.5.min.js"></script>
+	<script src="../../components/ztree/js/jquery.ztree.excheck-3.5.js"></script>
+	<script src="../../components/ztree/js/jquery.ztree.exedit-3.5.js"></script>
+	<script id="yhxx-template" type="text/ractive">
+	<form id="form-yhxx">
+		<div class="_clear">
+			<dl class="pull-left">
+				<dt><i class="red">*</i>登 录 名</dt>
+				<dd><input type="text" name="loginid" placeholder="不能纯数字" value="{{yhxx.loginId}}" class="sdui-input" onkeyup="dlmCheck(this)" maxlength="32"  onblur="value=value.replace(/(^\s*)|(\s*$)/g, '')"></dd>
+				<dt><i class="red">*</i>登录密码</dt>
+				<dd><input type="password" name="dlmm" placeholder="请输入密码" value="{{yhxx.dlmm}}" name="mm" class="sdui-input" maxlength="32" onkeyup="onk(this)"></dd>
+				<dt><i class="red">*</i>确认密码</dt>
+				<dd><input type="password" name="qrmm" placeholder="请输入确认密码" value="{{yhxx.mm}}" name="qrmm" class="sdui-input" maxlength="32" onkeyup="onk(this)" onblur="mmyz()"></dd>
+				<dt><i class="red">*</i>用户名称</dt>
+				<dd><input type="text" name="zsxm" placeholder="请输入用户名称" value="{{yhxx.yhmc}}" name="xm" class="sdui-input" maxlength="20"  onblur="value=value.replace(/(^\s*)|(\s*$)/g, '')" onkeyup="yhxm(this)"></dd>
+				<dt><i></i>邮   箱</dt>
+				<dd><input type="text" name="yx" value="{{yhxx.yx}}" name="yx" maxlength="80" class="sdui-input" onblur="value=value.replace(/(^\s*)|(\s*$)/g, '')"></dd>
+				<dt><i></i>手 机 号</dt>
+				<dd><input type="text" name="sjh" value="{{yhxx.sjh}}" name="sjh" class="sdui-input" onblur="value=value.replace(/(^\s*)|(\s*$)/g, '')" maxlength="20" onkeyup="sjCheck(this)"></dd>
+				<dt><i class="red">*</i>角   色</dt>
+				<dd>
+					{{#jsxxlist:i}}
+					{{#if i==0}}
+					<div class="hp-glpt-check">
+						<input type="radio" class="sdui-radio" name="js" id="gly{{i}}" checked="checked" value="{{id}}">
+						<label for="gly{{i}}"> 
+					</div>
+					<label for="gly{{i}}" class="hp-radio-label" title="{{jsmc}}">{{jsmc}}</label>
+					{{/if}}
+					{{/jsxxlist}}
+				</dd>
+				<!--
+				{{#xhlist:j}}
+				<dt></dt>
+				<dd>
+					{{#jsxxlist:i}}
+					{{#if i<js && i>=ks}}
+					<div class="hp-glpt-check">
+						<input type="radio" class="sdui-radio" name="js" id="gly{{i}}" checked="checked" value="{{id}}">
+						<label for="gly{{i}}"> 
+					</div>
+					<label for="gly{{i}}" class="hp-radio-label" title="{{jsmc}}">{{jsmc}}</label>
+					{{/if}}
+					{{/jsxxlist}}
+				</dd>
+				{{/xhlist}}-->
+				<dt></dt>
+				<dd>
+					<div class="hp-glpt-qxcz">
+						<a href="javascript:void(0)" class="hp-glpt-ckqx" style="margin-left:-10px;">查看权限</a>
+					</div>
+				</dd>
+				<dt><p class="pink"><i class="red">*</i>显示为必填项</p></dt>
+				<dd></dd>
+			</dl>
+			<div class="hp-xzyh-sctp pull-right">
+				<div class="hp-xzyh-tp"> <img src="{{tx}}" class="sctx" data-id="{{txpath}}"/></div>
+				<p id="picker"><a href="javascript:void(0)" class="pink" id="sczp">上传照片</a></p>
+			</div>
+		</div>
+		<div class="hp-glpt-qxcz" style="margin-left: -94px;">
+			<input type="button" class="hp-btns hp-glpt-cancel" on-click="fanhui"/>
+			<input type="button" class="hp-btns hp-glpt-save" on-click="save"/>
+		</div>
+	</form>
+	</script>
+	<script src="../../js/admin/yhgl/xzyh.js"></script>
+</html>

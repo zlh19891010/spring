@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.admin.dao.yhgl.TGlptYhglYhxxMapper">
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.admin.entity.yhgl.TGlptYhglYhxx">
+		<result column="login_id" property="loginId" />
+		<result column="zh" property="zh" />
+		<result column="mm" property="mm" />
+		<result column="yhmc" property="yhmc" />
+		<result column="yhtx" property="yhtx" />
+		<result column="yx" property="yx" />
+		<result column="sjh" property="sjh" />
+		<result column="yhzt" property="yhzt" />
+		<result column="js_id" property="jsId" />
+		<result column="zdgly" property="zdgly" />
+		<result column="cjgly" property="cjgly" />
+		<result column="jg_id" property="jg_id" />
+		<result column="ssjgmc" property="ssjgmc" />
+		<result column="glyjb" property="glyjb" />
+		<result column="sjgly_id" property="sjglyid" />
+	</resultMap>
+
+	<resultMap id="BaseResultMapLogin" type="com.admin.entity.yhgl.TGlptYhglYhxx">
+		<result column="login_id" property="loginId" />
+		<result column="zh" property="zh" />
+		<result column="yhmc" property="yhmc" />
+		<result column="yhtx" property="yhtx" />
+		<result column="yx" property="yx" />
+		<result column="sjh" property="sjh" />
+		<result column="yhzt" property="yhzt" />
+		<result column="js_id" property="jsId" />
+		<result column="cjgly" property="cjgly" />
+		<result column="glyjb" property="glyjb" />
+		<result column="sjgly_id" property="sjglyid" />
+	</resultMap>
+
+
+	<select id="selectYhxxList" parameterType="com.admin.param.YhxxParam"
+		resultType="com.admin.view.ViewYhxx">
+		select
+		yhxx.id,yhxx.login_id,yhxx.zh,yhxx.yhmc,yhxx.yx,yhxx.sjh,yhxx.yhzt,yhxx.js_id,jsxx.jsmc
+		from t_glpt_yhgl_yhxx yhxx
+		left join t_glpt_jsgl_jsxx jsxx on yhxx.js_id = jsxx.id
+		where yhxx.delflag <![CDATA[<>]]>
+		'D'
+		<if test="loginId !=null and loginId != ''">
+			and yhxx.login_id LIKE CONCAT(CONCAT('%', #{loginId}),
+			'%')
+		</if>
+		<if test="yhzt !=null and yhzt != ''">
+			and yhxx.yhzt = #{yhzt}
+		</if>
+		<if test="zdgly !=null and zdgly != ''">
+			and yhxx.zdgly = #{zdgly}
+		</if>
+		<if test="cjgly !=null and cjgly != ''">
+			and yhxx.cjgly = #{cjgly}
+		</if>
+		<if test="jgid !=null and jgid != ''">
+			and yhxx.jg_id = #{jgid}
+		</if>
+		<if test="glyjb !=null and glyjb != ''">
+			and yhxx.glyjb <![CDATA[>]]>
+			#{glyjb}
+		</if>
+		<if test="zh !=null and zh != ''">
+			and yhxx.zh != #{zh}
+		</if>
+		<if test="createrCode !=null and createrCode != ''">
+			and yhxx.creater_code = #{createrCode}
+		</if>
+		GROUP BY yhxx.id
+		ORDER BY yhxx.create_time DESC
+	</select>
+
+	<!-- 查询下级所有的用户列表 -->
+	<select id="selectXjyhList" parameterType="com.admin.param.YhxxParam"
+		resultType="com.admin.entity.yhgl.TGlptYhglYhxx">
+		select
+		yhxx.id,yhxx.login_id,yhxx.zh,yhxx.yhmc,yhxx.yx,yhxx.sjh,yhxx.yhzt,yhxx.js_id,jsxx.jsmc,yhxx.jg_id,yhxx.ssjgmc
+		from t_glpt_yhgl_yhxx yhxx
+		left join t_glpt_jsgl_jsxx jsxx on yhxx.js_id = jsxx.id
+		where yhxx.delflag <![CDATA[<>]]>
+		'D'
+		<if test="loginId !=null and loginId != ''">
+			and yhxx.login_id LIKE CONCAT('%', #{loginId}, '%')
+		</if>
+		<if test="yhmc !=null and yhmc != ''">
+			and yhxx.yhmc LIKE CONCAT('%', #{yhmc}, '%')
+		</if>
+		<if test="yhzt !=null and yhzt != ''">
+			and yhxx.yhzt = #{yhzt}
+		</if>
+		<if test="zdgly !=null and zdgly != ''">
+			and yhxx.zdgly = #{zdgly}
+		</if>
+		<if test="cjgly !=null and cjgly != ''">
+			and yhxx.cjgly = #{cjgly}
+		</if>
+		<if test="jgid !=null and jgid != ''">
+			and yhxx.jg_id = #{jgid}
+		</if>
+		<if test="glyjb !=null and glyjb != ''">
+			and yhxx.glyjb <![CDATA[>]]>
+			#{glyjb}
+		</if>
+		<if test="zh !=null and zh != ''">
+			and yhxx.zh LIKE CONCAT('%', #{zh}, '%')
+		</if>
+		and yhxx.id !=#{id}
+		GROUP BY yhxx.id
+		ORDER BY yhxx.create_time DESC
+	</select>
+
+
+
+	<!-- 查询用户 -->
+	<select id="getYhxx" resultMap="BaseResultMapLogin">
+		select * from t_glpt_yhgl_yhxx
+		where DELFLAG != 'D' and mm = #{mm}
+		and (login_id =#{userName} OR zh=#{userName} )
+	</select>
+	<!-- 根据id查询用户 -->
+	<select id="selectYhxxById" resultType="com.admin.view.ViewYhxx">
+		select
+		yhxx.id,yhxx.login_id,yhxx.zh,yhxx.yhmc,yhxx.yx,yhxx.sjh,yhxx.yhzt,yhxx.js_id,jsxx.jsmc,yhxx.sjgly_id
+		from t_glpt_yhgl_yhxx yhxx
+		left join t_glpt_jsgl_jsxx jsxx on yhxx.js_id = jsxx.id
+		where yhxx.delflag <![CDATA[<>]]>
+		'D'
+		and yhxx.sjgly_id = #{id}
+	</select>
+	<!-- 根据登录名查询是否重复 -->
+	<select id="selectYhByLoginid" resultType="com.admin.entity.yhgl.TGlptYhglYhxx">
+		select * from t_glpt_yhgl_yhxx
+		where delflag <![CDATA[<>]]> 'D'
+		and login_id = #{loginid}
+		<if test="jgId != null">
+			and jg_id = #{jgId}
+		</if>
+	</select>
+	
+	<!-- 根据登录名查询是否重复, 运营中心超级管理员-->
+	<select id="selectYhByLoginidForSuper" resultType="com.admin.entity.yhgl.TGlptYhglYhxx">
+		select * from t_glpt_yhgl_yhxx
+		where delflag <![CDATA[<>]]> 'D'
+		and login_id = #{loginid}
+		and id = jg_id
+	</select>
+	
+	<!-- 根据上级管理员编号获取用户信息 -->
+	<select id="selectYhxxBySjglyId" resultType="com.admin.entity.yhgl.TGlptYhglYhxx">
+	   select * from t_glpt_yhgl_yhxx
+	   where delflag <![CDATA[<>]]> 'D'
+	   and sjgly_id = #{sjglyid}
+	</select>
+</mapper>

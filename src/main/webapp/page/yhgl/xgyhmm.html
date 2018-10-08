@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>重置密码</title>
+	<link rel="stylesheet" href="../../css/common/common.css" />
+	<link href="../../components/sdui/sdui.css" type="text/css" rel="stylesheet">
+	<link rel="stylesheet" href="../../css/admin/glpt/xzgly.css" />
+</head>
+<body>
+	<div class="hp-glpt-xzgly" style="margin-top:70px;margin-left: 20px;">
+		<div class="hp-glpt-xzglycon" id="yhxx-form" style ="margin-top: 50px;">
+			
+		</div>
+	</div>
+</body>
+
+	<script src="../../components/sdui/js/jquery-1.9.1.min.js"></script>
+	<script src="../../components/sdui/js/bootstrap.min.js"></script>
+	<script src="../../components/sdui/js/bootstrap-paginator.js"></script>
+	<script src="../../components/layer/layer.js"></script>
+	<script src="../../components/sdui/js/jquery.validate.js"></script>
+	<script src="../../components/sdui/js/messages_cn.js"></script>
+	<script src="../../components/sdui/sdui.js"></script>
+	<script src="../../components/ractivejs/ractive.js"></script>
+	<script src="../../js/common/constants.js"></script>
+	<script src="../../js/common/common.js"></script>
+
+	<script id="yhxx-template" type="text/ractive">
+	<form id="form-yhxx">
+		<dl>
+			<dt style="text-align: right;"><i class="red">*</i>登录密码</dt>
+			<dd><input type="password" class="sdui-input" onkeyup="onk(this)" name="dlmm" value="{{yhxx.dlmm}}" maxlength="32" ></dd>
+			<dt style="text-align: right;"><i class="red">*</i>确认密码</dt>
+			<dd><input type="password" class="sdui-input" onkeyup="onk(this)" name="qrmm" value="{{yhxx.mm}}" maxlength="32" on-blur="checkmm"></dd>
+		</dl>
+		<div class="hp-glpt-qxcz" style="margin-left: -170px; margin-top: 35px;">
+			<input type="button" class="hp-btns hp-glpt-save" on-click="bc"/>
+			<input type="button" class="hp-btns hp-glpt-cancel" on-click="fh"/>
+		</div>
+	</form>
+	</script>
+	
+	<script src="../../js/admin/yhgl/xgyhmm.js"></script>
+</html>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.admin.dao.jsgl.TGlptJsglJsyqxdygxMapper">
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.admin.entity.TGlptJsglJsyqxdygx">
+		<result column="js_id" property="jsId" />
+		<result column="qx_code" property="qxCode" />
+		<result column="jsgs" property="jsgs" />
+		<result column="xzgm" property="xzgm" />
+		<result column="nr_id" property="nrId" />
+		<result column="xzsy" property="xzsy" />
+		<result column="czjb" property="czjb" />
+	</resultMap>
+
+
+	<!-- 批量插入 tangli -->
+	<insert id="insertPl">
+		insert into t_glpt_jsgl_jsyqxdygx (
+		id, js_id, qx_code, jsgs, xzgm,nr_id,xzsy,
+		delflag,operater_code,operate_time,creater_code,create_time,czjb)
+		values
+		<foreach collection="dygxList" item="item" open="" separator=","
+			close="">
+			(#{item.id}, #{item.jsId}, #{item.qxCode},
+			#{item.jsgs}, #{item.xzgm}, #{item.nrId}, #{item.xzsy} ,
+			#{item.delflag}, #{item.operaterCode}, #{item.operateTime},
+			#{item.createrCode}, #{item.createTime},#{item.czjb})
+		</foreach>
+	</insert>
+	<!-- 根据条件查询 -->
+	<select id="getDygxListByParam" resultMap="BaseResultMap" parameterType="com.admin.entity.TGlptJsglJsyqxdygx">
+		select * from t_glpt_jsgl_jsyqxdygx where delflag!='D'
+		<if test="jsId!=null and jsId!=''">
+		  AND js_id=#{jsId}
+		</if>
+		<if test="jsgs!=null and jsgs!=''">
+		  AND jsgs=#{jsgs}
+		</if>
+		<if test="qxCode !=null and qxCode!=''">
+		  AND qx_code=#{qxCode}
+		</if>
+	</select>
+	
+	<!-- 根据条件查询 -->
+	<select id="selectYhCzjb" resultMap="BaseResultMap" parameterType="com.admin.entity.TGlptJsglJsyqxdygx">
+		select * from t_glpt_jsgl_jsyqxdygx 
+		where delflag!='D'
+		<if test="jsId!=null and jsId!=''">
+		  AND js_id=#{jsId}
+		</if>
+		<if test="jsgs!=null and jsgs!=''">
+		  AND jsgs=#{jsgs}
+		</if>
+		<if test="qxCode !=null and qxCode!=''">
+		  AND qx_code=#{qxCode}
+		</if>
+	</select>
+</mapper>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.admin.dao.jsgl.TGlptJsglJsxxMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.admin.entity.jsgl.TGlptJsglJsxx">
+		<result column="jszt" property="jszt" />
+		<result column="jsmc" property="jsmc" />
+		<result column="jsms" property="jsms" />
+		<result column="jsgs" property="jsgs" />
+		<result column="jsjb" property="jsjb" />
+		<result column="sjjs_id" property="sjjsId" />
+	</resultMap>
+
+	<resultMap id="viewxzjsMap" type="com.admin.view.ViewXzjs" extends="BaseResultMap">
+		<result column="sjjsmc" property="sjjsmc" />
+	</resultMap>
+	<!-- 获取所有下级角色 包含自己 tangli-->
+	<select id="getAllxjjsList" resultMap="BaseResultMap">
+	select * from t_glpt_jsgl_jsxx  jsxx where jsxx.delflag!='D' and jsxx.jszt='02'
+	<if test="jsgs!=null and jsgs!=''">
+		and jsgs=#{jsgs}
+	</if>
+	<if test="jsid!=null and jsid!=''">
+		and jsjb >= (select jsjb from t_glpt_jsgl_jsxx where delflag!='D' and id=#{jsid} and jszt='02')
+	</if>
+	</select> 
+
+
+	<!-- 角色信息列表分页 tangli -->
+	<select id="getJsxxList" resultMap="BaseResultMap" parameterType="com.admin.entity.jsgl.TGlptJsglJsxx">
+		select jsxx.* from t_glpt_jsgl_jsxx jsxx where jsxx.delflag!='D' and jsxx.jsjb is not null
+		and jsxx.jsjb > (
+			select sj.jsjb from t_glpt_jsgl_jsxx sj where sj.delflag!='D'
+			<if test="id != null and id != ''">
+			and sj.id =#{id}
+			</if>
+		)
+		and jsxx.id !=(select yyzx.id from t_glpt_jsgl_jsxx yyzx where yyzx.jsgs='02' and yyzx.delflag!='D' order by yyzx.jsjb ASC LIMIT 0,1)
+		<if test="jsmc != null and jsmc != ''">
+			and jsxx.jsmc like concat('%', '${jsmc}', '%')
+		</if>
+		<if test="jszt != null and jszt != ''">
+			and jsxx.jszt =#{jszt}
+		</if>
+		<if test="jsjb != null and jsjb != ''">
+			and jsxx.jsjb =#{jsjb}
+		</if>
+		<if test="jsgs != null and jsgs != ''">
+			and jsxx.jsgs =#{jsgs}
+		</if>
+
+		order by jsxx.create_time desc
+	</select>
+
+	<!-- liucheng -->
+	<select id="getJsxx" resultMap="BaseResultMap" parameterType="com.admin.entity.jsgl.TGlptJsglJsxx">
+		select * from t_glpt_jsgl_jsxx where delflag !='D'
+
+		<if test="jsgs != null and jsgs != ''">
+			and jsgs =#{jsgs}
+		</if>
+		<if test="jszt != null and jszt != ''">
+			and jszt =#{jszt}
+		</if>
+		<if test="id != null and id != ''">
+			and id =#{id}
+		</if>
+		<if test="sjjsId != null and sjjsId != ''">
+			and sjjs_id =#{sjjsId}
+		</if>
+	</select>
+	<!-- 获取所有角色信息 管理员 -->
+<select id="selectGlyJsxx" resultMap="BaseResultMap" parameterType="com.admin.entity.jsgl.TGlptJsglJsxx">
+	 select * from t_glpt_jsgl_jsxx where delflag !='D' 
+	 and jszt='02'
+	 and jsgs='01'
+     <if test="jsjb != null and jsjb != '' ">
+    	and (jsjb <![CDATA[>=]]> #{jsjb } OR id = #{id})
+     </if>
+</select>
+<!-- 获取所有角色信息  运营中心-->
+<select id="selectYyzxJsxx" resultMap="BaseResultMap" parameterType="com.admin.entity.jsgl.TGlptJsglJsxx">
+	 select * from t_glpt_jsgl_jsxx where delflag !='D' 
+	 and jszt='02'
+	 and jsgs='02'
+     <if test="id != null and id != '' ">
+     and id != '1'
+     </if>
+     <if test="jsjb != null and jsjb != '' ">
+     and jsjb <![CDATA[>=]]> #{jsjb} 
+     order by jsjb asc
+     </if>
+</select>
+	<!-- 获取所有角色信息 -->
+	<select id="selectJsxx" resultMap="BaseResultMap" parameterType="com.admin.entity.jsgl.TGlptJsglJsxx">
+		select * from t_glpt_jsgl_jsxx where delflag !='D'
+		and jszt='02'
+		<if test="jsgs != null and jsgs != ''">
+			and jsgs =#{jsgs}
+		</if>
+		<if test="id != null and id != ''">
+			and sjjs_id =#{id} or id=#{id}
+		</if>
+	</select>
+	
+	<!-- 查询角色名称是否存在 tangli -->
+	<select id="getJsxxByJsmc" resultMap="BaseResultMap" parameterType="com.admin.entity.jsgl.TGlptJsglJsxx">
+		select * from t_glpt_jsgl_jsxx where delflag !='D'
+		<if test="jsgs != null and jsgs != ''">
+			and jsgs =#{jsgs}
+		</if>
+		<if test="jsmc != null and jsmc != ''">
+			and jsmc =#{jsmc}
+		</if>
+	</select>
+
+	<!-- 根据id,获取信息 -->
+	<select id="getJsxxById" resultMap="viewxzjsMap">
+		select jsxx.*,(select
+		sjxx.jsmc from t_glpt_jsgl_jsxx sjxx where
+		sjxx.delflag!='D' and
+		sjxx.id=jsxx.sjjs_id) as sjjsmc from
+		t_glpt_jsgl_jsxx jsxx
+		where
+		jsxx.delflag !='D' and jsxx.id=#{id}
+	</select>
+	
+	
+	<!-- 根据角色归属获取角色的叶子节点 tangli -->
+	<select id="getKfpJsByJsgs" resultMap="BaseResultMap">
+		select jsxx.* from t_glpt_jsgl_jsxx jsxx where jsxx.delflag !='D' and jsxx.jszt='02' and jsxx.jsgs=#{jsgs}
+		and jsxx.jsjb=
+		 ( select max(jx.jsjb) from t_glpt_jsgl_jsxx jx where jx.delflag!='D'and jx.jszt='02' and jx.jsgs=#{jsgs} )
+	</select>
+
+
+</mapper>

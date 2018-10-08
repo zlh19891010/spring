@@ -1,0 +1,2308 @@
+/*  sdui鍏ㄥ眬鍏遍�氭牱寮�  */
+/*
+body {
+	font: 14px/18px "Microsoft Yahei", Tahoma, Helvetica, Arial, Verdana, "\5b8b\4f53", sans-serif;
+}
+
+*/
+
+/* ----------------------------- sdui鏍呮牸绯荤粺 start ------------------------------ */
+/* 璁剧疆鏍呮牸绯荤粺瀹瑰櫒鏍峰紡 */
+.sdui-container {
+	margin: 0 auto;
+	padding: 0 0 0 1%;
+}
+
+.sdui-container:after { /* 鏈�鍚庢竻闄ゆ诞鍔� */
+	content:""; 
+	display: block; 
+	clear: both; 
+}
+
+/* 璁剧疆琛屾牱寮�   */
+.sdui-container .row {
+	clear: both;
+	padding: 0 10px;
+	margin: 10px 0;
+}
+.sdui-container .row:after {
+	content:""; 
+	display: block; 
+	visibility:hidden;
+	clear: both; 
+}
+
+
+/* 璁剧疆鍒楁牱寮�  */
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+	float: left;
+	display:inline-block;
+	margin: 0 1% 0 0;
+	word-break:keep-all;
+	white-space:nowrap; 
+}
+
+.col-1:after, .col-2:after, .col-3:after, .col-4:after, .col-5:after, .col-6:after, .col-7:after, .col-8:after, .col-9:after, .col-10:after, .col-11:after, .col-12:after {
+	content:""; 
+	display: block;
+	visibility:hidden;
+}
+
+/* 褰撴湁澶氬垪鏃讹紝鏈�鍚庝竴鍒楅渶瑕佽缃甽ast鏍峰紡 */
+/* .col-1.last, .col-2.last, .col-3.last, .col-4.last, .col-5.last, .col-6.last, .col-7.last, .col-8.last, .col-9.last, .col-10.last, .col-11.last, .col-12 {
+	margin: 0;
+}
+ */
+ 
+.sdui-container .row>*:first-child {
+	text-align: left;
+}
+ 
+.sdui-container .row>*:last-child {
+	margin: 0;
+}
+
+/* 璁剧疆鍒楁牱寮�  */
+.col-1 { width: 7.33%; }
+.col-2 { width: 15.7%; }
+.col-3 { width: 24.03%; }
+.col-4 { width: 32.36%; }
+.col-5 { width: 40.69%; }
+.col-6 { width: 49.02%; }
+.col-7 { width: 57.35%; }
+.col-8 { width: 65.68%; }
+.col-9 { width: 74.01%; }
+.col-10 { width: 82.34%; }
+.col-11 { width: 90.67%; }
+.col-12 { width: 99%; margin: 0; }
+
+/* 璁剧疆鍒楁牱寮忎笅鐨勫浘鐗囨牱寮�  */
+.col-1 img, .col-2 img, .col-3 img, .col-4 img, .col-5 img, .col-6 img, .col-7 img, .col-8 img, .col-9 img, .col-10 img, .col-11 img, .col-12 img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* 瀵逛簬 1024鍒嗚鲸鐜� */
+@media all and (min-width: 1024px) {
+	.sdui-container {
+		/*max-width: 1000px;*/
+	}
+
+	.sdui-container .row {
+		padding: 0;
+	}
+}
+
+/* 瀵逛簬768鍒嗚鲸鐜�  */
+/**
+@media all and (max-width: 768px) {
+	.row {
+	}
+
+	.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11 {
+		float: none;
+		width: 99%;
+	}
+}
+*/
+
+/* ----------------------------- sdui鏍呮牸绯荤粺 end ------------------------------ */
+
+/* ----------------------------- sdui鎸夐挳鏍峰紡  start ------------------------------ */
+
+/* 榛樿鎸夐挳鏍峰紡  */
+.sdui-btn {
+	display: inline-block;
+	width: 100px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #A0C461;
+    outline:none;
+    color: #fff;
+    white-space: nowrap;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    border: 1px solid #A0C461;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 1;
+}
+
+/*蓝色按钮*/
+.sdui-btn-blue{
+	background: url(../../img/cx.png);
+	border: none;
+}
+.sdui-btn-blue:hover{
+	background-image: url(../../img/cx_hover.png);
+}
+.sdui-btn-blue:active{
+	background-image: url(../../img/cx_active.png);
+}
+.sdui-btn-qx{
+	background: url(../../img/qx.png);
+	border: none;
+	color: #333 !important;
+	opacity: 1 !important;
+}
+.sdui-btn-qx:hover{
+	background-image: url(../../img/qx_hover.png);
+}
+.sdui-btn-qx:active{
+	background-image: url(../../img/qx_active.png);
+}
+.sdui-btn-circle {
+	border-radius: 16px;
+}
+
+.sdui-btn:focus {
+	/* color: #fff; */
+}
+
+/* primary鎸夐挳鏍峰紡  */
+.sdui-btn-primary {
+	border: 1px solid #E5E5E5;
+    background-color: E5E5E5;
+    color: #000;
+}
+
+/* normal鎸夐挳鏍峰紡  */
+.sdui-btn-green {
+	border: 1px solid #76BF52;
+    background-color: #6FBC49;
+    color: #fff;
+}
+
+/* warm鎸夐挳鏍峰紡  */
+.sdui-btn-warm {
+	background: url(../../img/xz.png);
+	border: none;
+}
+.sdui-btn-warm:hover {
+	background: url(../../img/xz_hover.png);
+}
+.sdui-btn-warm:active {
+	background: url(../../img/xz_active.png);
+}
+
+/* danger鎸夐挳鏍峰紡  */
+.sdui-btn-danger {
+	border: 1px solid #DC5A5A;
+	background-color: #DC5A5A;
+	color: #fff;
+}
+
+/* disabled鎸夐挳鏍峰紡  */
+.sdui-btn-disabled {
+	border: 1px solid #e6e6e6;
+    background-color: #FBFBFB;
+    color: #C9C9C9;
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+/*  hover棰滆壊鏍峰紡    */
+/* sdui鎸夐挳榛樿hover鏍峰紡   */
+.sdui-btn:hover {
+	color: #fff;
+	opacity: 0.8;
+}
+
+/* 鏆栬壊hover */
+.sdui-btn-hover-warm:hover {
+	background-color: #ff9900;
+	opacity: 1;
+}
+
+/* 璀﹀憡鑹瞙over */
+.sdui-btn-hover-danger:hover {
+	color: #fff;
+    border: 1px solid #EA728F;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F17799', endColorstr='#E54A61', GradientType='0');
+    background: -ms-linear-gradient(top, #F17799, #E54A61);
+    background: -moz-linear-gradient(top,#F17799,#E54A61);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#F17799), to(#E54A61));
+    background: -webkit-linear-gradient(top, #F17799, #E54A61);
+    background: -o-linear-gradient(top, #F17799, #E54A61);
+}
+
+/* normal鑹瞙over */
+.sdui-btn-hover-green:hover {
+	border: 1px solid #62A640;
+	background: #62A640;
+}
+
+/* default鑹瞙over */
+.sdui-btn-hover-default:hover {
+	background-color: #2D97DF;
+	opacity: 1;
+}
+
+
+/* 鎸夐挳size瀵瑰簲鏍峰紡   */
+/*  澶у彿鎸夐挳  */
+.sdui-btn-big {
+	height: 44px;
+    line-height: 44px;
+    border-radius: 22px;
+    padding: 0 25px;
+    font-size: 16px;
+}
+
+/* 涓彿鎸夐挳 */
+.sdui-btn-middle {
+	height: 38px;
+    line-height: 38px;
+    border-radius: 19px;
+    padding: 0 21px;
+    font-size: 14px;
+}
+
+/*  灏忓彿鎸夐挳  */
+.sdui-btn-small {
+	height: 26px;
+    line-height: 24px;
+    border-radius: 4px;
+    padding: 0 18px;
+    font-size: 12px;
+}
+
+/*  mini鎸夐挳  */
+.sdui-btn-mini {
+	height: 22px;
+    line-height: 22px;
+    border-radius: 11px;
+    padding: 0 5px;
+    font-size: 12px;
+}
+
+
+.sdui-btn {
+	margin-right: 10px;
+}
+
+.sdui-btn-add,
+.sdui-btn-delete,
+.sdui-btn-edit,
+.sdui-btn-view,
+.sdui-btn-tingyong,
+.sdui-btn-qiyong,
+.sdui-btn-setting,
+.sdui-btn-tongji,
+.sdui-btn-tongguo:before,
+.sdui-btn-shenhe:before,
+.sdui-btn-jinqian,
+.sdui-btn-ren-add,
+.sdui-btn-daoru,
+.sdui-btn-daochu,
+.sdui-btn-weihu,
+.sdui-btn-suoding,
+.sdui-btn-jiesuo,
+.sdui-btn-xiazai,
+.sdui-btn-baocun
+ {
+	font-family: "iconfont" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/** 鏂板  */
+.sdui-btn-add {
+	background-color: #23B7E5;
+}
+.sdui-btn-add:before {
+	content:'\e603';
+}
+
+/** 鍒犻櫎  */
+.sdui-btn-delete {
+	background-color: #A6AEC1;
+}
+.sdui-btn-delete:before {
+	content:'\e654';
+}
+
+/** 缂栬緫  */
+.sdui-btn-edit {
+	background-color: #24B8E6;
+}
+.sdui-btn-edit:before {
+	content: '\e66e';
+}
+
+/** 鏌ョ湅  */
+.sdui-btn-view {
+	background-color: #7266BC;
+}
+.sdui-btn-view:before {
+	content: '\e61b';
+}
+
+/** 鍋滅敤  */
+.sdui-btn-tingyong {
+	background-color: #EB6100;
+}
+.sdui-btn-tingyong:before {
+	content: '\e643';
+}
+
+/** 鍚敤 */
+.sdui-btn-qiyong {
+	background-color: #8FC320;
+}
+.sdui-btn-qiyong:before {
+	content: '\e65a';
+}
+
+/** 璁剧疆 */
+.sdui-btn-setting {
+	background-color: #7266B8;
+}
+.sdui-btn-setting:before {
+	content: '\e604';
+}
+
+/** 缁熻 */
+.sdui-btn-tongji {
+	background-color: #7266B8;
+}
+.sdui-btn-tongji:before {
+	content: '\e615';
+}
+
+/** 閫氳繃 */
+.sdui-btn-tongguo {
+	background-color: #8FC320;
+}
+.sdui-btn-tongguo:before {
+	content: '\e67f';
+}
+
+/** 缁存姢 */
+.sdui-btn-weihu {
+	background-color: #23B7E5;
+}
+.sdui-btn-weihu:before {
+	content: '\e640';
+}
+
+/** 瀹℃牳 */
+.sdui-btn-shenhe {
+	background-color: #23B7E5;
+}
+.sdui-btn-shenhe:before {
+	content: '\e640';
+}
+
+/** 閲戦挶鍥炬爣  */
+.sdui-btn-jinqian {
+	background-color: #ff9900;
+}
+.sdui-btn-jinqian:before {
+	content: '\e640';
+}
+
+/** 娣诲姞浜哄憳鍥炬爣  */
+.sdui-btn-ren-add {
+	background-color: #23B7E5;
+}
+.sdui-btn-ren-add:before {
+	content: '\e85f';
+}
+
+/** 瀵煎嚭鍥炬爣  */
+.sdui-btn-daoru {
+	background-color: #23B7E5;
+}
+.sdui-btn-daoru:before {
+	content: '\e66f';
+}
+
+/** 瀵煎嚭鍥炬爣  */
+.sdui-btn-daochu {
+	background-color: #23B7E5;
+}
+.sdui-btn-daochu:before {
+	content: '\e618';
+}
+
+/** 閿佸畾鍥炬爣  */
+.sdui-btn-suoding {
+	background-color: #EB6100;
+}
+.sdui-btn-suoding:before {
+	content: '\e60d';
+}
+
+/** 瑙ｉ攣鍥炬爣  */
+.sdui-btn-jiesuo {
+	background-color: #8FC320;
+}
+.sdui-btn-jiesuo:before {
+	content: '\e644';
+}
+
+/** 涓嬭浇鍥炬爣  */
+.sdui-btn-xiazai {
+	background-color: #8FC320;
+}
+.sdui-btn-xiazai:before {
+	content: '\e621';
+}
+
+/** 淇濆瓨鍥炬爣  */
+.sdui-btn-baocun {
+	background-color: #23B7E5;
+}
+.sdui-btn-baocun:before {
+	content: '\e644';
+}
+
+.sdui-btn-add:before,
+.sdui-btn-delete:before,
+.sdui-btn-edit:before,
+.sdui-btn-view:before,
+.sdui-btn-tingyong:before,
+.sdui-btn-qiyong:before,
+.sdui-btn-setting:before,
+.sdui-btn-tongji:before,
+.sdui-btn-tongguo:before,
+.sdui-btn-shenhe:before,
+.sdui-btn-jinqian:before,
+.sdui-btn-ren-add:before,
+.sdui-btn-daoru:before,
+.sdui-btn-daochu:before,
+.sdui-btn-weihu:before,
+.sdui-btn-suoding:before,
+.sdui-btn-jiesuo:before,
+.sdui-btn-xiazai:before,
+.sdui-btn-baocun:before
+ {
+	vertical-align:middle;
+  	display:inline-block;
+  	height: 30px;
+  	margin-right: 5px;
+}
+
+
+.sdui-link {
+	font-family: "iconfont" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin:0 5px;
+    position: relative;
+    padding-left: 18px;
+}
+
+.sdui-link:hover {
+	text-decoration: underline;
+	cursor:pointer;
+}
+
+/** 鏂板  */
+.sdui-link-add,.sdui-link-add:focus {
+	color: #23B7E5;
+}
+.sdui-link-add:before {
+	content:'\e603';
+}
+
+/** 鍒犻櫎  */
+.sdui-link-delete,.sdui-link-delete:focus {
+	/* color: #A6AEC1; */
+	color:#de6465;
+}
+.sdui-link-delete:before {
+	content:'\e654';
+}
+
+/** 缂栬緫  */
+.sdui-link-edit,.sdui-link-edit:focus {
+	color: #24B8E6;
+}
+.sdui-link-edit:before {
+	content: '\e66e';
+}
+
+/** 鏌ョ湅  */
+.sdui-link-view,.sdui-link-view:focus {
+	/* color: #7266BC; */
+	color:#a4c76b;
+}
+.sdui-link-view:before {
+	content: '\e61b';
+}
+
+/** 鍋滅敤  */
+.sdui-link-tingyong,.sdui-link-tingyong:focus {
+	color: #EB6100;
+}
+.sdui-link-tingyong:before {
+	content: '\e643';
+}
+
+/** 鍚敤 */
+.sdui-link-qiyong,.sdui-link-qiyong:focus {
+	color: #8FC320;
+}
+.sdui-link-qiyong:before {
+	content: '\e65a';
+}
+
+/** 璁剧疆 */
+.sdui-link-setting,.sdui-link-setting:focus {
+	color: #7266B8;
+}
+.sdui-link-setting:before {
+	content: '\e604';
+}
+
+/** 缁熻 */
+.sdui-link-tongji,.sdui-link-tongji:focus {
+	color: #7266B8;
+}
+.sdui-link-tongji:before {
+	content: '\e615';
+}
+
+/** 閫氳繃 */
+.sdui-link-tongguo,.sdui-link-tongguo:focus {
+	color: #8FC320;
+}
+.sdui-link-tongguo:before {
+	content: '\e67f';
+}
+
+/** 缁存姢 */
+.sdui-link-weihu,.sdui-link-weihu:focus {
+	color: #23B7E5;
+}
+.sdui-link-weihu:before {
+	content: '\e640';
+}
+
+/** 瀹℃牳 */
+.sdui-link-shenhe,.sdui-link-shenhe:focus {
+	color: #23B7E5;
+}
+.sdui-link-shenhe:before {
+	content: '\e640';
+}
+
+/** 閲戦挶鍥炬爣  */
+.sdui-link-jinqian,.sdui-link-jinqian:focus {
+	color: #ff9900;
+}
+.sdui-link-jinqian:before {
+	content: '\e640';
+}
+
+/** 娣诲姞浜哄憳鍥炬爣  */
+.sdui-link-ren-add,.sdui-link-ren-add:focus {
+	color: #23B7E5;
+}
+.sdui-link-ren-add:before {
+	content: '\e85f';
+}
+
+/** 瀵煎嚭鍥炬爣  */
+.sdui-link-daoru,.sdui-link-daoru:focus {
+	color: #23B7E5;
+}
+.sdui-link-daoru:before {
+	content: '\e66f';
+}
+
+/** 瀵煎嚭鍥炬爣  */
+.sdui-link-daochu,.sdui-link-daochu:focus {
+	color: #23B7E5;
+}
+.sdui-link-daochu:before {
+	content: '\e618';
+}
+
+/** 閿佸畾鍥炬爣  */
+.sdui-link-suoding,.sdui-link-suoding:focus {
+	color: #EB6100;
+}
+.sdui-link-suoding:before {
+	content: '\e60d';
+}
+
+/** 瑙ｉ攣鍥炬爣  */
+.sdui-link-jiesuo,.sdui-link-jiesuo:focus {
+	color: #8FC320;
+}
+.sdui-link-jiesuo:before {
+	content: '\e644';
+}
+
+/** 涓嬭浇鍥炬爣  */
+.sdui-link-xiazai,.sdui-link-xiazai:focus {
+	color: #8FC320;
+}
+.sdui-link-xiazai:before {
+	content: '\e621';
+}
+
+/** 淇濆瓨鍥炬爣  */
+.sdui-link-baocun,.sdui-link-baocun:focus {
+	color: #23B7E5;
+}
+.sdui-link-baocun:before {
+	content: '\e644';
+}
+
+.sdui-link-add:before,
+.sdui-link-delete:before,
+.sdui-link-edit:before,
+.sdui-link-view:before,
+.sdui-link-tingyong:before,
+.sdui-link-qiyong:before,
+.sdui-link-setting:before,
+.sdui-link-tongji:before,
+.sdui-link-tongguo:before,
+.sdui-link-shenhe:before,
+.sdui-link-jinqian:before,
+.sdui-link-ren-add:before,
+.sdui-link-daoru:before,
+.sdui-link-daochu:before,
+.sdui-link-weihu:before,
+.sdui-link-suoding:before,
+.sdui-link-jiesuo:before,
+.sdui-link-xiazai:before,
+.sdui-link-baocun:before
+ {
+ 	position:absolute;
+ 	top:0;
+ 	left:0;
+	vertical-align:middle;
+  	display:inline-block;
+  	line-height: 18px;
+  	font-size:14px;
+  	margin-right: 5px;
+}
+
+/* ----------------------------- sdui鎸夐挳鏍峰紡  end   ------------------------------ */
+
+/* ----------------------------- sdui form琛ㄥ崟鏍峰紡  start   ------------------------------ */
+/*  checkbox 鏍峰紡  */
+
+.sdui-checkbox + label:hover ,.sdui-radio + label:hover {
+	border: 1px solid #5298c5;
+}
+
+.sdui-checkbox {
+	display: none;
+}
+
+.sdui-checkbox + label {
+	vertical-align: middle;
+	background-color: #FFF; 
+    border: 1px solid #C1CACA; 
+    /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05); */
+   /*  padding: 9px;  */
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: 4px;
+    display: inline-block; 
+    position: relative; 
+}
+
+.sdui-checkbox + label:active { 
+    /** box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1); */
+}
+
+.sdui-checkbox:checked + label { 
+    background-color: #DC5A5A;
+    border: 1px solid #DC5A5A;
+    /** box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1); */
+    color: #fff; 
+    text-align: center;
+}
+
+/* .sdui-checkbox:checked + label:after { 
+    content: '';
+    position: absolute; 
+    top: 15%; 
+    left: 15%; 
+    color: #1E9FFF; 
+    width: 70%;
+    height: 70%;
+    background: #1E9FFF;
+    text-align: center; 
+}  */
+
+.sdui-checkbox:checked + label:after { 
+    content: '\2714';
+    position: absolute; 
+    top: 0px; 
+    left: 0px; 
+    color: #fff; 
+    width: 100%;
+    height: 100%;
+    line-height: 100%;
+    text-align: center; 
+    font-size: 1.2em; 
+    vertical-align: text-top; 
+} 
+
+/* 绂佺敤鐨刢heckbox鏍峰紡 */
+.sdui-checkbox:disabled + label {
+    background-color: #F2F2F2;
+    border: 1px solid #C1CACA;
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+.sdui-checkbox:disabled:checked + label {
+    background-color: #F2F2F2;
+}
+
+.sdui-checkbox:disabled:checked + label:after { 
+    color: #92A1AC; 
+}
+
+/*  radio 鏍峰紡  */
+.sdui-radio {
+	display: none;
+}
+
+.sdui-radio + label {
+	vertical-align: middle;
+	background-color: #FFF; 
+    border: 1px solid #C1CACA; 
+    /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05); */
+   	width: 1.2em;
+   	height: 1.2em;
+    border-radius: 0.7em; 
+    display: inline-block; 
+    position: relative; 
+}
+
+.sdui-radio + label:active { 
+    /* box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1); */
+}
+
+.sdui-radio:checked + label { 
+    border: 1px solid #5298c5;
+    background: linear-gradient(#87c4e9, #5aa7dd);
+    box-shadow: inset -1px -2px 1px #4b8cbc;
+    /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1); */
+}
+.sdui-radio:checked + label:after { 
+	content: "\2714";
+	position: absolute; 
+    top: 1px; 
+    left: 0px; 
+    color: #fff; 
+    width: 100%;
+    height: 100%;
+    line-height: 100%;
+    text-align: center; 
+    font-size: 1em; 
+    vertical-align: text-top;
+}
+
+/* 绂佺敤鐨剅adio鏍峰紡 */
+.sdui-radio:disabled + label {
+    background-color: #F2F2F2;
+    border: 1px solid #C1CACA;
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+.sdui-radio:disabled:checked + label {
+    background-color: #F2F2F2;
+}
+
+.sdui-radio:disabled:checked + label:after { 
+    color: #92A1AC; 
+}
+
+/*  鏅�氭枃鏈锛屽琛屾枃鏈textarea锛屼笅鎷夐�夋嫨妗唖elect 鏍峰紡  */
+.sdui-input,.sdui-textarea,.sdui-select {
+	font-size: 1em;
+	/*border: 1px solid #EEEBE9;
+	border: solid 3px transparent;*/
+	box-shadow: inset 0px 1px 2px #D4D0CD;
+	border-radius: 5px;
+	background-color: #fff;
+	text-indent: 5px;
+	padding:0;
+	color: #4C4846;
+	overflow: hidden;
+}
+
+.sdui-input,.sdui-textarea {
+	/* -webkit-box-shadow:inset 1px 1px 0px #D4D0CD;
+	-moz-box-shadow:inset 1px 1px 0px #D4D0CD;  
+	box-shadow:inset 1px 1px 0px #D4D0CD; */
+}
+
+.sdui-select {
+	-webkit-box-shadow:0px 1px 2px #D4D0CD;
+	-moz-box-shadow:0px 1px 2px #D4D0CD;  
+	box-shadow:0px 1px 2px #D4D0CD; 
+}
+
+.sdui-input:focus,.sdui-textarea:focus,.sdui-select:focus {
+	outline:none;
+	border: solid 3px transparent;
+	border-image: url(../../img/input.png) 3 3 stretch;
+	box-shadow: none;
+	/*-webkit-box-shadow:2px 2px 2px #EEEBE9;
+	-moz-box-shadow:2px 2px 2px #EEEBE9;  
+	box-shadow:2px 2px 2px #EEEBE9;*/
+}
+
+.sdui-input:hover,.sdui-textarea:hover,.sdui-select:hover {
+	/*border-color: #39b7a5;*/
+	border: solid 3px transparent;
+	border-image: url(../../img/input.png) 3 3 stretch;
+	box-shadow: none;
+	
+	/*-webkit-box-shadow:2px 2px 2px #EEEBE9;
+	-moz-box-shadow:2px 2px 2px #EEEBE9;  
+	box-shadow:2px 2px 2px #EEEBE9;*/
+}
+
+/* 榛樿input鐨勯珮搴� */
+.sdui-input {
+	height: 40px;
+	line-height: 40px;
+}
+
+.sdui-textarea {
+	min-height: 120px;
+}
+
+.sdui-select {
+	height: 42px;
+	line-height: 100%;
+}
+
+/* 澶у彿鐨刬nput鍙妔elect妗� */
+.sdui-input-big,.sdui-select-big {
+	height: 44px;
+	line-height: 44px;
+}
+
+/* 涓彿鐨刬nput鍙妔elect妗� */
+.sdui-input-middle,.sdui-select-middle {
+	height: 38px;
+	line-height: 38px;
+}
+
+
+/* 鏅�氳緭鍏ユ銆乻elect杈撳叆妗嗐�乼extarea杈撳叆妗�    ===>  绂佺敤鐨勬牱寮� */
+.sdui-input:disabled,.sdui-textarea:disabled,.sdui-select:disabled {
+	border:1px solid #EEEBE9;
+	background-color: #F0F0F0;
+	cursor: not-allowed;
+}
+
+.sdui-input:disabled:hover,.sdui-textarea:disabled:hover,.sdui-select:disabled:hover {
+	border-color: #e6e6e6;
+}
+
+
+/* ----------------------------- sdui form琛ㄥ崟鏍峰紡  end   ------------------------------ */
+
+/* ----------------------------- sdui 杈呭姪绾�  start   ------------------------------ */
+/* 鍒嗛殧绾� */
+hr {
+	height: 1px;
+    margin: 10px 0;
+    border: 0;
+    background-color: #e2e2e2;
+    clear: both;
+}
+
+/* 寮曠敤鍧� */
+.sdui-quote {
+	margin: 10px 0;
+    padding: 15px;
+    line-height: 22px;
+    border-left: 5px solid #2D97DF;
+    border-radius: 0 2px 2px 0;
+    background-color: #F7F7F7;
+}
+
+.sdui-quote-normal {
+    border-left-color: #1E9FFF;
+}
+
+.sdui-quote-warm {
+    border-left-color: #ff9900;
+}
+
+.sdui-quote-danger {
+    border-left-color: #FF5722;
+}
+
+.sdui-quote-danger {
+    border-left-color: #FF5722;
+}
+
+.sdui-quote-grey {
+    border-color: #B4B9BF;
+    border-style: solid;
+    border-width: 1px 1px 1px 5px;
+    background: 0 0;
+}
+
+/* tab椤垫樉绀� */
+/* 榛樿椋庢牸 */
+.sdui-tab {
+	position: relative;
+}
+
+.sdui-tab>.sdui-tab-menu {
+	padding-left: 0;
+    overflow: hidden;
+    border-left:1px solid #999;
+    margin: 0;
+}
+
+.sdui-tab>.sdui-tab-menu>li {
+	list-style-type: none;
+    display: inline-block;
+    padding: 0 10px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    cursor: pointer;
+    margin: 0;
+    float: left;
+    border-radius:0;
+    border: 1px solid #999;
+    background: #e0e0e0;
+    border-left: none;
+}
+
+.sdui-tab>.sdui-tab-menu>li.active {
+	border-bottom: 1px solid #fff;
+	border-radius: 2px 2px 2px 0;
+	background: #fff;
+}
+
+.sdui-tab>.sdui-tab-menu>small {
+	height: 38px;
+    line-height: 38px;
+    padding-left: 10px;
+    color: rgb(215, 215, 215);
+}
+
+.sdui-tab>.sdui-tab-content {
+	margin: 0;
+	margin-top: -1px;
+	padding: 10px;
+	border: 1px solid #999;
+	border-radius: 0px 2px 2px;
+}
+
+/* normal椋庢牸 */
+.sdui-tab>.sdui-tab-menu-normal {
+	border-left-color: #0F7ED1;
+}
+
+.sdui-tab>.sdui-tab-menu-normal>li {
+	border-color: #0F7ED1;
+	background: #1E9FFF;
+	color: #fff;
+}
+
+.sdui-tab>.sdui-tab-menu-normal>li.active {
+	color: #0F7ED1;
+}
+
+.sdui-tab>.sdui-tab-content-normal {
+	border-color: #0F7ED1;
+}
+
+/* warm椋庢牸 */
+.sdui-tab>.sdui-tab-menu-warm {
+	border-left-color: #FF9900;
+}
+
+.sdui-tab>.sdui-tab-menu-warm>li {
+	border-color: #FF9900;
+	background: #FAA734;
+	color: #fff;
+}
+
+.sdui-tab>.sdui-tab-menu-warm>li.active {
+	color: #FF9900;
+}
+
+.sdui-tab>.sdui-tab-content-warm {
+	border-color: #FF9900;
+}
+
+/* 绔嬩綋椋庢牸tab */
+
+.sdui-tab ul.sdui-tab-menu-stereo{
+	border: none;
+	padding-left: 10px;
+}
+
+.sdui-tab>.sdui-tab-menu-stereo>li {
+	border:none;
+	border-right: 1px solid #B4B4B4;
+	border-bottom: 1px solid #B4B4B4;
+	margin-top: 5px;
+	background-image: -moz-linear-gradient(top, #EBEBEB, #CACACA);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #EBEBEB), color-stop(1, #CACACA));
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EBEBEB', endColorstr='#CACACA', GradientType='0');
+	padding: 5px 30px;
+	
+	-webkit-border-top-left-radius: 5px;
+    border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    border-top-right-radius: 5px;
+	
+	margin-right: 20px;
+	color: #646464;
+	font-weight: bold !important;
+}
+
+.sdui-tab>.sdui-tab-menu-stereo>li.active {
+	color: #585858;
+	border-right: none;
+	border-bottom: 1px solid #fff;
+	-webkit-box-shadow:0 0 10px #E8E8E8;  
+	-moz-box-shadow:0 0 10px #E8E8E8;  
+	box-shadow:0 0 10px #E8E8E8;
+}
+
+.sdui-tab>.sdui-tab-content-stereo {
+	border: none;
+	margin-left: 10px;
+	-webkit-box-shadow:0 0 10px #E8E8E8;  
+	-moz-box-shadow:0 0 10px #E8E8E8;  
+	box-shadow:0 0 10px #E8E8E8; 
+}
+
+/* green椋庢牸 */
+.sdui-tab>.sdui-tab-menu-green {
+	border-left-color: #2C8946;
+}
+
+.sdui-tab>.sdui-tab-menu-green>li {
+	border-color: #2C8946;
+	background: #5FB878;
+	color: #fff;
+}
+
+.sdui-tab>.sdui-tab-menu-green>li.active {
+	color: #2C8946;
+}
+
+.sdui-tab>.sdui-tab-content-green {
+	border-color: #2C8946;
+}
+
+/* radio椋庢牸 tab */
+.sdui-tab>.sdui-tab-menu-radio {
+	border: none;
+}
+
+.sdui-tab>.sdui-tab-menu-radio>li {
+	border: none;
+	background: none;
+}
+
+.sdui-tab>.sdui-tab-menu-radio>li.active {
+	border-bottom: none;
+    border-radius: 0;
+}
+
+.sdui-tab>.sdui-tab-content-radio {
+	 border:none;
+}
+
+.sdui-tab>.sdui-tab-menu-radio>li>label {
+	background-color: #FFF; 
+    border: 1px solid #C1CACA; 
+    /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05); */
+   	width: 1em;
+   	height: 1em;
+    border-radius: 0.6em; 
+    display: inline-block; 
+    position: relative; 
+}
+
+.sdui-tab>.sdui-tab-menu-radio>li>*{
+	vertical-align: middle;
+}
+
+.sdui-tab>*.label{
+	height: 38px;
+	line-height: 38px;
+	float: left;
+}
+
+.sdui-tab>.sdui-tab-menu-radio>li.active>label { 
+    /* background-color: #ECF2F7; */
+    border: 1px solid #1E9FFF; 
+    /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1); */
+    color: #1E9FFF; 
+}
+.sdui-tab>.sdui-tab-menu-radio>li.active>label:after { 
+		content: "";
+		display: block;
+        position: absolute;
+        top: 15%;
+        left: 15%;
+        width: 70%;
+        height: 70%;
+        background:#1E9FFF;
+        border-radius: 60%;
+}
+
+/* 绂佺敤鐨剅adio tab鏍峰紡 */
+.sdui-tab>.sdui-tab-menu-radio>li.disabled>label {
+    background-color: #F2F2F2;
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+
+/* 涓嬪垝绾块鏍肩殑tab */
+/* 绠�鍗曢鏍肩殑tab */
+
+.sdui-tab>.title {
+	position: absolute;
+	top:0;
+	left:10px;
+	height:38px;
+	line-height: 38px;
+	font-size: 16px;
+}
+
+.sdui-tab>.sdui-tab-menu-brief {
+	border: none;
+	border-bottom: 2px solid #D9DADC;
+	padding-right: 20px;
+	background: #F6F7FA;
+}
+
+.sdui-tab>.sdui-tab-menu-brief>li {
+	position:relative;
+	background:none;
+	border: none;
+	float: right;
+	font-size: 12px;
+}
+
+.sdui-tab>.sdui-tab-menu-brief>li.active {
+	color: #E5415B;
+	background: #F6F7FA;
+}
+
+.sdui-tab>.sdui-tab-menu-brief>li.active:after {
+	content:'';
+	width: 100%;
+	border: none;
+	border-bottom: 4px solid #E5415B;
+	position:absolute;
+	height:35px;
+	left:0;
+	top:0;
+}
+
+.sdui-tab>.sdui-tab-content-brief {
+	border: none;
+	background: #F6F7FA;
+}
+
+/* 绠�鍗曢鏍肩殑normal涓婚 */
+.sdui-tab>.sdui-tab-menu-brief-normal {
+	border-bottom-color: #d0dee5;
+}
+
+.sdui-tab>.sdui-tab-menu-brief-normal>li.active {
+	color: #000;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.sdui-tab>.sdui-tab-menu-brief-normal>li.active:after {
+	border-bottom-color: #66c9f3;
+}
+
+/* 绠�鍗曢鏍肩殑warm涓婚 */
+.sdui-tab>.sdui-tab-menu-brief-warm {
+	border-bottom-color: #FAA734;
+}
+
+.sdui-tab>.sdui-tab-menu-brief-warm>li.active {
+	color: #FF9900;
+}
+
+.sdui-tab>.sdui-tab-menu-brief-warm>li.active:after {
+	border-bottom-color: #FF9900;
+}
+
+/* 绠�鍗曢鏍肩殑green涓婚 */
+.sdui-tab>.sdui-tab-menu-brief-green {
+	border-bottom-color: #5FB878;
+}
+
+.sdui-tab>.sdui-tab-menu-brief-green>li.active {
+	color: #2C8946;
+}
+
+.sdui-tab>.sdui-tab-menu-brief-green>li.active:after {
+	border-bottom-color: #2C8946;
+}
+
+
+/* ----------------------------- sdui 杈呭姪绾�  end   ------------------------------ */
+
+/* ----------------------------- sdui鏂囨湰鏍峰紡 start  ------------------------------ */
+/* primary鏂囨湰鏍峰紡  */
+.sdui-text-primary {
+    color: #555;
+}
+
+/* normal鏂囨湰鏍峰紡  */
+.sdui-text-normal {
+	color: #1E9FFF;
+}
+
+/* warm鏂囨湰鏍峰紡  */
+.sdui-text-warm {
+	color: #ff9900;
+}
+
+/* danger鏂囨湰鏍峰紡  */
+.sdui-text-danger {
+	color: #FF5722;
+}
+
+/* green鏂囨湰鏍峰紡  */
+.sdui-text-green {
+	color: #2C8946;
+}
+
+/* red鏂囨湰鏍峰紡  */
+.sdui-text-red {
+	color: red;
+}
+/* ----------------------------- sdui鏂囨湰鏍峰紡 end  ------------------------------ */
+
+/*----------------------------- sdui 杈硅窛鏍峰紡  start ----------------------------- */
+.sdui-marL15{
+	margin-left: 15px;
+}
+/*----------------------------- sdui 杈硅窛鏍峰紡  end ----------------------------- */
+
+
+
+/* ---------------------------- sdGrid 鐩稿叧鏍峰紡       start  -----------------------------*/
+
+.sdGrid .top-area {
+	/* border-bottom: solid 1px #d0dee5'; */
+	margin-bottom: 10px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	min-height: 33px;
+	line-height: 33px;
+}
+
+.sdGrid table {
+	border-collapse:separate;
+	border-spacing: 0;
+	overflow: hidden;
+	border:solid 1px #c1c1c1;
+	width:100%;
+	
+	-webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    
+    color: #252525;
+}
+
+.sdGrid table tbody tr {
+	background: #fff;
+	/* border-top: 1px solid #DCDEDE !important;  瀵逛簬table鍦嗚锛� 姝ゅ睘鎬ц缃凡缁忔棤鐢� */
+}
+
+.sdGrid table tbody td {
+	border-top: 1px solid #c1c1c1 !important;
+}
+
+
+.sdGrid table tbody tr:nth-child(even){
+	background: #e8f4fb;
+}
+
+.sdGrid table tr:hover {
+	background:#D9DADF !important;
+	/* -webkit-box-shadow:0 0 10px #E8E8E8;  
+	-moz-box-shadow:0 0 10px #E8E8E8;  
+	box-shadow:0 0 10px #E8E8E8; */
+}
+
+.sdGrid table th{
+	font-size: 13px;
+	font-weight: bold;
+	background: #f1f1f1;
+	color: #000000;
+	
+	height: 50px;
+	line-height: 50px;
+	
+	padding-left: 20px;
+	padding-right: 5px;
+	text-align: left;
+}
+
+.sdGrid table thead th:last-child{
+	border-right:none;
+}
+
+.sdGrid table td {
+	font-size: 14px;
+	height: 40px;
+	line-height: 2em;
+	
+	padding-left: 20px;
+	padding-right: 10px;
+	text-align: left;
+}
+
+.sdGrid table tbody td:last-child{
+	border-right: none;
+}
+
+.sdGrid table td>div{
+	display: block;
+	/* word-break: break-all;
+	word-wrap: break-word;
+	*/
+}
+
+.sdGrid input[type="radio"], input[type="checkbox"] {
+    margin: 0;
+    line-height: normal;
+}
+
+
+/* -------------- sdGrid绠�娲� 椋庢牸 -----------------*/
+.sdGrid-brief table{
+	border: none !important;
+	border-radius: 0;
+}
+
+.sdGrid-brief table th {
+	background:#F7F8F8;
+	border-right: none;
+	border-bottom: none;
+	color: #686666;
+	filter: none;
+}
+
+.sdGrid-brief table tbody td {
+	border-top: none !important;
+	border-right: none !important;
+	border-bottom: none !important;
+	
+	border-bottom: 1px solid #E1E1E1 !important;
+}
+
+/* .sdGrid-brief-green table tbody tr:last-child td {
+	border-bottom: none !important;
+} */
+
+
+.sdGrid-brief table tbody tr:nth-child(even) {
+	background: none;
+}
+
+.sdGrid-brief table tbody tr:hover {
+	background: none !important;
+}
+
+/* -------------- sdGrid绠�娲佺孩 椋庢牸 -----------------*/
+.sdGrid-brief-red table{
+	border: none !important;
+	
+	-webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+
+.sdGrid-brief-red table th{ 
+	background: #E2E3E8;
+	color: #595757;
+	border-right: 1px solid #E2E3E8;
+	border-bottom: 1px solid #E2E3E8;
+}
+
+.sdGrid-brief-red table tbody td {
+	border-top: none !important;
+	border-right: none !important;
+	/* border-bottom: 1px solid #CDCED0 !important; */
+}
+
+
+.sdGrid-brief-red table tbody tr:hover {
+	background: none !important;
+	color: #DD5A58 !important;
+}
+
+.sdGrid-brief-red table tbody tr:nth-child(even) {
+	background: #ECEDF1 !important;
+}
+
+.sdGrid-brief-red table tbody tr:nth-child(odd) {
+	background: none;
+}
+
+
+
+/*page*/
+.sdgrid-pager{position:relative;margin-top:10px;padding:0;}
+.sdgrid-pager .highlight{color:#056dae;font-style:normal;}
+.sdgrid-pager:after {
+	content:""; 
+	display: block; 
+	clear: both; 
+}
+
+.sdgrid-tr-hover {
+	background:#EFF0F4 !important;
+}
+
+/* sdgrid 鍒嗛〉缁勪欢閮ㄥ垎  */
+.pagination {margin: 10px 0;}
+
+.pagination ul,.pagination ol {
+    padding: 0;
+    margin: 0 0 10px 25px;
+}
+
+.pagination ul {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-left: 0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.pagination ul>li {
+    display: inline;
+}
+
+.pagination a {
+    color: #08c;
+    text-decoration: none;
+}
+
+.pagination ul>li>a, .pagination ul>li>span {
+    float: left;
+    padding: 4px 12px;
+    line-height: 20px;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-left-width: 0;
+}
+
+.pagination ul>li>a:hover, .pagination ul>li>a:focus, .pagination ul>.active>a, .pagination ul>.active>span {
+    background-color: #f5f5f5;
+}
+
+.pagination ul>.active>a, .pagination ul>.active>span {
+    color: #999;
+    cursor: default;
+}
+
+.pagination ul>li:first-child>a, .pagination ul>li:first-child>span {
+    border-left-width: 1px;
+    -webkit-border-bottom-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    -webkit-border-top-left-radius: 4px;
+    border-top-left-radius: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    -moz-border-radius-topleft: 4px;
+}
+
+/* 鍒嗛〉婊戝姩榧犳爣鏍峰紡璋冩暣  */
+.pagination li {cursor: pointer;}
+/* ---------------------------- sdGrid 鐩稿叧鏍峰紡       end  -----------------------------*/
+
+/*鍚戜笅鎷夊彇锛屽姞杞芥洿澶�*/
+.sd-pull-list {
+	padding: 20px;
+}
+
+.sd-pull-list table {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 20px;
+	
+	border-collapse:separate;
+	border-spacing: 0;
+	overflow: hidden;
+	border:solid 1px #DCDDDD;
+	width:100%;
+	
+	-webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+	
+	background-color: #fff;
+}
+
+.sd-pull-list tbody td {
+	border-right: 1px solid #DCDDDD;
+	padding: 10px 20px;
+	text-align: left;
+}
+
+.sd-pull-list tbody td:last-child {
+	border-right: none;
+}
+
+
+.sd-pull-list>div.action {
+	width: 100%;
+	text-align: center;
+}
+
+.sd-pull-list>div.action>div.button{
+	display: inline-block;
+	background: url(skin/double-arrow.png) no-repeat;
+	height: 19px;
+	width: 31px;
+	cursor: pointer;
+}
+
+
+/* 涓嬫媺鑿滃崟锛屼富棰橈細澶х孩 */
+.sd-pull-list-theme-darkred {
+	
+}
+
+.sd-pull-list-theme-darkred table {
+	padding:0;
+	border:none;
+	
+	-webkit-box-shadow:0 0 20px #D8D8D8;  
+	-moz-box-shadow:0 0 20px #D8D8D8;  
+	box-shadow:0 0 20px #D8D8D8;
+}
+
+.sd-pull-list-theme-darkred tbody td {
+	border-right: none;
+	padding: 10px 20px;
+	text-align: left;
+	
+	-webkit-box-shadow:10px 0 10px #FCDBDB;  
+	-moz-box-shadow:10px 0 10px #FCDBDB;  
+	box-shadow:10px 0 10px #FCDBDB;
+}
+
+/* ---------------------------- sdSelect 鐩稿叧鏍峰紡 start ----------------------------*/
+
+.sdSelect-input {
+	background: #F8F7F7 url(skin/arrow-down.png) no-repeat right 10px center;
+}
+.sdSelect-input-up {
+	background-image: url(skin/arrow-up.png);
+}
+
+/* 閫変腑涔嬪悗鏍峰紡 */
+.sdSelect-container .selected {
+	/* background: #4BAFFA; */
+	/* 鑳屾櫙鑹叉笎鍙� */
+	/*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E57474', endColorstr='#DC5A5A', GradientType='0');
+	background: -ms-linear-gradient(top, #E57474, #DC5A5A);
+	background: -moz-linear-gradient(top,#E57474,#DC5A5A);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#E57474), to(#DC5A5A));
+	background: -webkit-linear-gradient(top, #E57474, #DC5A5A);
+	background: -o-linear-gradient(top, #E57474, #DC5A5A);*/
+	background: #ececec;
+	
+	/* 鏄剧ず鏂囧瓧棰滆壊 */
+	/*color: #fff;*/
+	
+	/* 鍐呴槾褰� */
+	/*-webkit-box-shadow: inset 0 2px 2px rgba(211,77,77,1);
+    -moz-box-shadow: inset 0 2px 2px rgba(211,77,77,1);
+    box-shadow: inset 0 2px 2px rgba(211,77,77,1);*/
+}
+
+.sdSelect-container .item-hover {
+	cursor: default;
+	/* background: #CBE5FA !important; */
+	
+	/* 鑳屾櫙鑹叉笎鍙� */
+	/*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F58E8E', endColorstr='#DC5A5A', GradientType='0');
+	background: -ms-linear-gradient(top, #F58E8E, #DC5A5A);
+	background: -moz-linear-gradient(top,#F58E8E,#DC5A5A);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#F58E8E), to(#DC5A5A));
+	background: -webkit-linear-gradient(top, #F58E8E, #DC5A5A);
+	background: -o-linear-gradient(top, #F58E8E, #DC5A5A);*/
+	background: #ececec;
+	/* 鏄剧ず鏂囧瓧棰滆壊 */
+	/*color: #fff;*/
+	
+	/* 鍐呴槾褰� */
+	/*-webkit-box-shadow: inset 0 2px 2px rgba(220,90,90,1);
+    -moz-box-shadow: inset 0 2px 2px rgba(220,90,90,1);
+    box-shadow: inset 0 2px 2px rgba(220,90,90,1);*/
+}
+
+
+.sdSelect-container ul {
+	/* 鍐呴槾褰� */
+	-webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 3px 3px rgba(0,0,0,0.3);
+    box-shadow: 0 3px 3px rgba(0,0,0,0.3);
+    
+    -webkit-border-bottom-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    
+    -webkit-border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+}
+
+.sdSelect-container ul li {
+	background: #F7F6F6;
+	border-top: 1px solid #E8E8E8;
+}
+
+
+/* ---------------------------- sdSelect 鐩稿叧鏍峰紡 end ----------------------------*/
+
+/* ---------------------------- sdValidation 鐩稿叧鏍峰紡 start ----------------------------*/
+/* 楠岃瘉閫氳繃鏃讹紝鏍峰紡 */
+.sd-validate .valid {
+	border: 1px #32BC61 solid;
+	background-color: #fff;
+}
+
+/* 楠岃瘉涓嶉�氳繃鏃讹紝鏍峰紡 */
+.sd-validate .error {
+	border: 1px #f00 solid;
+	background-color: #FBF9BB;
+}
+/* ---------------------------- sdValidation 鐩稿叧鏍峰紡 end ----------------------------*/
+
+
+/* ---------------------------- sdTree 鐩稿叧鏍峰紡 start -------------------------------*/
+
+
+
+.sdTree,.sdTree ul,.sdTree ul li{
+	margin:0;padding:0;list-style:none;
+	display: block;
+}
+
+.sdTree {
+	word-break:keep-all;
+	white-space:nowrap;
+	/* position: relative; */
+}
+
+.sdTree .error {
+	border: 1px #f00 solid;
+	background-color: #FBF9BB;
+}
+
+.sdTree li {
+	line-height: 38px;
+}
+
+.sdTree li ul {
+	margin-left: 27px;
+}
+
+.sdTree li ul.ul-bg {
+	margin-left: 5px;
+	padding-left: 10px;
+	/* border-left: 1px dotted #ADAD9C !important; */
+}
+
+.sdTree div.tree-item,.sdTree .tree-icon,.sdTree .tree-title {
+	height: 38px;
+}
+
+.sdTree div.tree-item {
+	position: relative;
+	overflow: hidden;
+}
+
+.sdTree div.tree-item-edit {
+	/* border-bottom: 1px dotted #C6C6C1 !important; */
+}
+
+.sdTree div.tree-item-active {
+	border-bottom: 1px solid #1E9FFF !important;
+}
+
+.sdTree .tree-icon,.sdTree .tree-title {
+	display: inline-block;
+	position: absolute;
+}
+
+.sdTree .tree-check {
+	/* font-family: "iconfont" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    color:#C9C9C9; */
+    display: inline-block;
+    height: 10px;
+    width:10px;
+    border: 1px solid #DD5A58;
+    border-radius: 6px;
+}
+
+.sdTree .tree-check:after {
+	/* content: '\e60e'; */
+	/* content:'\e68c'; */
+}
+
+.sdTree .tree-title {
+	top:0;
+	left:27px;
+}
+
+.sdTree .tree-icon{
+	width: 27px;
+	height: 38px;
+    text-align: center;
+}
+
+.sdTree .tree-icon-default{
+   /* background: #fff url(skin/tree-icon.gif) center; */
+}
+
+.sdTree .tree-icon-close,.sdTree .tree-icon-open {
+	cursor: pointer;
+}
+
+.sdTree .tree-title-hover .tree-check{
+	/* color: #DD5A58 !important;
+	background: #DD5A58; */
+}
+
+.sdTree .tree-title-hover-pointer {
+	cursor: pointer;
+	background: #ECEDF1;
+}
+
+.sdTree .tree-title-selected {
+	background: #ECEDF1 !important;
+}
+
+.sdTree .tree-title-selected  .tree-check{
+	color: #DD5A58 !important;
+	background: #DD5A58;
+}
+
+
+.sdTree .tree-icon-close {
+	/* background: #fff url(skin/tree-icon-close.gif) no-repeat center; */
+	/*background:url(skin/tree-icon-close-02.png) no-repeat center;*/
+	background:url(skin/tree-icon-close-03.png) no-repeat center;
+}
+
+.sdTree .tree-icon-open {
+	/* background: #fff url(skin/tree-icon-open.gif) no-repeat center;  */
+	/*background:url(skin/tree-icon-open-02.png) no-repeat cente*/r; 
+	background:url(skin/tree-icon-open-03.png) no-repeat center; 
+}
+
+.sdTree input {
+	height: 26px;
+	color: #000 !important;
+}
+
+.sdTree-toolbar {
+	border-radius: 2px;
+	/* background: url(skin/tree_toolbar_bg_01.png) repeat center; */
+	opacity: 1;
+	margin-top: 5px !important;
+	background: #fff;
+}
+
+.sdTree-toolbar, .sdTree-toolbar li{
+	margin:0;padding:0;list-style:none;
+}
+
+.sdTree-toolbar li{
+	float: left;
+	margin: 4px 5px;
+	width:19px;
+	height:19px;
+	cursor:pointer;
+}
+
+.sdTree-toolbar .edit,.sdTree-toolbar .delete,.sdTree-toolbar .insertAfter,.sdTree-toolbar .insertBefore,.sdTree-toolbar .insertChild {
+	width:19px;
+	height:19px;
+	cursor:pointer;
+}
+
+.sdTree-toolbar .edit {
+	/*background: url(skin/tree_editor.png) no-repeat center;*/
+	/*background: url(../../images/add005grey.png) no-repeat center;*/
+	background: url(skin/tree_editor_before.png) no-repeat center;
+}
+
+.sdTree-toolbar .edit:hover {
+	/*background: url(skin/tree_editor.png) no-repeat center;*/
+	background: url(skin/tree_editor_after.png) no-repeat center;
+}
+
+.sdTree-toolbar .save {
+	/*background: url(skin/tree_save.png) no-repeat center;*/
+	background: url(skin/tree_save_before.png) no-repeat center;
+}
+
+.sdTree-toolbar .save:hover {
+	/*background: url(skin/tree_save.png) no-repeat center;*/
+	background: url(skin/tree_save_after.png) no-repeat center;
+}
+
+.sdTree-toolbar .delete {
+	/*background: url(skin/tree_delete.png) no-repeat center;*/
+	background: url(skin/tree_delete_before.png) no-repeat center;
+}
+
+.sdTree-toolbar .delete:hover {
+	/*background: url(skin/tree_delete.png) no-repeat center;*/
+	background: url(skin/tree_delete_after.png) no-repeat center;
+}
+
+.sdTree-toolbar .insertAfter {
+	/*background: url(skin/tree_insert_after.png) no-repeat center;*/
+	background: url(skin/tree_arrowDown_before.png) no-repeat center;
+}
+
+.sdTree-toolbar .insertAfter:hover {
+	/*background: url(skin/tree_insert_after.png) no-repeat center;*/
+	background: url(skin/tree_arrowDown_after.png) no-repeat center;
+}
+.sdTree-toolbar .insertBefore {
+	/*background: url(skin/tree_insert_before.png) no-repeat center;*/
+	background: url(skin/tree_arrowUp_before.png) no-repeat center;
+}
+
+.sdTree-toolbar .insertBefore:hover {
+	/*background: url(skin/tree_insert_before.png) no-repeat center;*/
+	background: url(skin/tree_arrowUp_before.png) no-repeat center;
+}
+.sdTree-toolbar .insertChild {
+	/*background: url(skin/tree_insert_child.png) no-repeat center;*/
+	background: url(skin/tree_add_before.png) no-repeat center;
+}
+
+.sdTree-toolbar .insertChild:hover {
+	/*background: url(skin/tree_insert_child.png) no-repeat center;*/
+	background: url(skin/tree_add_after.png) no-repeat center;
+}
+
+.sdTree-toolbar:after {
+	content:""; 
+	display: block; 
+	clear: both; 
+}
+
+/* ---------------------------- sdTree 鐩稿叧鏍峰紡 end -------------------------------*/
+
+/* ---------------------------- sdAutoComplete 鐩稿叧鏍峰紡 start -------------------------------*/
+
+.sdAutoComplete .item-hover{
+	cursor: pointer;
+	background: #CBE5FA !important;
+}
+
+/* ---------------------------- sdAutoComplete 鐩稿叧鏍峰紡 end -------------------------------*/
+
+
+/* ---------------------------- sdui-form 鐩稿叧鏍峰紡 start ---------------------------------*/
+/* 椋庢牸涓�  */
+.sdui-form {
+	/* border: 1px solid #DEE0DF; */
+	border:none;
+	
+	border-radius: 4px;
+	/* margin: 20px; */
+	background: #F6F7FA;
+	color: #5A5152;
+}
+
+.sdui-form .head {
+	border-bottom: 2px solid #D4D4D4;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	padding: 10px 10px;
+	line-height: 30px;
+	color: #3D3D3E;
+	background: #F6F7FA;
+}
+.sdui-form .head:after {
+	content:""; 
+	display: block; 
+	clear: both; 
+}
+
+.sdui-form .head>.title {
+	font-size: 16px;
+	/* font-weight: bold; */
+	float: left;
+}
+
+.sdui-form .head>.button-area {
+	float:right;
+}
+
+.sdui-form .content {
+	width: 100%;
+	padding: 20px 20px;
+	overflow: auto;
+}
+
+.sdui-form .content>* {
+	margin-bottom: 30px;
+}
+
+/* 闈㈡澘锛岄粯璁ゆ繁绾㈣壊 */
+.sdui-panel {
+	/* border: 1px solid #DEE0DF; */
+	border-radius: 4px;
+	margin: 20px;
+	background:url(skin/form_bg_01.png) repeat;
+	color: #5A5152;
+}
+
+.sdui-panel .head {
+	/* border-bottom: 1px solid #DCDDDD; */
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	padding: 1px;
+	line-height: 38px;
+	color: #fff;
+	background-color:#DC5A5A;
+	text-align: center;
+	
+	-webkit-box-shadow:0 5px 5px #D4D4D4;  
+	-moz-box-shadow:0 5px 5px #D4D4D4;  
+	box-shadow:0 5px 5px #D4D4D4;
+}
+.sdui-panel .head:after {
+	content:""; 
+	display: block; 
+	clear: both; 
+}
+
+.sdui-panel .head>.mark {
+	float: left;
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid #DC5A5A;
+    background-color: #fff;
+    padding: 0 25px;
+    color: #DC5A5A;
+    
+    font-size: 0.8em;
+}
+
+.sdui-panel .head>.title {
+	font-size: 15px;
+	font-weight: bold;
+	color: #fff;
+	
+	float: none;
+}
+
+.sdui-panel .content {
+	padding: 0;
+	overflow: auto;
+}
+
+.sdui-panel .content>* {
+	margin-bottom: 30px;
+}
+
+/* 闈㈡澘 娴呰摑鑹� */
+.sdui-panel-lightblue {
+	
+}
+
+.sdui-panel-lightblue .head {
+	background-color:#5AAADC;
+}
+
+.sdui-panel-lightblue .head>.mark {
+    border: 1px solid #5AAADC;
+    /* background-color: #5AAADC; */
+    color: #5AAADC;
+}
+
+/* 闈㈡澘 娣辩伆鑹� */
+.sdui-panel-darkgrey {
+	
+}
+
+.sdui-panel-darkgrey .head {
+	background-color:#494B57;
+}
+
+.sdui-panel-darkgrey .head>.mark {
+    border: 1px solid #494B57;
+    color: #494B57;
+}
+
+/* 闈㈡澘 浜豢鑹� */
+.sdui-panel-lightgreen {
+	
+}
+
+.sdui-panel-lightgreen .head {
+	background-color:#96BE50;
+}
+
+.sdui-panel-lightgreen .head>.mark {
+    border: 1px solid #96BE50;
+    color: #96BE50;
+}
+
+/* 闈㈡澘 鏆楅粍鑹� */
+.sdui-panel-darkyellow {
+	
+}
+
+.sdui-panel-darkyellow .head {
+	background-color:#DCBE5A;
+}
+
+.sdui-panel-darkyellow .head>.mark {
+    border: 1px solid #DCBE5A;
+    color: #DCBE5A;
+}
+
+
+/* 椋庢牸浜�  */
+.sdui-form-03 {
+	border: 1px solid #E1E2E3;
+	border-radius: 4px;
+	margin: 20px;
+	background: #fff;
+	color: #5A5152;
+	
+	-webkit-box-shadow:0 0 10px #E8E8E8;  
+	-moz-box-shadow:0 0 10px #E8E8E8;  
+	box-shadow:0 0 10px #E8E8E8;
+}
+
+.sdui-form-03 .head {
+	border-bottom: 1px solid #DCDDDD;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	padding: 10px 10px;
+	line-height: 30px;
+	color: #000;
+	background: #F0F5F7;
+	
+	text-align: center;
+}
+.sdui-form-03 .head:after {
+	content:""; 
+	display: block; 
+	clear: both; 
+}
+
+.sdui-form-03 .head>.title {
+	font-size: 16px;
+	font-weight: bold;
+	color: #595757;
+	
+	float: none;
+}
+
+
+.sdui-form-03 .content {
+	padding:0;
+	overflow: auto;
+	background: #F0F5F7;
+}
+
+.sdui-form-03 .content>* {
+	margin-bottom: 30px;
+}
+
+/* ---------------------------- sdui-form 鐩稿叧鏍峰紡 end ---------------------------------*/
+
+
+/* ---------------------------- sdui-group-button 鐩稿叧鏍峰紡 start ---------------------------------*/
+
+ul.sdGroupButton {
+	margin:20px;
+	padding:0;
+	list-style:none;
+	border: 1px solid #D9D9D9;
+	border-radius: 5px;
+	
+	-webkit-box-shadow: 3px 3px 6px #D9D9D9;
+	-moz-box-shadow: 3px 3px 6px #D9D9D9;  
+	box-shadow: 3px 3px 6px #D9D9D9;
+}
+
+ul.sdGroupButton:after {
+	content: "";
+	display: block;
+	clear: both;
+	visibility: hidden;
+}
+
+ul.sdGroupButton li {
+	border: none;
+	float: left;
+	border-right: 1px solid #D9D9D9;
+	text-align: center;
+	height: 2.5em;
+	line-height: 2.5em;
+	font-weight: bold;
+	background: #fff;
+	color: #707070;
+}
+
+ul.sdGroupButton li:first-child {
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+ul.sdGroupButton li:last-child {
+	border-right: none;
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+ul.sdGroupButton li.active {
+	background: #2D98EA;
+	color: #fff;
+	-webkit-box-shadow:inset 3px 3px 6px #298CDD;
+	-moz-box-shadow:inset 3px 3px 6px #298CDD;  
+	box-shadow:inset 3px 3px 6px #298CDD;
+}
+
+ul.sdGroupButton li:hover {
+	background: #6CBFFC;
+	color: #fff;
+	cursor: pointer;
+	-webkit-box-shadow:inset 3px 3px 6px #55B2FA;
+	-moz-box-shadow:inset 3px 3px 6px #55B2FA;  
+	box-shadow:inset 3px 3px 6px #55B2FA;
+}
+
+/* ---------------------------- sdui-group-button 鐩稿叧鏍峰紡 end ---------------------------------*/
+
+
+.sdui-label {
+	font-weight: bold;
+	color: #000000;
+}
+
+/* ---------------------------- mark鏍囪 鐩稿叧鏍峰紡 start ---------------------------------*/
+
+mark {
+	color: #fff;
+	background: #33B5CB;
+	padding: 4px 12px;
+	font-size: 12px;
+	border-radius: 12px;
+	margin: 0 5px;
+}
+
+/* 娣辩孩鑹� */
+mark.dark-red {
+	background: #E65267;
+}
+
+/* 绮夎壊 */
+mark.pink {
+	background: #DB6AEC;
+}
+
+/* 娴呯豢鑹� */
+mark.light-green {
+	background: #6FBC49;
+}
+/* 浅黄色 */
+mark.light-yellow{
+	background:#dcbe5a;
+}
+/* 深紫色 */
+mark.deep-purple{
+	background:#353745;
+}
+/* 浅灰色 */
+mark.light-gray{
+	background:#b5b5b6;
+}
+/* 蓝色 */
+mark.light-blue{
+	  background: #5aaadc;
+}
+
+
+
+/* 娣辩豢鑹� */
+mark.dark-green {
+	background: #33B5CB;
+}
+
+/* 姗橀粍鑹� */
+mark.orange {
+	background: #F2B053;
+}
+
+/* mark鏍囪鐨勫舰鐘�  */
+mark.shape-normal {
+	border-radius: 2px;
+}
+
+
+/* ---------------------------- mark鏍囪 鐩稿叧鏍峰紡 end ---------------------------------*/
+
+
+.sdui-fixed-bottom {
+	position: fixed;
+	width: 100%;
+	text-align: center;
+	left:0;
+	bottom:0;
+	padding: 10px !important;
+	margin: 0px !important;
+	background: url(skin/dialog_bg.png) repeat center;
+}
+
+
+/*次级*/
+.cj-content .sdui-radio:checked + label{
+	border: 1px solid #38b29e;
+    background: linear-gradient(#58c6b6, #3cb4a1);
+    box-shadow: inset -1px -2px 1px #319786;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>查看用户</title>
+		<link rel="stylesheet" href="../../css/common/common.css" />
+		<link href="../../components/sdui/sdui.css" type="text/css" rel="stylesheet">
+		<link rel="stylesheet" href="../../css/admin/glyyh.css" />
+	</head>
+
+	<body>
+		<div class="hp-glpt-xzgly">
+			<h1 class="hp-title">
+				<a href="javascript:void(0)" class="return pull-left" onclick="history.back(-1)"> 返回</a>
+				查看用户
+				</h1>
+				<div class="hp-yhgl-ck" id="yhxx-form">
+
+				</div>	
+		</div>
+	</body>
+	<script src="../../components/sdui/js/jquery-1.9.1.min.js"></script>
+	<script src="../../components/sdui/js/bootstrap.min.js"></script>
+	<script src="../../components/sdui/js/bootstrap-paginator.js"></script>
+	<script src="../../components/layer/layer.js"></script>
+	<script src="../../components/sdui/js/jquery.validate.js"></script>
+	<script src="../../components/sdui/js/messages_cn.js"></script>
+	<script src="../../components/sdui/sdui.js"></script>
+	<script src="../../components/ractivejs/ractive.js"></script>
+	<script type="text/javascript" src="../../components/webuploader-0.1.5/webuploader.js"></script>
+	<script src="../../js/common/constants.js"></script>
+	<script src="../../js/common/common.js"></script>
+
+	<script id="yhxx-template" type="text/ractive">
+		<dl>
+			<dt>登 录 名：</dt>
+			<dd><span class ="ellips" title="{{yhxx.loginId}}">{{yhxx.loginId}}</span></dd>
+			<dt>用户名称：</dt>
+			<dd><span class ="ellips" title="{{yhxx.yhmc}}">{{yhxx.yhmc}}</span></dd>
+			<dt>指定管理员：</dt>
+			<dd>{{#if yhxx.zdgly == 1}}是{{else}}否{{/if}}</dd>
+			<dt>邮      箱：</dt>
+			<dd><span class ="ellips" title="{{yhxx.yx}}">{{yhxx.yx}}</span></dd>
+			<dt>手 机 号：</dt>
+			<dd>{{yhxx.sjh}}</dd>
+			<dt>角     色：</dt>
+			<dd>
+				<span class ="ellips" title="{{jsmcs}}">{{jsmcs}}</span>
+				<a href="javascript:void(0)" class="hp-ckqx ml-20">查看权限</a>
+			</dd>
+		</dl>
+		<div class="hp-yhgl-cktx">
+			<img src="{{yhtx}}" class="sctx" data-id="{{txpath}}" />
+		</div>
+		<div class="hp-center">
+			<input type="button" class="hp-btn-lblue" value="返回" onclick="fanhui()" />
+		</div>
+	</script>
+
+	<script src="../../js/admin/yhgl/ckyh.js"></script>
+</html>

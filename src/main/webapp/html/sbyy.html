@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/common/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../components/sdui/sdui.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/operation/sbyy.css"/>
+</head>
+<body>
+<h1 class="hp-title cj-title">设备预约</h1>
+<div class="cj-sbyy">
+	<div class="cj-sbyy-date pull-left">
+		<input type="button" class="hp-btn hp-cj-btn" value="仅标记我的预约信息" />
+		<input type="button" class="hp-btn hp-cancel-btn" value="显示所有预约信息" />
+		<div class="cj-sbyy-calendar">
+			<img src="../img/admin/rl.jpg" />
+		</div>
+	</div>
+	<div class="cj-sbyy-list">
+		
+		<div class="cj-sbyy-list-box">
+			<div class="cj-sbyy-list-head">
+				<h2>预约时刻表</h2>
+				<h3>日期 2017-5-2</h3>
+			</div>
+			<table>
+				<tr>
+					<td class="hp-center"><i class="sbyy-icon bg-orange">预</i></td>
+					<td><span>08:00 - 09:00</span></td>
+					<td><span>待处理</span></td>
+					<td class="hp-right">
+						<a href="#" class="look-icon">查看预约信息</a>  
+					</td>
+				</tr>
+				<tr>
+					<td class="hp-center"><i class="sbyy-icon bg-green">闲</i></td>
+					<td><span>08:00 - 09:00</span></td>
+					<td><span></span></td>
+					<td class="hp-right">
+						<a href="#" class="ks_icon">开始预约</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="hp-center"><i class="sbyy-icon bg-orange">预</i></td>
+					<td><span>08:00 - 09:00</span></td>
+					<td><span class="co-orange">拒绝申请</span></td>
+					<td class="hp-right">
+						<a href="#" class="look-icon">查看拒绝原因</a>
+						<a href="#" class="cx_icon">重新预约</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="hp-center"><i class="sbyy-icon bg-orange">预</i></td>
+					<td><span>08:00 - 09:00</span></td>
+					<td><span class="co-green">同意申请</span></td>
+					<td class="hp-right">
+						<a href="#" class="look-icon">查看预约信息</a>
+						<a href="#" class="qx_icon">取消预约</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="hp-center"><i class="sbyy-icon bg-orange">预</i></td>
+					<td><span>08:00 - 09:00</span></td>
+					<td><span>待处理</span></td>
+					<td class="hp-right">
+						<a href="#" class="look-icon">查看预约信息</a>  
+					</td>
+				</tr>
+				<tr>
+					<td class="hp-center"><i class="sbyy-icon bg-green">闲</i></td>
+					<td><span>08:00 - 09:00</span></td>
+					<td><span></span></td>
+					<td class="hp-right">
+						<a href="#" class="ks_icon">开始预约</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="hp-center"><i class="sbyy-icon bg-orange">预</i></td>
+					<td><span>08:00 - 09:00</span></td>
+					<td><span class="co-orange">拒绝申请</span></td>
+					<td class="hp-right">
+						<a href="#" class="look-icon">查看拒绝原因</a>
+						<a href="#" class="cx_icon">重新预约</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="hp-center"><i class="sbyy-icon bg-orange">预</i></td>
+					<td><span>08:00 - 09:00</span></td>
+					<td><span class="co-green">同意申请</span></td>
+					<td class="hp-right">
+						<a href="#" class="look-icon">查看预约信息</a>
+						<a href="#" class="qx_icon">取消预约</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="block hide"></div>
+<div class="block-box cj-sbyy-yy hide">
+	<div class="block-box-title">
+		开始预约
+		<a href="javascript:void(0)" class="block-close close"></a>
+	</div>
+	<div class="block-box-con">
+		<dl class="form-dl">
+			<dt>预约人</dt>
+			<dd><input type="text" class="input-text"></dd>
+			<dt>职务</dt>
+			<dd><input type="text" class="input-text"></dd>
+			<dt>所属部门</dt>
+			<dd><input type="text" class="input-text"></dd>
+			<dt>上课人数</dt>
+			<dd><input type="text" class="input-text"></dd>
+			<dt>预约时间</dt>
+			<dd class="long">2017-03-09  12:00-13:00</dd>
+			<dt>预约说明</dt>
+			<dd class="long"><textarea class="input-text"></textarea></dd>
+		</dl>
+	</div>
+	<div class="hp-center">
+		<input type="button" class="hp-btn hp-cancel-btn close" value="取消" />
+		<input type="button" class="hp-cj-btn ml-20" value="提交" />
+	</div>
+</div>
+
+<div class="block-box cj-sbyy-ck hide">
+	<div class="block-box-title">
+		预约信息
+		<a href="javascript:void(0)" class="block-close close"></a>
+	</div>
+	<div class="block-box-con">
+		<ul>
+			<li>预约人：张老师</li>
+			<li>职 务：生物老师</li>
+			<li class="last">所属部门：初三1班</li>
+			<li>上课人数：15 </li>
+			<li>预约时间：2017-03-09  12:00-13:00 </li>
+			<li class="long">预约说明：预约说明预约说明预约说明预约说明预约说明预约说明预约说明预约说明预约说明预约说明预约说明预约说明预约说明预约说明预约说明预约说明预约说明预约说明预约说明预约说预约说明预约说明预约说明预约说明预约说明预约说明预约说明预约说明预约说明预约说明预约说明预约说明预约说明预约说明预约说明预约说明预约说明预约说明预约说明预约说。</li>
+			<li class="long">调整后使用时间：2017-03-09  12:00-13:00 </li>
+		</ul>
+	</div>
+	<div class="hp-center">
+		<input type="button" class="hp-cj-btn ml-20 close" value="关闭" />
+	</div>
+</div>
+<script src="../js/common/jquery-1.10.2.js"></script>
+<script>
+	$(function(){
+		$(".look-icon").click(function(){
+			$(".block").removeClass("hide");
+			$(".cj-sbyy-ck").removeClass("hide");
+		})
+		
+		$(".cx_icon, .ks_icon").click(function(){
+			$(".block").removeClass("hide");
+			$(".cj-sbyy-yy").removeClass("hide");
+		})
+		
+		$(".close").click(function(){
+			$(".block").addClass("hide");
+			$(".block-box").addClass("hide");
+		})
+	})
+</script>
+</body>
+</html>

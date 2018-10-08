@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.admin.dao.cards.TGlptCardsMapper">
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.admin.entity.cards.TGlptCards">
+		<id column="id" property="id" />
+		<result column="card" property="card" />
+		<result column="str_accounts" property="strAccounts" />
+		<result column="str_nick_name" property="strNickName" />
+		<result column="creater_code" property="createrCode" />
+		<result column="create_time" property="createTime" />
+	</resultMap>
+    
+    <select id="selectCards" parameterType="com.admin.param.ParamCards" resultType="com.admin.view.ViewCards">
+      select gly.yhmc,car.card,car.str_accounts,car.str_nick_name,car.create_time from t_glpt_cards car left join t_glpt_glygl_glyxx gly on car.creater_code=gly.id 
+      
+      where 1=1
+      <if test="userId !=null and userId !=''">
+          and car.creater_code=#{userId} 
+      </if>
+      <if test="strAccounts !=null and strAccounts !=''">
+          and car.str_accounts like CONCAT('%',#{strAccounts},'%')  
+      </if>
+      <if test="czkssj !=null and czkssj !=''">
+          and car.create_time <![CDATA[>= ]]> #{czkssj}
+      </if>
+      <if test="czjssj !=null and czjssj !=''">
+          and car.create_time <![CDATA[<= ]]> #{czjssj}
+      </if>
+      order by car.create_time desc
+    </select>
+    
+</mapper>

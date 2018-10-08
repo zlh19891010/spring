@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.admin.dao.glygl.TGlptGlyglGlyxxMapper">
+
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.admin.entity.glygl.TGlptGlyglGlyxx">
+		<result column="id" property="id" />
+		<result column="login_id" property="loginId" />
+		<result column="mm" property="mm" />
+		<result column="zh" property="zh" />
+		<result column="yhmc" property="yhmc" />
+		<result column="yhtx" property="yhtx" />
+		<result column="yx" property="yx" />
+		<result column="sjh" property="sjh" />
+		<result column="js_id" property="jsId" />
+		<result column="sfcjgly" property="sfcjgly" />
+		<result column="sjgly_id" property="sjglyId" />
+		<result column="gly_zt" property="glyZt" />
+		<result column="cards" property="cards" />
+		<result column="s_auth_code" property="sAuthCode" />
+	</resultMap>
+				
+	
+	 <sql id="Glyxx_Column_List" >
+	    id,login_id,zh,yhmc,yhtx,yx,sjh,js_id,sfcjgly,sjgly_id,gly_zt,cards,s_auth_code
+ 	 </sql>
+	
+	
+	<select id="selectZhList" parameterType="com.admin.param.ParamStatistics" resultType="com.admin.entity.glygl.TGlptGlyglGlyxx">
+	     select <include refid="Glyxx_Column_List" /> from t_glpt_glygl_glyxx 
+	     <where>
+	        1=1 and login_id !='admin'
+	        <if test="czkssj !=null and czkssj !=''">
+	         and create_time <![CDATA[>= ]]> #{czkssj}
+	        </if>
+	        <if test="czjssj !=null and czjssj !=''">
+	         and create_time <![CDATA[<= ]]> #{czjssj}
+	        </if>
+	        <if test="sdate !=null and sdate !=''">
+	         and create_time <![CDATA[>= ]]> #{sdate}
+	        </if>
+	        <if test="edate !=null and edate !=''">
+	         and create_time <![CDATA[<= ]]> #{edate}
+	        </if>
+	        <if test="smouth !=null and smouth !=''">
+	         and create_time <![CDATA[>= ]]> #{smouth}
+	        </if>
+	        <if test="emouth !=null and emouth !=''">
+	         and create_time <![CDATA[<= ]]> #{emouth}
+	        </if>
+	        <if test="syear !=null and syear !=''">
+	         and create_time <![CDATA[>= ]]> #{syear}
+	        </if>
+	        <if test="eyear !=null and eyear !=''">
+	         and create_time <![CDATA[<= ]]> #{eyear}
+	        </if>
+	     </where>
+	</select>
+	
+	<select id="getGlyxx" resultMap="BaseResultMap">
+		select <include refid="Glyxx_Column_List" /> from t_glpt_glygl_glyxx
+		where DELFLAG != 'D' and mm = #{mm} 
+ 		and  (login_id =#{userName} OR zh=#{userName} )
+ 		   
+	</select>
+	
+	<select id="selectGlyxxList" parameterType="com.admin.param.YhxxParam" resultType="com.admin.view.ViewYhxx">
+    	SELECT gly.id ,gly.login_id loginId ,gly.zh , gly.yhmc, js.jsmc, gly.cards,gly.s_auth_code,gly.gly_zt yhzt
+    	FROM t_glpt_glygl_glyxx gly
+    	left join t_glpt_jsgl_jsxx js on gly.js_id = js.id and js.delflag <![CDATA[<>]]> 'D'
+    	WHERE gly.delflag <![CDATA[<>]]> 'D'
+    	<if test="loginId != null and loginId != '' " >
+      		AND gly.login_id LIKE CONCAT(CONCAT('%', #{loginId}), '%')
+  		</if>
+  		<if test="jsmc != null and jsmc != ''">
+  		    and js.jsmc like concat(concat('%', #{jsmc}), '%')
+  		</if>
+  		<if test="yhzt != null and yhzt != '' " >
+      		AND gly.gly_zt =  #{yhzt}
+  		</if>
+  		<if test="createrCode != null and createrCode != '' " >
+      		AND gly.creater_code =  #{createrCode}
+  		</if>
+  		and gly.zh != #{zh}
+  		and gly.id != #{id}
+  		order by gly.create_time desc
+	</select>
+
+	<!--根据角色id,获取用户信息  tangli-->
+	<select id="getYhxxByJsid"  resultType="java.lang.String">
+	   select glyxx.zh from t_glpt_glygl_glyxx glyxx where glyxx.delflag !='D' and glyxx.js_id=#{jsId}
+       union all
+       select yhxx.zh from t_glpt_yhgl_yhxx yhxx where yhxx.delflag !='D' and yhxx.js_id=#{jsId}
+	</select>
+
+	<!--根据用户名查询管理员-->
+	<select id="selectGlyxxByLoginId"  parameterType="java.lang.String" resultType="com.admin.entity.glygl.TGlptGlyglGlyxx">
+	   select * from t_glpt_glygl_glyxx where delflag !='D' and login_id=#{LoginId}
+	</select>
+
+    <!--分配点卡数量  -->
+    <update id="updateCards" >
+        update t_glpt_glygl_glyxx set cards=#{cards} where id=#{id}
+    </update>
+</mapper>

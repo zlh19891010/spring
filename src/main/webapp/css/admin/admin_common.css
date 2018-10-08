@@ -1,0 +1,60 @@
+.lm-box {
+	height: 48px;
+	line-height: 48px;
+	background-color: #c8cdd1;
+	position: relative;
+}
+
+.sdui-label,
+.sdui-select {
+	font-size: 13px;
+	margin-right: 3px;
+}
+
+.lm-box>h4 {
+	font-size: 18px;
+	color: #000000;
+	font-weight: 400;
+	text-align: center;
+}
+
+.return {
+	position: absolute;
+	left: 26px;
+	background: url(../../img/admin/return_icon.png) left center no-repeat;
+	padding-left: 16px;
+	font-size: 16px;
+	color: #000000;
+}
+
+.sdui-btn {
+	background-color: #4d98ca;
+	border: none;
+}
+
+.sdui-form .content>* {
+	margin-bottom: 12px!important;
+}
+
+.content {
+	margin-left: 10px;
+}
+
+.none {
+	display: none!important;
+}
+
+.hp-rzxx-search {
+	margin-top: 10px;
+}
+
+.hp-rzxx-czsj {
+	float: left;
+	margin-right: 52px;
+	display: inline-block;
+	width: 31.4%;
+}
+
+.hp-rzxx-czsj .sdui-input {
+	width: 35%;
+}

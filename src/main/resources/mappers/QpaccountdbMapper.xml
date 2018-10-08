@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.admin.dao.account.QpaccountdbMapper">
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.admin.entity.account.Qpaccountdb">
+		<id column="strAccounts" property="strAccounts" />
+		<result column="strPassword" property="strPassword" />
+		<result column="strClientIP" property="strClientIP" />
+		<result column="strMachineID" property="strMachineID" />
+		<result column="strNickName" property="strNickName" />
+		<result column="strIcon" property="strIcon" />
+		<result column="strOpenID" property="strOpenID" />
+		<result column="strToken" property="strToken" />
+		<result column="tmLastTime" property="tmLastTime" />
+		<result column="bOnline" property="bOnline" />
+		<result column="nCards" property="nCards" />
+		<result column="nState" property="nState" />
+		<result column="nSex" property="nSex" />
+		<result column="nScore" property="nScore" />
+		<result column="sAuthCode" property="sAuthCode" />
+		<result column="uid" property="uid" />
+	</resultMap>
+
+     <sql id="Account_Column_List" >
+	    strAccounts,strClientIP,strMachineID,strNickName,strIcon,strOpenID,strToken,tmLastTime,bOnline,nCards,nState,nSex,nScore,sAuthCode,uid
+ 	 </sql>
+ 	 
+ 	 <select id="getUid" resultType="java.lang.String">
+ 	    select uid from qpaccountdb where strOpenID=#{roleID}
+ 	 </select>
+ 	 
+ 	 <select id="selectOnCount" resultType="java.lang.Integer">
+ 	   select count(*) from qpaccountdb where bOnline =1
+ 	   <if test="sAuthCode !=null and sAuthCode !=''">
+ 	      and sAuthCode=#{sAuthCode}
+ 	   </if>
+ 	 </select>
+ 	 
+ 	 
+ 	 <select id="selectAccountByCode" parameterType="com.admin.param.ParamStatistics" resultType="com.admin.entity.account.Qpaccountdb"> 
+ 	   select <include refid="Account_Column_List" /> from qpaccountdb
+ 	   <where>
+ 	      1=1
+ 	       <if test="sAuthCode != null and sAuthCode != '' " >
+              AND sAuthCode =#{sAuthCode}
+           </if>
+           <if test="czkssj !=null and czkssj !=''">
+	         and bindTime <![CDATA[>= ]]> #{czkssj}
+	        </if>
+	        <if test="czjssj !=null and czjssj !=''">
+	         and bindTime <![CDATA[<= ]]> #{czjssj}
+	        </if>
+	        <if test="sdate !=null and sdate !=''">
+	         and bindTime <![CDATA[>= ]]> #{sdate}
+	        </if>
+	        <if test="edate !=null and edate !=''">
+	         and bindTime <![CDATA[<= ]]> #{edate}
+	        </if>
+	        <if test="smouth !=null and smouth !=''">
+	         and bindTime <![CDATA[>= ]]> #{smouth}
+	        </if>
+	        <if test="emouth !=null and emouth !=''">
+	         and bindTime <![CDATA[<= ]]> #{emouth}
+	        </if>
+	        <if test="syear !=null and syear !=''">
+	         and bindTime <![CDATA[>= ]]> #{syear}
+	        </if>
+	        <if test="eyear !=null and eyear !=''">
+	         and bindTime <![CDATA[<= ]]> #{eyear}
+	        </if>
+ 	   </where>
+ 	 </select>
+
+    <select id="selectAccountList" parameterType="com.admin.param.ParamAccount" resultType="com.admin.view.ViewAccount">
+       select <include refid="Account_Column_List" /> from qpaccountdb
+       <where>
+            1=1
+           <if test="sAuthCode != null and sAuthCode != '' " >
+              AND sAuthCode =#{sAuthCode}
+           </if>
+           <if test="strAccounts != null and strAccounts != '' " >
+              AND uid =#{strAccounts}
+           </if>
+           <if test="strNickName != null and strNickName != '' " >
+              AND strNickName LIKE CONCAT('%', #{strNickName},'%')
+           </if>
+           <if test="bOnline != null and bOnline != '' " >
+              AND bOnline =#{bOnline}
+           </if>
+           <if test="nState != null and nState != '' " >
+              AND nState =#{nState}
+           </if>
+       </where>
+    </select>
+    
+    
+</mapper>

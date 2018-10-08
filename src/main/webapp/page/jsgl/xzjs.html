@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>新增角色</title>
+		<link href="../../components/layer/skin/layer.css" type="text/css" rel="stylesheet">
+		<link href="../../components/sdui/sdui.css" type="text/css" rel="stylesheet">
+		<link rel="stylesheet" href="../../components/ztree/css/zTreeStyle.css">
+		<link rel="stylesheet" href="../../css/common/common.css" type="text/css" rel="stylesheet" />
+		<link href="../../css/admin/jsgl/jsxz.css" type="text/css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class="hp-glpt-xzgly none">
+			<h1 class="hp-title">
+			<a href="javascript:void(0)" class="return pull-left"> 返回</a>
+			新增角色
+			</h1>
+
+			<form id="myform">
+				<div class="hp-glpt-xzglycon">
+					<dl id="jsjbtem">
+						<!--模版部分 -->
+					</dl>
+					<div class="hp-glpt-qxcz">
+						<input type="button" class="hp-btns hp-glpt-save" />
+						<input type="button" class="hp-btns hp-glpt-cancel" />
+					</div>
+				</div>
+			</form>
+		</div>
+		<!--弹框-->
+		<div class="hp-black hide"></div>
+		<div class="hp-glpt-qxfpc hp-show hide">
+			<div class="hp-show-title">
+				<span>权限分配</span>
+				<i class="hp-show-close pull-right"></i>
+			</div>
+			<div class="hp-show-con">
+				<div class="hp-qxfp-con _clear">
+					<div class="hp-qxfp-left pull-left">
+						<h3>
+						可分配的权限<a href="javascript:void(0)" class="hp-qxfp-xz pull-right"></a>
+					</h3>
+						<ul class="ztree" id="lefttree">
+
+						</ul>
+
+					</div>
+					<div class="hp-qxfp-right pull-right">
+						<h3>
+						已分配的权限<a href="javascript:void(0)" class="hp-qxfp-sc pull-right"></a>
+					</h3>
+						<ul class="ztree" id="righttree"></ul>
+					</div>
+				</div>
+			</div>
+			<div class="hp-show-btns">
+				<input type="button" class="hp-btns hp-glpt-save" />
+				<input type="button" class="hp-btns hp-glpt-cancel" />
+			</div>
+		</div>
+
+		<script src="../../js/common/jquery-1.10.2.js"></script>
+		<script src="../../components/sdui/js/bootstrap.min.js"></script>
+		<script src="../../components/sdui/js/bootstrap-paginator.js"></script>
+		<script src="../../components/sdui/js/jquery.validate.js"></script>
+		<script src="../../components/layer/layer.js"></script>
+		<script src="../../components/sdui/sdui.js"></script>
+		<script src="../../components/ractivejs/ractive.js"></script>
+		<script src="../../components/ztree/js/jquery.ztree.core-3.5.min.js"></script>
+		<script src="../../components/ztree/js/jquery.ztree.excheck-3.5.js"></script>
+		<script src="../../components/ztree/js/jquery.ztree.exedit-3.5.js"></script>
+		<script src="../../js/common/constants.js"></script>
+		<script src="../../js/common/common.js"></script>
+		<script src="../../js/admin/jsgl/xzjs.js"></script>
+		<script src="../../js/admin/jsgl/xzjstree.js"></script>
+
+		<script id="menu-template" type="text/ractive">
+			<dt><i class="red">*</i>角色名称</dt>
+			<dd><input type="text" id="jsmc" name="jsmc" class="sdui-input" maxlength="32" onkeyup="this.value=this.value.replace(/ /g,'')"></dd>
+			<dt><i class="red">*</i>角色描述</dt>
+			<dd><input type="text" id="jsms" name="jsms" class="sdui-input" maxlength="80" onkeyup="this.value=this.value.replace(/ /g,'')"></dd>
+			<dt><i class="red">*</i>角色归属</dt>
+			<dd>
+				{{#each jsgsList:i}}
+				{{#if i==0}}
+				<div class="hp-glpt-check">
+					<input class="sdui-radio glptcs" type="radio" name="glyy" id="jsgs{{i}}" checked="checked" msgType="{{code}}" value="{{code}}">
+					<label for="jsgs{{i}}"></label>
+				</div>
+				<label for="jsgs{{i}}">{{codedesc}}</label>
+				{{else}}
+				<div class="hp-glpt-check">
+					<input class="sdui-radio glptcs" type="radio" name="glyy" id="jsgs{{i}}" msgType="{{code}}" value="{{code}}">
+					<label for="jsgs{{i}}"></label>
+				</div>
+				<label for="jsgs{{i}}">{{codedesc}}</label>
+				{{/if}}
+				{{/each}}
+			</dd>
+			<!--角色级别分配-->
+			<dt><i class="red">*</i>上级角色</dt>
+			<dd>
+				<select class="sdui-select xzjs-xlk" value="{{sjjs}}">
+					{{#jsjbList}}
+					<option value="{{code}}" jsjb="{{jsjb}}" id="{{code}}">{{name}}</option>
+					{{/jsjbList}}
+				</select>
+			</dd>
+			<!--角色级别分配-->
+			<dt></dt>
+			<dd>
+				<input type="button" class="hp-glpt-qxfp" />
+			</dd>
+			<dt><p class="pink"><i class="red">*</i>显示为必填项</p></dt>
+			<dd></dd>
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>首页-门户管理</title>
+		<link rel="stylesheet" type="text/css" href="../../components/webuploader-0.1.5/webuploader.css" />
+		<link href="../../css/common/common.css" type="text/css" rel="stylesheet" />
+		<link href="../../css/admin/mhgl/mhgl.css" type="text/css" rel="stylesheet" />
+		<link href="../../components/layer/skin/layer.css" type="text/css" rel="stylesheet">
+		<link href="../../components/sdui/sdui.css" type="text/css" rel="stylesheet">
+		<link href="../../css/admin/admin_common.css" type="text/css" rel="stylesheet" />
+	</head>
+	
+	<style>
+
+	</style>
+
+	<body>
+		<h1 class="hp-title">首页</h1>
+
+		<div class="mhgl-box">
+			<div class="mhgl-item">
+				<div class="mhgl-upload-logo">
+					<h3>团队logo<span>(255*100 px)</span></h3>
+
+					<div class="mhgl-uploader">
+						<div class="mhgl-uploader-box" id="logo_picker">
+							点击上传图片
+						</div>
+					</div>
+					<div class="mhgl-logo none">
+						<!--logo图片 -->
+					</div>
+				</div>
+			</div>
+			
+			<div class="mhgl-item">
+				<h3>banner轮播<span>（1280*632 px）</span></h3>
+				<ul class="mhgl-banner-list">
+					<!--banner图片 -->
+				</ul>
+				<div class="mhgl-uploader">
+					<div class="mhgl-uploader-box" id="banner_picker">
+						点击上传BANNER
+					</div>
+				</div>
+			</div>
+			<!-- 三大类目vr课程，解决方案，合作伙伴-->
+			<div class="mhgl-item tab_th">
+				<!--<h3>banner轮播<span>（1280*632 px）</span></h3>-->
+				<ul class="mhgl-three-list nav">
+					<!--banner图片 -->
+					<li style="background: #009b66;" class="threeImages" data-name="VR课程">
+						<div class="nav-title" >
+							<span>VR COURSE</span>
+							<span>VR 课 程 </span>
+							<div class="mhgl-logo-close imagebj" onclick="szlj(this)"></div>
+						</div>
+						
+					</li>
+						<li style="background: #0075c1;" class="threeImages" data-name="解决方案">
+						<div class="nav-title" >
+							<span>SOLUTION</span>
+							<span>解决方案</span>
+						</div>
+						<div class="mhgl-logo-close imagebj"  onclick="szlj(this)"></div>
+					</li>
+						<li style="background: #6a6767;" class="threeImages" data-name="合作伙伴">
+						<div class="nav-title"  > 
+							<span>PARTNER</span>
+							<span>合作伙伴</span>
+						</div>
+						<div class="mhgl-logo-close imagebj"  onclick="szlj(this)"></div>
+					</li>
+				</ul>
+				
+			</div>
+			<div class="mhgl-item mhgl-bg">
+				<div>
+					<h3>联系电话</h3>                                                                      
+					<input type="text" class="input-text" id="lxdh" onkeyup="this.value=this.value.replace(/[^0-9\s]/g,'')" maxlength="11"/>
+				</div>
+				<div class="mhgl-ewm">
+					<h3>二维码<span>(130*130px）</span></h3>
+
+					<div class="mhgl-uploader">
+						<div class="mhgl-uploader-box" id="ewm_picker">
+							点击上传图片
+						</div>
+					</div>
+					<div class="mhgl-content none">
+						<!--二维码图片 -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="hp-center">
+			<a href="javascript:void(0)" class="hp-btn ml-20" onclick="save(this)">提交</a>
+		</div>
+		<script src="../../js/common/jquery-1.10.2.js"></script>
+		<script src="../../components/sdui/js/bootstrap.min.js"></script>
+		<script src="../../components/sdui/js/bootstrap-paginator.js"></script>
+		<script src="../../components/layer/layer.js"></script>
+		<script src="../../components/sdui/sdui.js"></script>
+		<script src="../../components/ractivejs/ractive.js"></script>
+		<script src="../../components/store/storejson2.min.js"></script>
+		<script src="../../components/webuploader-0.1.5/webuploader.js"></script>
+		<script src="../../js/common/constants.js"></script>
+		<script src="../../js/common/common.js"></script>
+		<script src="../../js/admin/wzgl/vrsy.js"></script>
+		<script id="vrsy-template" type="text/ractive">
+
+		</script>
+	</body>
+
+</html>

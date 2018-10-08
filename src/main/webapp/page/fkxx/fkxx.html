@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link href="../../components/layer/skin/layer.css" type="text/css" rel="stylesheet">
+		<link href="../../components/sdui/sdui.css" type="text/css" rel="stylesheet">
+		<link href="../../css/common/common.css" type="text/css" rel="stylesheet">
+		<link href="../../css/admin/admin_common.css" type="text/css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class="lm-box">
+			<h4>反馈信息</h4>
+		</div>
+		<div class="sdui-form full-screen">
+			<div id="test">
+
+			</div>
+			<div class="content sdGrid">
+				<div class="sdGrid" id="customtable">
+
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../../components/sdui/js/jquery-1.9.1.min.js"></script>
+	<script src="../../components/sdui/js/bootstrap.min.js"></script>
+	<script src="../../components/sdui/js/bootstrap-paginator.js"></script>
+	<script src="../../components/layer/layer.js"></script>
+	<script src="../../components/sdui/sdui.js"></script>
+	<script src="../../components/ractivejs/ractive.js"></script>
+	<script src="../../js/common/constants.js"></script>
+	<script type="text/javascript" src="../../components/datepicker/WdatePicker.js"></script>
+	<script src="../../js/common/common.js"></script>
+
+	<script id="test-template" type="text/ractive">
+		<div class="top-area">
+			<div class="_clear">
+				<div class="col-2">
+					<label class="sdui-label">信息标题</label>
+					<input type="text" class="sdui-input" value="{{fkxx.xxbt}}" />
+				</div>
+				<div class="hp-rzxx-czsj">
+					<label class="sdui-label">反馈时间</label>
+					<input type="text" id="sckssj" class="sdui-input Wdate" value="{{fkxx.fkkssj}}" readonly="readonly" onClick="WdatePicker({maxDate:'#F{$dp.$D(\'scjssj\')}'})" />
+					<label class="sdui-label">至</label>
+					<input type="text" id="scjssj" class="sdui-input Wdate" value="{{fkxx.fkjssj}}" readonly="readonly" onClick="WdatePicker({minDate:'#F{$dp.$D(\'sckssj\')}'})" />
+				</div>
+			</div>
+			<div class="hp-rzxx-search _clear">
+				<div class="col-2">
+					<label class="sdui-label">反馈状态</label>
+					<select class="sdui-select" value="{{fkxx.fkzt}}">
+						<option value="">全部</option>
+						{{#fkztList}}
+						<option value="{{code}}">{{name}}</option>
+						{{/fkztList}}
+					</select>
+				</div>
+				<div class="col-2">
+					<label class="sdui-label">反馈类型</label>
+					<select class="sdui-select" value="{{fkxx.fklx}}">
+						<option value="">全部</option>
+						{{#fklxList}}
+						<option value="{{code}}">{{name}}</option>
+						{{/fklxList}}
+					</select>
+				</div>
+				<span class="sdui-btn sdui-btn-blue ml-20" on-click="query">查询</span>
+			</div>
+		</div>
+	</script>
+	<script src="../../js/admin/fkxx/fkxx.js"></script>
+</html>

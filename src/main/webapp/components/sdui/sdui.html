@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>学生端sdui展示</title>
+<link href="../layer/skin/layer.css" rel="stylesheet" type="text/css"/>
+<link href="css/fonts/iconfont.css" rel="stylesheet" type="text/css"/>
+<link href="sdui.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../layer/layer.js"></script>
+<script type="text/javascript" src="sdui.js"></script>
+
+<style type="text/css">
+	
+	.sdui-form .sdui-form-03 {
+		float: left;
+		width: 30%;
+	}
+	
+	hr {
+		margin: 30px 0;
+	}
+
+</style>
+
+</head>
+<body>
+
+不同文本框：
+<input type="input" class="sdui-input" >
+
+下拉框：
+<select class="sdui-select" style="width:300px">
+	<option value="">全部</option>
+	<option value="male">男</option>
+	<option value="female">女</option>
+	<option value="unknown">人妖</option>
+</select>
+
+多行文本框：
+<textarea class="sdui-textarea" rows="" cols=""></textarea>
+
+<br>
+<br>
+禁用的样式：<input type="input" class="sdui-input" disabled="disabled">
+<hr>
+
+checkbox：
+<input type="checkbox" class="sdui-checkbox" name="xxx" id="xxx0"><label for="xxx0"></label> <input type="checkbox" class="sdui-checkbox" name="xxx" id="xxx"><label for="xxx"></label>  <input type="checkbox" class="sdui-checkbox" disabled="disabled" checked="checked" name="xxx" id="xxx2"><label for="xxx2"></label>
+radio：
+<input type="radio" class="sdui-radio" name="yyy0" id="fff0"><label for="fff0"></label> 男 <input type="radio" class="sdui-radio" name="yyy" id="fff"><label for="fff"></label> 女 <input type="radio" class="sdui-radio" disabled="disabled" checked="checked" name="yyy2" id="fff2"><label for="fff2"></label> 
+
+
+<hr>
+<br>
+简洁风格:
+<br>
+
+<div id="tab-click02" class="sdui-tab">
+	<div class="title">学生端</div>
+	<ul class="sdui-tab-menu sdui-tab-menu-brief">
+		<li>待批阅</li>
+		<li>已批阅</li>
+		<li class="active">批阅账号管理</li>
+	</ul>
+	<div class="sdui-tab-content sdui-tab-content-brief">
+		<div> 01 </div>
+		<div> 02 </div>
+		<div> 03 </div>
+	</div>
+</div>
+
+
+<hr>
+sdui-form（或者叫面板更合适）：
+
+<br>
+<div class="sdui-form">
+	<div class="head">
+		<div class="title">自定义form</div><div class="button-area"><a class="sdui-btn">添加</a></div>
+	</div>
+	<div class="content">
+		你好，form
+	</div>
+</div>
+<br>
+sdui-panel：
+
+<div class="sdui-panel">
+	<div class="head">
+		<div class="mark">课程</div><div class="title">自定义form</div>
+	</div>
+	<div class="content" style="height: 100px;">
+		你好，form
+	</div>
+</div>
+<br>
+
+<br>
+sdui-panel + sdui-panel-lightblue组合：
+<div class="sdui-panel sdui-panel-lightblue">
+	<div class="head">
+		<div class="title">自定义form</div>
+	</div>
+	<div class="content" style="height: 100px;">
+		你好，form
+	</div>
+</div>
+<br>
+sdui-panel + sdui-panel-darkgrey组合：
+<div class="sdui-panel sdui-panel-darkgrey">
+	<div class="head">
+		<div class="title">自定义form</div>
+	</div>
+	<div class="content" style="height: 100px;">
+		你好，form
+	</div>
+</div>
+<br>
+<br>
+sdui-panel + sdui-panel-lightgreen组合：
+<div class="sdui-panel sdui-panel-lightgreen">
+	<div class="head">
+		<div class="mark">缴费</div><div class="title">自定义form</div>
+	</div>
+	<div class="content" style="height: 100px;">
+		你好，form
+	</div>
+</div>
+<br>
+
+<br>
+sdui-panel + sdui-panel-darkyellow组合：
+<div class="sdui-panel sdui-panel-darkyellow">
+	<div class="head">
+		<div class="mark">考试</div><div class="title">自定义form</div>
+	</div>
+	<div class="content" style="height: 100px;">
+		你好，form
+	</div>
+</div>
+<br>
+
+<br>
+
+<hr>
+
+数据表格（sdGrid）：
+<br>
+默认风格 ：
+<br>
+<div class="sdGrid">
+
+	<table>
+		<thead>
+			<tr>
+				<th>咨询类型</th><th>课程名称</th><th>咨询内容</th><th>咨询人</th><th>咨询时间</th><th>回复状态</th><th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>课件咨询</td><td>00234计算机应用基础</td><td>课件在哪里下载</td><td>高辉</td><td>2016-10-01</td><td>待回复</td><td><a class="sdui-link sdui-link-delete">删除</a></td>
+			</tr>
+			<tr>
+				<td>课件咨询</td><td>00234计算机应用基础</td><td>课件在哪里下载</td><td>高辉</td><td>2016-10-01</td><td>待回复</td><td><a class="sdui-link sdui-link-delete">删除</a></td>
+			</tr>
+			<tr>
+				<td>课件咨询</td><td>00234计算机应用基础</td><td>课件在哪里下载</td><td>高辉</td><td>2016-10-01</td><td>待回复</td><td><a class="sdui-link sdui-link-delete">删除</a></td>
+			</tr>
+			<tr>
+				<td>课件咨询</td><td>00234计算机应用基础</td><td>课件在哪里下载</td><td>高辉</td><td>2016-10-01</td><td>待回复</td><td><a class="sdui-link sdui-link-delete">删除</a></td>
+			</tr>
+			<tr>
+				<td>课件咨询</td><td>00234计算机应用基础</td><td>课件在哪里下载</td><td>高辉</td><td>2016-10-01</td><td>待回复</td><td><a class="sdui-link sdui-link-delete">删除</a></td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
+
+<br>
+
+简洁风格（sdGrid + sdGrid-brief 组合）：
+<br>
+
+
+	<div class="sdGrid sdGrid-brief" style="padding:0;height:200px;">
+		<table>
+			<tbody>
+				<tr>
+					<td>课件咨询</td><td>00234计算机应用基础</td><td>课件在哪里下载</td><td>高辉</td><td>2016-10-01</td><td>待回复</td><td><a class="sdui-link sdui-link-delete">删除</a></td>
+				</tr>
+				<tr>
+					<td>课件咨询</td><td>00234计算机应用基础</td><td>课件在哪里下载</td><td>高辉</td><td>2016-10-01</td><td>待回复</td><td><a class="sdui-link sdui-link-delete">删除</a></td>
+				</tr>
+				<tr>
+					<td>课件咨询</td><td>00234计算机应用基础</td><td>课件在哪里下载</td><td>高辉</td><td>2016-10-01</td><td>待回复</td><td><a class="sdui-link sdui-link-delete">删除</a></td>
+				</tr>
+				<tr>
+					<td>课件咨询</td><td>00234计算机应用基础</td><td>课件在哪里下载</td><td>高辉</td><td>2016-10-01</td><td>待回复</td><td><a class="sdui-link sdui-link-delete">删除</a></td>
+				</tr>
+				<tr>
+					<td>课件咨询</td><td>00234计算机应用基础</td><td>课件在哪里下载</td><td>高辉</td><td>2016-10-01</td><td>待回复</td><td><a class="sdui-link sdui-link-delete">删除</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+<br>
+<br>
+<br>
+<br>
+简洁红（sdGrid + sdGrid-brief-red 组合） 风格：
+<br>
+
+<div class="sdui-form">
+	<div class="head"><div class="title">通知公告</div><div class="button-area">更多</div></div>
+	<div class="content sdGrid sdGrid-brief-red" style="padding:10px;">
+		<table>
+			<thead>
+				<tr><th>类型</th><th>专业</th><th>评论</th><th>提交人</th><th>日期</th><th>状态</th><th></th></tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>课件咨询</td><td>00234计算机应用基础</td><td>课件在哪里下载</td><td>高辉</td><td>2016-10-01</td><td>待回复</td><td><a class="sdui-link sdui-link-delete">删除</a></td>
+				</tr>
+				<tr>
+					<td>课件咨询</td><td>00234计算机应用基础</td><td>课件在哪里下载</td><td>高辉</td><td>2016-10-01</td><td>待回复</td><td><a class="sdui-link sdui-link-delete">删除</a></td>
+				</tr>
+				<tr>
+					<td>课件咨询</td><td>00234计算机应用基础</td><td>课件在哪里下载</td><td>高辉</td><td>2016-10-01</td><td>待回复</td><td><a class="sdui-link sdui-link-delete">删除</a></td>
+				</tr>
+				<tr>
+					<td>课件咨询</td><td>00234计算机应用基础</td><td>课件在哪里下载</td><td>高辉</td><td>2016-10-01</td><td>待回复</td><td><a class="sdui-link sdui-link-delete">删除</a></td>
+				</tr>
+				<tr>
+					<td>课件咨询</td><td>00234计算机应用基础</td><td>课件在哪里下载</td><td>高辉</td><td>2016-10-01</td><td>待回复</td><td><a class="sdui-link sdui-link-delete">删除</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<hr>
+
+标记（mark标签）:
+<br>
+李克强为何看重快递业务量<mark>默认</mark><mark class="dark-red">深红色</mark><mark class="pink">粉色</mark><mark class="light-green">浅绿色</mark><mark class="dark-green">深绿色</mark><mark class="orange">橘黄色</mark><mark class="shape-normal dark-green">橘黄色</mark>dsfsdf
+<br>
+<hr>
+默认按钮样式：
+<br>
+1） 只使用sdui-btn：<input type="button" class="sdui-btn" value="提交"> 
+
+2）使用 sdui-btn +  sdui-btn-danger：<a href="javascript:void(0);" class="sdui-btn sdui-btn-danger">提交</a>
+
+3）使用 sdui-btn +  sdui-btn-warm：<a href="javascript:void(0);" class="sdui-btn sdui-btn-warm">查看答辩论文</a>
+<br>
+<br>
+<br>
+
+拉取列表（sdPullList）：
+<br>
+<div id="pulllist"></div>  
+
+拉去列表，主题：大红（sd-pull-list-theme-darkred）
+<br>
+<div id="pulllist-darkred"></div>
+<br>
+<script type="text/javascript">
+
+$(function(){
+	
+	$("#tab-click02").sdTab({type:1,callbacks:[function(){
+		console.log('第一个tab被调用!!!');
+	},function(){
+		console.log('第二个tab被调用 ....')
+	},function(){
+		console.log('第三个tab被调用 ~~~~')
+	}]});
+	
+	// 我是警告框
+	// alert('123');
+	// success('恭喜你，中奖了');
+	// error('系统出错啦');
+	// confirm('你确定要删除吗');
+	
+	/* dialog({
+		content:'dialog-demo.html',
+		title:'我是sdui演示页'
+	}); */
+	
+	// $.sdSelect();
+	
+	var records = [{
+		id:'123'
+		,name:'小明'
+		,birthday:'2017-01-05'
+	},{
+		id:'222'
+			,name:'小王'
+			,birthday:'2016-06-06'
+		}]
+	
+	$('#pulllist').sdPullList({
+		colProperty : [{
+			colLabel : 'ID',
+			colModel : {
+				innerHtml : function(data) {
+					return '<span title="'+data.id+'">'+data.id+'</span>';
+				}
+			}
+		},
+		{
+			colLabel : '姓名',
+			colModel : {
+				innerHtml : function(data) {
+					return '<span title="'+data.name+'">'+data.name+'</span>';
+				}
+			}
+		},
+		{
+			colLabel : '生日',
+			colModel : {
+				style:{
+					width:'120px'
+				},
+				innerHtml : function(data) {
+					
+					
+					
+					return '<span title="'+data.birthday+'">'+data.birthday+'</span>';
+				}
+			}
+		},
+		{
+			colLabel : '操作',
+			colModel : {
+				style:{
+					width:'120px'
+				},
+				innerHtml : function(data) {
+					
+					
+					
+					return '<a class="sdui-btn sdui-btn-small">去学习</a><br><a class="sdui-btn sdui-btn-small sdui-btn-danger" style="margin-top:10px;padding:0 5px;">从我的学习移除</a><br><a class="sdui-btn sdui-btn-small sdui-btn-warm" style="margin-top:10px;padding:0 5px;">从我的学习移除</a>';
+				}
+			}
+		}]
+	},records)
+	
+	$('#pulllist-darkred').sdPullList({
+		theme:'sd-pull-list-theme-darkred',
+		colProperty : [{
+			colLabel : 'ID',
+			colModel : {
+				style:{
+					background:'#DA5A5A'
+				},
+				innerHtml : function(data) {
+					return '<span title="'+data.id+'">'+data.id+'</span>';
+				}
+			}
+		},
+		{
+			colLabel : '姓名',
+			colModel : {
+				innerHtml : function(data) {
+					return '<span title="'+data.name+'">'+data.name+'</span>';
+				}
+			}
+		},
+		{
+			colLabel : '生日',
+			colModel : {
+				style:{
+					width:'120px'
+				},
+				innerHtml : function(data) {
+					
+					
+					
+					return '<span title="'+data.birthday+'">'+data.birthday+'</span>';
+				}
+			}
+		},
+		{
+			colLabel : '操作',
+			colModel : {
+				style:{
+					width:'120px'
+				},
+				innerHtml : function(data) {
+					
+					
+					
+					return '<a class="sdui-btn sdui-btn-small">去学习</a><br><a class="sdui-btn sdui-btn-small sdui-btn-danger" style="margin-top:10px;padding:0 5px;">从我的学习移除</a><br><a class="sdui-btn sdui-btn-small sdui-btn-warm" style="margin-top:10px;padding:0 5px;">从我的学习移除</a>';
+				}
+			}
+		}]
+	},records)
+	
+});
+
+</script>
+</body>
+</html>

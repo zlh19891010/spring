@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.admin.dao.order.OrderInfoMapper">
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.admin.entity.order.OrderInfo">
+		<id column="id" property="id" />
+		<result column="order_id" property="orderId" />
+		<result column="product_count" property="productCount" />
+		<result column="product_num" property="productNum" />
+		<result column="amount" property="amount" />
+		<result column="pay_status" property="payStatus" />
+		<result column="pay_time" property="payTime" />
+		<result column="user_id" property="userId" />
+		<result column="order_type" property="orderType" />
+		<result column="game_user_id" property="gameUserId" />
+		<result column="server_id" property="serverId" />
+		<result column="product_name" property="productName" />
+		<result column="product_id" property="productId" />
+		<result column="channel_product_id" property="channelProductId" />
+		<result column="private_data" property="privateData" />
+		<result column="channel_number" property="channelNumber" />
+		<result column="sign" property="sign" />
+		<result column="source" property="source" />
+		<result column="enhanced_sign" property="enhancedSign" />
+		<result column="channel_order_id" property="channelOrderId" />
+		<result column="game_id" property="gameId" />
+		<result column="plugin_id" property="pluginId" />
+		<result column="currency_type" property="currencyType" />
+	</resultMap>
+
+
+
+     <select id="selectAmount" parameterType="com.admin.param.ParamStatistics" resultType="com.admin.entity.order.OrderInfo">
+       select amount from order_info
+       <where>
+            1=1
+            <if test="openid !=null and openid!=''">
+             and game_user_id =#{openid}
+            </if>
+            <if test="czkssj !=null and czkssj !=''">
+	         and create_time <![CDATA[>= ]]> #{czkssj}
+	        </if>
+	        <if test="czjssj !=null and czjssj !=''">
+	         and create_time <![CDATA[<= ]]> #{czjssj}
+	        </if>
+	        <if test="sdate !=null and sdate !=''">
+	         and create_time <![CDATA[>= ]]> #{sdate}
+	        </if>
+	        <if test="edate !=null and edate !=''">
+	         and create_time <![CDATA[<= ]]> #{edate}
+	        </if>
+	        <if test="smouth !=null and smouth !=''">
+	         and create_time <![CDATA[>= ]]> #{smouth}
+	        </if>
+	        <if test="emouth !=null and emouth !=''">
+	         and create_time <![CDATA[<= ]]> #{emouth}
+	        </if>
+	        <if test="syear !=null and syear !=''">
+	         and create_time <![CDATA[>= ]]> #{syear}
+	        </if>
+	        <if test="eyear !=null and eyear !=''">
+	         and create_time <![CDATA[<= ]]> #{eyear}
+	        </if>
+       </where>
+     </select>
+
+     <select id="selectOrders" parameterType="com.admin.param.ParamOrder" resultType="com.admin.view.ViewOrder">
+         select id,order_id,product_count,amount,pay_status,pay_time,user_id,order_type,
+         game_user_id,server_id,product_name,product_id,channel_product_id,private_data,
+         channel_number,channel_order_id,game_id,plugin_id,currency_type
+         from order_info
+         <where>
+                   1=1
+                   <if test="orderId !=null and orderId !=''">
+                        and order_id like concat('%',#{orderId},'%')
+                   </if>
+                   <if test="privateData !=null and privateData !=''">
+                        and private_data like concat('%',#{privateData},'%')
+                   </if>
+                   <if test="czkssj !=null and czkssj !=''">
+                        and pay_time  <![CDATA[>= ]]> #{czkssj}
+                   </if>
+                   <if test="czjssj !=null and czjssj !=''">
+                        and pay_time  <![CDATA[<= ]]> #{czjssj}
+                   </if>
+                   <if test="gameUserId !=null and gameUserId !=''">
+                        and game_user_id like concat('%',#{gameUserId},'%')
+                   </if>
+         </where>
+         order by pay_time desc
+     </select>
+     
+     
+     <select id="selectOrders2"  parameterType="com.admin.param.ParamOrder" resultType="com.admin.view.ViewOrder">
+         select ord.id,ord.product_num,ord.order_id,ord.product_count,ord.amount,ord.pay_status,ord.pay_time,ord.user_id,ord.order_type,
+         ord.game_user_id,ord.server_id,ord.product_name,ord.product_id,ord.channel_product_id,ord.private_data,
+         ord.channel_number,ord.channel_order_id,ord.game_id,ord.plugin_id,ord.currency_type 
+         from qp.qpaccountdb acc right join order_info ord on acc.strOpenID = ord.game_user_id 
+         <where>
+              1=1
+              <if test="sAuthCode != null and sAuthCode != ''">
+                and  acc.sAuthCode =#{sAuthCode}
+              </if>
+              <if test="orderId !=null and orderId !=''">
+                and ord.order_id like concat('%',#{orderId},'%')
+              </if>
+              <if test="privateData !=null and privateData !=''">
+                and ord.private_data like concat('%',#{privateData},'%')
+              </if>
+              <if test="czkssj !=null and czkssj !=''">
+                and ord.pay_time  <![CDATA[>= ]]> #{czkssj}
+              </if>
+              <if test="czjssj !=null and czjssj !=''">
+                and ord.pay_time  <![CDATA[<= ]]> #{czjssj}
+              </if>
+              <if test="gameUserId !=null and gameUserId !=''">
+                and ord.game_user_id like concat('%',#{gameUserId},'%')
+              </if>
+         </where>
+          order by ord.create_time desc
+     </select>
+     
+     <select id="selectByOrder" resultType="java.lang.Integer">
+        select count(*) from order_info where order_id =#{orderId}
+     
+     </select>
+</mapper>

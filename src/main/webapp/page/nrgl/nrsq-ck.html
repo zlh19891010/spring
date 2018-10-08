@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>查看内容授权</title>
+		<link rel="stylesheet" href="../../css/common/common.css" />
+		<link rel="stylesheet" href="../../components/sdui/sdui.css" type="text/css">
+		<link rel="stylesheet" href="../../css/admin/nrgl.css" />
+	</head>
+
+	<body>
+		<h1 class="hp-title">
+		<a href="javascript:void(0)" class="return pull-left" onclick="history.back(-1)"> 返回</a>
+		查看内容授权
+	    </h1>
+		<div class="hp-yhgl-ck" id="cknrxx">
+
+		</div>
+	</body>
+
+	<script src="../../js/common/jquery-1.10.2.js"></script>
+	<script src="../../components/sdui/js/bootstrap.min.js"></script>
+	<script src="../../components/sdui/js/bootstrap-paginator.js"></script>
+	<script src="../../components/layer/layer.js"></script>
+	<script src="../../components/sdui/sdui.js"></script>
+	<script src="../../components/ractivejs/ractive.js"></script>
+	<script src="../../js/common/constants.js"></script>
+	<script src="../../js/common/common.js"></script>
+	<script src="../../components/store/storejson2.min.js"></script>
+
+	<script id="nrxx-templete" type="text/ractive">
+		{{#nrsq}}
+		<dl>
+			<dt>内容标题：</dt>
+			<dd>{{nrbt}}</dd>
+			{{#flxxSelect}}
+			<dt>{{flsx}}</dt>
+			<dd>
+				{{flmc}}
+			</dd>
+			{{/flxxSelect}}
+			<dt>授权对象名称：</dt>
+			<dd>{{sqdxmc}}</dd>
+			<dt>授权对象帐号：</dt>
+			<dd>{{sqdxzh}}</dd>
+			<dt></dt>
+			<dd><input type="button" class="hp-btn-lblue" value="返回" onclick="history.back(-1)" /></dd>
+		</dl>
+		{{/nrsq}}
+	</script>
+
+	<script src="../../js/admin/nrgl/nrsqck.js"></script>
+
+</html>

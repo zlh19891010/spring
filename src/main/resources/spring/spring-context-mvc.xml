@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+						http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+						http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+						http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<context:annotation-config />
+
+	<!-- 扫描controller层的类 -->
+	<context:component-scan base-package="com.admin.controller" />
+	
+	<!-- 扫描service层的类 -->
+	<context:component-scan base-package="com.admin.service" />
+
+	<!-- 使用SpringMVC自带的CommonsMultipartResolver实现多个文件上传的功能 org.springframework.web.multipart.commons.CommonsMultipartResolver -->
+	<mvc:annotation-driven />
+	<mvc:default-servlet-handler />
+
+	<!-- JSP视图渲染器 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="order" value="256" />
+		<property name="prefix" value="/WEB-INF/pages/" />
+		<property name="suffix" value=".jsp" />
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+	</bean>
+
+	<!-- 强制使用cglib动态代理植入增强 -->
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+
+	<bean id="kissoInit" class="com.baomidou.kisso.web.WebKissoConfigurer" init-method="initKisso">
+		<property name="ssoPropPath" value="conf/sso.properties" />
+		<!-- 测试模式 ，不同环境配置选择设置 -->
+		<!-- <property name="runMode" value="test_mode" /> -->
+	</bean>
+
+	<mvc:interceptors>
+		<mvc:interceptor>
+		    <mvc:mapping path="/**" />
+		    <bean class="com.admin.filter.SessionInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+
+	<!-- SpringMVC上传文件时，需要配置MultipartResolver处理器 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="UTF-8" />
+		<!-- 指定所上传文件的总大小不能超过20M。注意maxUploadSize属性的限制不是针对单个文件，而是所有文件的容量之和 -->
+		<!--1024*1024*1024即1G-->
+		<property name="maxUploadSize" value="-1" />
+		<!-- 内存中的最大值 -->  
+        <property name="maxInMemorySize" value="1" />    
+	</bean>
+
+</beans>

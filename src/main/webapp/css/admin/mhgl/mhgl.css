@@ -1,0 +1,423 @@
+.mhgl-box{
+	padding: 20px 0px;
+}
+.mhgl-item{
+	padding: 10px 20px;
+}
+.mhgl-item input{
+	width: 225px;
+	height: 38px;
+}
+.mhgl-item h3{
+	display: inline-block;
+	padding-right: 10px;
+	min-width: 90px;
+	font-size: 14px;
+	font-weight: normal;
+	vertical-align: middle;
+}
+.mhgl-item h3 span{
+	font-size: 10px;
+}
+
+.mhgl-uploader{
+	position: relative;
+	top: 5px;
+	display: inline-block;
+	padding: 8px;
+	border: solid 1px #ddd;
+	border-radius: 5px;
+	background: #fcfcfc;
+	cursor: pointer;
+}
+.mhgl-uploader-box{
+	width: 180px;
+	height: 50px;
+	line-height: 3.8;
+	border: dashed 1px #ddd;
+	border-radius: inherit;
+	background: url(../../../img/admin/jia.png) no-repeat left 20px center;
+}
+.mhgl-uploader-box i{
+	display: inline-block;
+	font-size: 30px;
+	color: #bababa;
+	vertical-align: middle;
+}
+
+.mhgl-uploader-box .webuploader-pick{
+	width: 100%;
+	height: 100%;
+	color: #000;
+	text-indent: 10px;
+}
+
+.mhgl-upload-logo h3 span{
+	display: block;
+}
+.mhgl-logo{
+	position: relative;
+	margin-left: 20px;
+	margin-top: -30px;
+	display: inline-block;
+	width: 148px;
+	height: 66px;
+	overflow: hidden;
+	border: solid 1px #ddd;
+	border-radius: 5px;
+	vertical-align: middle;
+	overflow: hidden;
+}
+
+.mhgl-logo img{
+	width: 100%;
+	height: 100%;
+}
+.mhgl-logo-close{
+	display: none;
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	background: url(../../../img/admin/del.png) no-repeat center rgba(0, 0, 0, .6);
+	cursor: pointer;
+}
+.mhgl-logo:hover .mhgl-logo-close{
+	display: block;
+}
+
+.mhgl-banner-list{
+	padding: 20px 0px;
+	font-size: 0px;
+}
+.mhgl-banner-list li{
+	margin-bottom: 15px;
+	margin-right: 15px;
+	display: inline-block;
+	width: 226px;
+}
+.mhgl-banner-list li input{
+	margin: 10px 0px;
+	text-align: center;
+}
+.mhgl-banner-list .mhgl-uploader-box{
+	padding: 38px 40px 38px 50px;
+}
+/**新增类目start*/
+.mhgl-three-list{
+	padding: 20px 0px;
+	font-size: 0px;
+}
+.mhgl-three-list li{
+	margin-bottom: 15px;
+	margin-right: 15px;
+	display: inline-block;
+	width: 226px;
+}
+.mhgl-three-list li input{
+	margin: 10px 0px;
+	text-align: center;
+}
+/**新增类目end*/
+.mhgl-icon {
+	display: inline-block;
+	width: 22px;
+	height: 22px;
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer;
+}
+.mhgl-icon-box{
+	padding: 0px 5px;
+	display: flex;
+	justify-content: space-between;
+}
+.mhgl-qy{
+	background-image: url(../../../img/admin/qy.png);
+}
+.mhgl-hy{
+	background-image: url(../../../img/admin/hy.png);
+}
+.mhgl-sc{
+	background-image: url(../../../img/admin/del1.png);
+}
+
+.mhgl-bg{
+	background: #eff3f3;
+	margin-top: 15px;
+}
+
+.mhgl-ewm{
+	margin: 20px 0px;
+}
+.mhgl-ewm h3 span{
+	display: block;
+}
+.mhgl-ewm .mhgl-uploader{
+	height: 97px;
+	vertical-align: top;
+}
+.mhgl-ewm .mhgl-uploader-box{
+	background-position: center top 20px;
+	height: 100%;
+	line-height: 8;
+}
+
+/*添加新闻*/
+.mhgl-tjxw{
+	padding: 30px 100px;
+}
+.mhgl-zd{
+	display: inline-block;
+	margin-left: 100px;
+}
+.mhgl-zd label{
+	margin-right: 10px;
+}
+.mhgl-xwtp-sm{
+	color: #898989;
+}
+
+/*加入我们*/
+.mhgl-jrwm .mhgl-item h3{
+	margin-bottom: 20px;
+	display: block;
+}
+
+.mhgl-jrwm .mhgl-item h3 span{
+	padding-left: 10px;
+}
+.mhgl-jrwm .mhgl-jrwm-dl dt{
+	width: 60px;
+}
+.mhgl-jrwm .mhgl-jrwm-dl dd{
+	width: calc(50% - 90px);
+}
+.mhgl-jrwm-ul li{	
+	margin-bottom: 15px;
+}
+.mhgl-jrwm-ul textarea{
+	margin-right: 10px;
+	margin-left: 10px;
+	width: 80%;
+    vertical-align: middle;
+    height: 38px;
+    overflow: auto;
+	resize: vertical;
+}
+
+.mhgl-jrwm-ul .mhgl-icon{
+	margin-left: 25px;
+	vertical-align: middle;
+}
+.mhgl-tj{
+	background-image: url(../../../img/admin/tj.png);
+}
+.mhgl-tj:hover{
+	background-image: url(../../../img/admin/tj_hover.png);
+}
+
+.mhgl-sc2{
+	background-image: url(../../../img/admin/sc2.png);
+}
+.mhgl-sc2:hover{
+	background-image: url(../../../img/admin/sc2_hover.png);
+}
+.mhgl-zpxx .mhgl-khxx-box dl{
+	width: 450px;
+}
+.mhgl-zpxx .mhgl-khxx-box dt{
+	width: 60px;
+}
+.mhgl-zpxx .mhgl-khxx-box dd {
+    width: calc(100% - 70px);
+	position: relative;
+}
+
+.mhgl-zpxx .mhgl-tj{
+	position: absolute;
+	bottom: 23px;
+	right: 5%;
+	z-index: 3;
+}
+/*关于我们*/
+.mhgl-khxx{
+	margin-bottom: 30px;
+}
+.mhgl-khxx.mhgl-item h3{
+	line-height: 4;
+	margin: 0px;
+}
+.mhgl-khxx > ul > li{
+	padding: 20px 0px;
+	border-top: solid 3px #ccc;
+}
+.mhgl-khxx-img{
+	position: relative;
+	margin-right: 20px;
+	height: 142px;
+	width: 142px;
+	overflow: hidden;
+	border-radius: 100%;
+}
+.mhgl-khtx-change{
+	display: none;
+	position: absolute;
+	top: -6px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	line-height: 145px;
+	color: #fff;
+	background: url(../../../img/admin/jia2.png) no-repeat left 25px center rgba(0, 0, 0, .6);
+	cursor: pointer;
+}
+.mhgl-khxx-img:hover .mhgl-khtx-change{
+	display: block;
+}
+
+.mhgl-khxx-box{
+	overflow: hidden;
+}
+.mhgl-khxx-box dl{
+	display: inline-block;
+	margin-right: 15px;
+	width: 95%;
+	vertical-align: middle;
+}
+
+.mhgl-khxx-box dt{
+	width: 40px;
+}
+
+.mhgl-khxx-box dd{
+	width: calc(100% - 50px);
+}
+.mhgl-khxx-img  .mhgl-uploader,
+.mhgl-khxx-img  .mhgl-uploader-box{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+.mhgl-khxx-img  .mhgl-uploader-box{
+	padding: 0px;
+	text-indent: 0px;
+	line-height: 125px;
+	background-position: left 15px center;
+}
+.mhgl-khxx-img .mhgl-uploader img {
+	position: relative;
+	top: -14px;
+	left: -9px;
+}
+.mhgl-sc3{
+	width: 30px;
+	height: 30px;
+	background-image: url(../../../img/admin/sc.png);
+}
+.mhgl-sc3:hover{
+	background-image: url(../../../img/admin/sc_hover.png);
+}
+.mhgl-khxx-img  .webuploader-pick{
+	text-indent: 30px;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+}
+/*vr课程*/
+
+.mhgl-banner-list li{
+	width:226px;
+	height:110px;
+}
+.mhgl-content{
+	position: relative;
+	margin-top: 4px;
+	margin-left: 20px;
+	display: inline-block;
+	width: 140px;
+	height: 99px;
+	overflow: hidden;
+	border: solid 1px #ddd;
+	border-radius: 5px;
+	vertical-align: middle;
+	overflow: hidden;
+}
+
+.mhgl-content img{
+	width: 100%;
+	height: 100%;
+}
+
+.mhgl-content:hover .mhgl-logo-close{
+	display: block;
+}
+
+/*************************/
+.nav-title {
+    margin: 31px auto 0px;
+    padding: 10px;
+    width: 116px;
+    font-size: 24px;
+    border-top: solid 1px #fff;
+    border-bottom: solid 1px #fff;
+    transition: all 1s;
+}
+
+.nav {
+    padding: 10px 0px 10px 0px;
+    font-size: 0;
+}
+
+.nav li{
+	 width: 226px; 
+	 height: 140px;
+	display: inline-block;
+    color: #fff;
+    text-align: center;
+    background-size: cover;
+ 
+}
+.nav-title span:first-child {
+    display: block;
+    font-family: "Impact";
+}
+
+.nav-title span{
+	font-size: 20px;	
+}
+
+.threeImages {
+	position: relative;
+
+	display: inline-block;
+	width: 148px;
+	height: 66px;
+
+
+	border-radius: 5px;
+
+}
+.li_banner{
+		position: relative;
+
+
+}
+.threeImages:hover .mhgl-logo-close{
+	display: block;
+}
+
+
+.li_banner:hover .mhgl-logo-close{
+	display: block;
+}
+
+.imagebj{
+	background: url(../../../img/admin/bjlj.png) no-repeat center rgba(0, 0, 0, .6);
+}
+
+.nav-title>span {
+	color:#fff;
+}

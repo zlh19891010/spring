@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>首页-门户管理</title>
+		<link rel="stylesheet" type="text/css" href="../../components/webuploader-0.1.5/webuploader.css" />
+		<link href="../../css/common/common.css" type="text/css" rel="stylesheet" />
+		<link href="../../css/admin/mhgl/mhgl.css" type="text/css" rel="stylesheet" />
+		<link href="../../components/layer/skin/layer.css" type="text/css" rel="stylesheet">
+		<link href="../../components/sdui/sdui.css" type="text/css" rel="stylesheet">
+		<link href="../../css/admin/admin_common.css" type="text/css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/admin/nrgl.css" type="text/css" rel="stylesheet" />
+	</head>
+
+	<body>
+
+		<div class="mhgl-box">
+			<div class="mhgl-item">
+				<div class="mhgl-upload-logo">
+					<h3>跳转链接:<span></span></h3>
+					
+					<input class="sdui-input" type="text" style="width: 340px;">
+	
+				</div>
+			</div>
+
+		</div>
+		<div class="hp-center">
+			<a href="javascript:void(0)" class="hp-btn ml-20" onclick="save(this)">保存</a>
+		</div>
+		<script src="../../js/common/jquery-1.10.2.js"></script>
+		<script src="../../components/sdui/js/bootstrap.min.js"></script>
+		<script src="../../components/sdui/js/bootstrap-paginator.js"></script>
+		<script src="../../components/layer/layer.js"></script>
+		<script src="../../components/sdui/sdui.js"></script>
+		<script src="../../components/ractivejs/ractive.js"></script>
+		<script src="../../components/store/storejson2.min.js"></script>
+		<script src="../../components/webuploader-0.1.5/webuploader.js"></script>
+		<script src="../../js/common/constants.js"></script>
+		<script src="../../js/common/common.js"></script>
+		<script>
+			$(document).ready(function(){
+				store.set("szlj","");
+				store.set("bcflag","0");
+				var bjtzdz = store.get("bjtzdz");	
+				$(".sdui-input").val(bjtzdz);
+			});
+			function save(obj){
+			var ljxx = 	$(".sdui-input").val();
+				store.set("bcflag","1");
+				store.set("szlj",ljxx);
+				closeParent();
+			}
+			
+		</script>
+
+	</body>
+
+</html>

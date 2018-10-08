@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.admin.dao.log.operation.LogOperationMapper">
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.admin.entity.log.operation.LogOperation">
+		<id column="id" property="id" />
+		<result column="type" property="type" />
+		<result column="status" property="status" />
+		<result column="operater_code" property="operaterCode" />
+		<result column="account" property="account" />
+		<result column="send_content" property="sendContent" />
+		<result column="return_content" property="returnContent" />
+		<result column="create_time" property="createTime" />
+		<result column="operate_time" property="operateTime" />
+	</resultMap>
+
+
+    <select id="selectLogList" parameterType="com.admin.param.ParamLogOperation" resultType="com.admin.view.ViewLogOperation">
+          select id,type,status,operater_code,account,send_content,return_content,create_time
+          from log_operation 
+          <where>
+                1=1
+                <choose>
+                   <when test="account != null and account !=''">
+                     and account=#{account}
+                   </when>
+                   <otherwise>
+                     and account is null
+                   </otherwise>
+                </choose>
+          </where>
+          order by create_time desc
+    </select>
+
+</mapper>

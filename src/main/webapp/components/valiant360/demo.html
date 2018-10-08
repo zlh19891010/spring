@@ -1,0 +1,148 @@
+<!--
+Valiant360
+Copyright (c) 2014 Charlie Hoey
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
+
+<!DOCTYPE HTML>
+<html lang="en">
+
+	<head>
+		<title>Valiant 360 Pano Player</title>
+		<meta charset="utf-8">
+
+		<!-- Valiant360 control styles -->
+		<link rel="stylesheet" type="text/css" href="css/valiant360.css" />
+
+	</head>
+
+	<body>
+
+		<div class="valiantPhoto" data-video-src="abc.mp4" style="width: 480px; height: 380px;"></div>
+		<button id="test">暂停</button>
+
+		<button id="test1">播放</button>
+		<!--
+        	作者：tangli2050@qq.com
+        	时间：2017-02-28
+        	描述：图片
+       
+		<div class="valiantPhoto" data-photo-src="equirectangular-screenshot.jpg" style="width: 480px; height: 380px;"></div>
+		-->
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/three.min.js"></script>
+        <script type="text/javascript" src="../../js/common/constants.js"></script>
+		<!-- Valiant360 plugin, load after jQuery and Three.js -->
+		<script src="js/Long.min.js"></script>
+		<script src="js/ByteBufferAB.min.js"></script>
+		<script src="js/ProtoBuf.min.js"></script>
+		<script type="text/javascript" src="jquery.valiant360.js"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				//初始化
+				$('.valiantPhoto').Valiant360();
+				//暂停按钮
+				$('#test').click(function() {
+					$('.valiantPhoto').Valiant360('pause');
+					//改变暂停播放按钮
+					if($(".playButton").hasClass('fa-pause')) {
+						$(".playButton").removeClass('fa-pause').addClass('fa-play');
+					}
+				});
+				//播放按钮
+				$('#test1').click(function() {
+					$('.valiantPhoto').Valiant360('play');
+					if($(".playButton").hasClass('fa-play')) {
+						$(".playButton").removeClass('fa-play').addClass('fa-pause');
+					}
+				});
+				//js中操作视频初始化：init()方法
+				//js中操作暂停：pause()方法
+				//js中操作播放：play()方法
+				//js中操作快进后退：onProgressClick()方法
+			});
+		</script>
+
+		<script>
+			(function(i, s, o, g, r, a, m) {
+				i['GoogleAnalyticsObject'] = r;
+				i[r] = i[r] || function() {
+					(i[r].q = i[r].q || []).push(arguments)
+				}, i[r].l = 1 * new Date();
+				a = s.createElement(o),
+					m = s.getElementsByTagName(o)[0];
+				a.async = 1;
+				a.src = g;
+				m.parentNode.insertBefore(a, m)
+			})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+			ga('create', 'UA-608903-14', 'flimshaw.net');
+			ga('send', 'pageview');
+		</script>
+
+		<script>
+			if(typeof dcodeIO === 'undefined' || !dcodeIO.ProtoBuf) {
+				throw(new Error("ProtoBuf.js is not present. Please see www/index.html for manual setup instructions."));
+			}
+			// 创建ProtoBuf
+			var ProtoBuf = dcodeIO.ProtoBuf;
+			// 先构造两个子模块
+			// 子模块－１
+			var RegisterRequest = ProtoBuf.loadProtoFile("MessageProto.proto").build("RegisterRequest");
+			var registerRequest= new RegisterRequest();
+			registerRequest.setEventId("1");
+			registerRequest.setEquipmentId("我是来注册的唯一的");
+			var Types = ProtoBuf.loadProtoFile("MessageProto.proto").build("Types");
+			// 子模块－２
+			var MessageRequest = ProtoBuf.loadProtoFile("MessageProto.proto").build("MessageRequest");
+			var messageRequest = new MessageRequest();
+			messageRequest.setType(Types.REGISTER);
+			messageRequest.setRegisterRequest(registerRequest);
+			//返回的协议模版
+			var MessageResponse = ProtoBuf.loadProtoFile("MessageProto.proto").build("MessageResponse");
+			var messageResponse = new MessageResponse();
+			//设置播放进度
+			var SetPlayProgressRequest = ProtoBuf.loadProtoFile("MessageProto.proto").build("SetPlayProgressRequest");
+			var setPlayProgressRequest =new SetPlayProgressRequest();
+			var socket;
+			if(!window.WebSocket) {
+				window.WebSocket = window.MozWebSocket;
+			}
+			if(window.WebSocket) {
+				socket = new WebSocket("ws://127.0.0.1:8022/ws");
+				socket.onmessage = function(event) {
+					console.log("onmessage" + event.data);
+					var msgDec = MessageResponse.decode(event.data);
+					console.log("msgDec:" + msgDec.type);
+					//如果接收到服务端的类型是获取播放进度的进入
+					if(msgDec.type==Constants.GET_PLAY_PROGRESS){
+						setPlayProgressRequest.setEventId(msgDec.getPlayProgressNotice.eventId);
+						setPlayProgressRequest.setEquipmentId(msgDec.getPlayProgressNotice.equipmentId);
+						setPlayProgressRequest.setPosition("5000");
+						setPlayProgressRequest.setFileId("xxxxxxxxxxxxxxxxxxxxxxxx");
+						messageRequest.setType(Types.SET_PLAY_PROGRESS);
+						messageRequest.setSetPlayProgressRequest(setPlayProgressRequest);
+						socket.send(messageRequest.toArrayBuffer());
+					}
+				};
+				socket.onopen = function(event) {
+					console.log("连接开启");
+					socket.binaryType = 'arraybuffer';
+					//socket.send(messageRequest.toArrayBuffer());
+				};
+				socket.onclose = function(event) {
+					console.log("连接被关闭");
+				};
+			} else {
+				alert("你的浏览器不支持 WebSocket！");
+			}
+		</script>
+	</body>
+
+</html>

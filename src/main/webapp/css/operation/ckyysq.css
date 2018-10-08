@@ -1,0 +1,52 @@
+.hp-glpt-xzgly input[type="text"]{
+    width: 206px;
+}
+
+.hp-glpt-xzgly dt{
+	text-align: center;
+	margin-right: -16px;
+	letter-spacing: 0px;
+	padding-right: 17px;
+}
+
+.hp-sbyy-item li{
+	width: 433px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.hp-sbyy-item ul{
+	margin-left: 81px;
+}
+
+.hp-sbyy-item li > span {
+    text-align: center;
+    min-width: 105px;
+}
+.hp-sbyy-item li > span>label{
+	width: 115px;
+}
+
+.hp-sbyy-item li:nth-child(3n) {
+    width: 299px;
+}
+
+
+/*******查看安排****/
+#jjxx-textarea{
+    display: inline-block;
+    white-space: normal;
+    width: 86%;
+    margin-left: 13px;
+}
+
+#yysm-div-tab{
+	display: inline-block;
+    white-space: normal;
+    width:79%;
+}
+.yysm-font-tab{
+	vertical-align: top;
+    margin-left: -1px;
+}

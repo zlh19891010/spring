@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <title></title>
+    <link href="../../components/layer/skin/layer.css" type="text/css" rel="stylesheet">
+    <link href="../../components/sdui/sdui.css" type="text/css" rel="stylesheet">
+    <link href="../../css/common/common.css" type="text/css" rel="stylesheet">
+    <link href="../../css/admin/admin_common.css" type="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+<div class="lm-box">
+    <h4>对局详情</h4>
+</div>
+<div class="sdui-form full-screen">
+    <div class="top-area _clear" id="test">
+
+    </div>
+    <div class="content sdGrid">
+        <div class="sdGrid" id="customtable">
+
+        </div>
+    </div>
+</div>
+</body>
+
+<script src="../../components/sdui/js/jquery-1.9.1.min.js"></script>
+<script src="../../components/sdui/js/bootstrap.min.js"></script>
+<script src="../../components/sdui/js/bootstrap-paginator.js"></script>
+<script src="../../components/layer/layer.js"></script>
+<script src="../../components/sdui/sdui.js"></script>
+<script src="../../components/ractivejs/ractive.js"></script>
+<script src="../../js/common/constants.js"></script>
+<script type="text/javascript" src="../../components/datepicker/WdatePicker.js"></script>
+<script src="../../js/common/common.js"></script>
+
+<script id="test-template" type="text/ractive">
+        <table>
+                <thead>
+                   <th style="text-align: center; ">局数</th>
+                   <th style="text-align: center;">庄家</th>
+                   {{#list :key}}
+                        {{#if @index ==0}}
+                        {{#this}}
+                        <th style="text-align: center;">{{name}}</th>
+                        {{/this}}
+                        {{/if}}
+                   {{/list}}
+                </thead>
+                <tbody>
+                   {{#list :key}}
+                   <tr style="border-top: 1px solid rgb(220, 222, 222);">
+                    <td style="text-align: center;">
+                      <span >第{{ @index +1}}局</span>
+                    </td>
+                    <td style="text-align: center;">
+                      <span title="{{key}}">{{key}}</span>
+                    </td>
+                    {{#this}}
+                    <td style="text-align: center;">
+                      <span title="{{score}}">{{score}}</span>
+                    </td>
+                    {{/this}}
+                   </tr>
+                   {{/list}}
+                </tbody>
+             </table>
+</script>
+<script src="../../js/admin/room/round.js"></script>
+</html>

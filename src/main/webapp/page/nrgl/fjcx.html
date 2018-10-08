@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>内容管理</title>
+		<link rel="stylesheet" href="../../css/common/common.css" />
+		<link rel="stylesheet" href="../../components/sdui/sdui.css" type="text/css">
+		<link rel="stylesheet" href="../../css/admin/nrgl.css" />
+	</head>
+
+	<body>
+		<div>
+			<h1 class="hp-title">
+		添加历史附件
+	</h1>
+			<div class="sdui-form full-screen">
+				<div class="content sdGrid" style="height: 495px;overflow: hidden;">
+					<div class="col-4">
+						<label class="sdui-label">附件名称</label>
+						<input type="text" class="sdui-input" id="cx_fjname" />
+					</div>
+					<input type="button" value="查询" class="sdui-btn sdui-btn-blue pull-right" onclick="cxbtn()" />
+					
+					<div id="fjlbnr" class="_clear" style="overflow:scroll;height: 300px;width:975px">
+
+					</div>
+					<div class="hp-center">
+						<input type="button" class="sdui-btn sdui-btn-blue" onclick="qd()" value="确定">
+						<input type="button" class="sdui-btn sdui-btn-orange" onclick="closeParent();" value="取消">
+					</div>
+				</div>
+
+			</div>
+
+			<script src="../../js/common/jquery-1.10.2.js"></script>
+			<script src="../../components/sdui/js/bootstrap.min.js"></script>
+			<script src="../../components/sdui/js/bootstrap-paginator.js"></script>
+			<script src="../../components/layer/layer.js"></script>
+			<script src="../../components/sdui/sdui.js"></script>
+			<script src="../../components/ractivejs/ractive.js"></script>
+			<script src="../../js/common/constants.js"></script>
+			<script src="../../js/common/common.js"></script>
+			<script src="../../components/store/storejson2.min.js"></script>
+
+			<script id="fjlb" type="text/ractive">
+				<table>
+					<thead>
+						<th style="text-align: center; width: 58px;padding-left: 48px;">
+							<input type="checkbox" class="sdui-checkbox" name="bklball" id="selectall">
+							<label for="selectall"></label>
+						</th>
+						<th style="text-align: center; width: 175px;">编号</th>
+						<th style="text-align: center; width: 175px;">附件名称</th>
+						<th style="text-align: center; width: 175px;">附件地址</th>
+						<th style="text-align: center; width: 175px;">附件大小</th>
+					</thead>
+					<tbody>
+						{{#if list.length}}
+						 {{#list}}
+						<tr style="border-top-width: 1px; border-top-style: solid; border-top-color: rgb(220, 222, 222);">
+							<td style="text-align: center;">
+									<input type="checkbox" class="sdui-checkbox" name="bklb" id="{{id}}" ljm="{{ljm}}" fjdz="{{fjdz}}" fjdx="{{fjdx}}" mtlx="{{mtlx}}" wjgs="{{wjgs}}">
+									<label for="{{id}}"></label>
+							</td>
+							<td>
+								<div style="width: 145px; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+									<span title="{{id}}">{{id}}</span>
+								</div>
+							</td>
+							<td>
+								<div style="width: 145px; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><span title="{{ljm}}">{{ljm}}</span></div>
+							</td>
+							<td>
+								<div style="width: 145px; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><span title="{{fjdz}}">{{fjdz}}</span></div>
+							</td>
+							<td>
+								<div style="width: 145px; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><span title="{{fjdx}}">{{fjdx}}</span></div>
+							</td>
+						</tr>
+						{{/list}}
+						{{else}}
+						     <tr><td colspan="6" style="text-align: center;">暂无数据</td></tr> 
+						{{/if}}
+					</tbody>
+				</table>
+			</script>
+			<script src="../../js/admin/nrgl/lsfj.js"></script>
+	</body>
+
+</html>

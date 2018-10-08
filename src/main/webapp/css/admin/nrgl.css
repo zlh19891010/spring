@@ -1,0 +1,223 @@
+.hp-nrgl-con {
+	margin: auto;
+	width: 1000px;
+}
+.hp-nrgl-con dt{
+	width: 100px;
+	vertical-align: top;
+}
+.hp-nrgl-con dd{
+	width: 850px;
+}
+.hp-nrgl-con dd .sdui-select{
+	width: 200px;
+}
+.hp-nrgl-con dd > label{
+	margin: 0px 10px 0px 30px;
+}
+.hp-nrgl-con textarea{
+	overflow: auto;
+	margin-top: 10px;
+	width: 100%;
+	height: 160px;
+}
+.hp-btn-scsp{
+	padding :0px;
+	width: 135px;
+}
+.hp-btn-scsp:after{
+	z-index: -1;
+}
+.hp-btn-scsp .webuploader-pick{
+	margin: 0px;
+	width: 100%;
+	height: 100%;
+	line-height: 40px;
+	background: url(../../img/common/sc.png) no-repeat left 16px center;
+}
+.hp-nrxz-splb{
+	margin-bottom: 10px;
+	box-shadow: 0px 0px 1px #aaa;
+}
+.hp-nrxz-splb li{
+	padding: 0px 0px 0px 10px;
+	border-bottom: solid 1px #ddd;
+	line-height: 3.5;
+}
+.hp-nrxz-splb li:hover,
+.hp-nrxz-splb li.active{
+	background: #edf6fa;
+}
+.hp-nrxz-splb li:last-child{
+	border: none;
+}
+.hp-nrxz-splb li p{
+	display: inline-block;
+	width: 560px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	vertical-align: middle;
+}
+.hp-nrxz-pro{
+	position: relative;
+	display: inline-block;
+	width: 170px;
+	height: 15px;
+	background: #e5e5e5;
+	box-shadow: inset 0px 1px 1px #aaa;
+	border-radius: 5px;
+	vertical-align: middle;
+	margin-right:3px;
+}
+.hp-nrxz-pro span{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 15px;
+	background: linear-gradient(to right, #3499da, #2ecb74) #3499da;
+	border-radius: 5px;
+	box-shadow: inset 0px -1px 1px #333;
+}
+.hp-nrxz-delsp{
+	margin-left: 10px;
+	display: inline-block;
+	width: 22px;
+	height: 22px;
+	background: url(../../img/delsp.png);
+	vertical-align: middle;
+}
+.hp-nrxz-btns{
+	text-align: center;
+}
+/*内容管理*/
+.hp-nrgl-tab{
+	padding: 0px 20px;
+}
+.hp-nrgl-tab a{
+	display: inline-block;
+	padding: 0px 10px;
+	height: 50px;
+	font-size: 16px;
+}
+.hp-nrgl-tab a.active,
+.hp-nrgl-tab a:hover{
+	border-bottom: solid 4px #2aa9fb;
+	color: #2aa9fb;
+}
+.hp-nrgl-nrbt, .hp-nrgl-zkzt{
+	margin-right: 50px;
+	margin-bottom: 20px;
+	display: inline-block;
+	width: 300px;
+}
+.hp-nrgl-nrbt input{
+	width:  210px;
+}
+.hp-nrgl-selectc{
+	display: inline;
+}
+.hp-nrgl-select{
+	margin-right: 55px;
+	display: inline-block;
+	width: 300px;
+}
+
+
+.hp-nrgl-nrbt .sdui-label, 
+.hp-nrgl-zkzt .sdui-label,
+.hp-nrgl-select .sdui-label{
+	display: inline-block;
+	padding: 0px 2px;
+}
+
+.sdGrid table td{
+	padding-right: 5px;
+	text-align: center;
+	padding-left: 48px;
+}
+
+.hp-center{
+	text-align: center;
+}
+
+.hp-nrgl-sqdx{
+	margin-right: 40px;
+	display: inline-block;
+	width: 300px;
+}
+.hp-nrgl-sqdx input{
+	width: 200px;
+}
+.sqyhlb table td{
+	padding-left: 48px;
+}
+.sqdxnrlb table td{
+	padding-left: 48px;
+}
+.sqdxnrlb table th{
+	padding-left: 48px;
+}
+.hp-nrsq-con .hp-nrgl-nrbt{
+	margin-right: 10px;
+}
+.hp-nrsq-con .hp-nrgl-select{
+	margin-right: 15px;
+}
+
+.sqlb.sdGrid table td,
+.sqlb.sdGrid table th,
+.ytjlb.sdGrid table td,
+.ytjlb.sdGrid table th{
+	padding: 1px;
+	line-height: 50px;
+	height: 50px;
+}
+.ytjlb.sdGrid table td>div
+.sqlb.sdGrid table td>div{
+	padding: 0px 30px;
+}
+.hp-yhgl-ck dd {
+	height:auto;
+}
+.sdui-form .content>* {
+       margin-bottom: 12px!important;
+}
+.sdui-form .content{
+	padding: 0px 20px;
+}
+.czan{
+	position: fixed;
+	bottom:10px;
+	left: 0;
+	right: 0;
+}
+.own table td{
+	    padding-left: 58px;
+}
+.yhlb table td{
+	    padding-left: 34px!important;
+}
+/*次级*/
+.cj-content .hp-nrgl-con dd label{
+	margin: 0px;
+	display: inline-block;
+	width: 100px;
+	
+}
+.hp-nrgl-con span.nr{
+	display: inline-block;
+	max-width: 200px;
+	overflow: hidden;
+	white-space: normal;
+	text-overflow: ellipsis;
+	padding-right: 50px;
+	vertical-align: middle;
+}
+.hp-nrgl-con dd p{
+	padding: 15px 0px;
+	line-height: 2;
+}
+.hp-nrgl-con dd.w100{
+	width: 100%;
+}

@@ -1,0 +1,43 @@
+.hp-glpt-xzgly input[type="text"]{
+    width: 206px;
+}
+
+.hp-glpt-xzgly dt{
+	text-align: center;
+	margin-right: -16px;
+	letter-spacing: 0px;
+	padding-right: 17px;
+}
+
+
+.hp-sbyy-item li{
+	width: 229px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.hp-sbyy-item ul{
+	margin-left: 349px;
+}
+
+.hp-sbyy-item li > span {
+    text-align: right;
+    min-width: 110px;
+}
+.hp-sbyy-item li > span>label{
+	width: 115px;
+}
+
+.inputbh{
+	width:291px!important;
+}
+
+#yysm-div-tab{
+	display: inline-block;
+    white-space: normal;
+    width:79%;
+}
+.sbsm-tab{
+	vertical-align: top;
+}

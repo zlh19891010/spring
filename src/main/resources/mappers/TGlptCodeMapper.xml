@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.admin.dao.TGlptCodeMapper">
+<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.admin.entity.TGlptCode">
+		<id column="ID" property="id" />
+		<result column="PARENTID" property="parentid" />
+		<result column="CODECLASS" property="codeclass" />
+		<result column="CODECLASSDESC" property="codeclassdesc" />
+		<result column="CODE" property="code" />
+		<result column="CODEDESC" property="codedesc" />
+		<result column="SPELLCODE" property="spellcode" />
+		<result column="CODELEVEL" property="codelevel" />
+		<result column="DISPLAYORDER" property="displayorder" />
+		<result column="SELECTABLE" property="selectable" />
+		<result column="TREEPATH" property="treepath" />
+		<result column="STATUS" property="status" />
+		<result column="DELFLAG" property="delflag" />
+		<result column="VERSIONS" property="versions" />
+	</resultMap>
+
+	
+	
+	 
+  <!-- nifang 根据codeclass获取TYyxtCode列表 -->
+  <select id="getCodeListByCodeclass" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select *
+      from t_glpt_code
+     where CODECLASS = #{codeclass}
+       and DELFLAG != 'D'
+       and STATUS = '1'
+     order by abs(DISPLAYORDER) 
+  </select>
+  
+  <!-- nifang 根据codeclass和code获取TYyxtCode -->
+  <select id="getCodeByCodeclassAndCode" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select *
+      from t_glpt_code
+     where CODECLASS = #{codeclass}
+       and CODE = #{code}
+       and DELFLAG != 'D'
+       and STATUS = '1'
+     order by abs(DISPLAYORDER) 
+  </select>
+
+</mapper>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>内容授权</title>
+		<link rel="stylesheet" href="../../css/common/common.css" />
+		<link rel="stylesheet" href="../../components/sdui/sdui.css" type="text/css">
+		<link rel="stylesheet" href="../../css/admin/nrgl.css" />
+	</head>
+
+	<body>
+		<div>
+			<h1 class="hp-title">内容授权</h1>
+			<div class="sdui-form full-screen">
+				<div class="top-area">
+					<div class="hp-nrgl-nrbt">
+						<label class="sdui-label">内容标题</label>
+						<input type="text" class="sdui-input" id="cx_nrbt"/>
+					</div>
+					<div id="cx" class="hp-nrgl-selectc">
+
+					</div>
+					<div class="hp-nrgl-sqdx">
+						<label class="sdui-label">授权对象名称</label>
+						<input type="text" class="sdui-input" id="cx_dxmc"/>
+					</div>
+					<div class="hp-nrgl-sqdx">
+						<label class="sdui-label">授权对象帐号</label>
+						<input type="text" class="sdui-input" id="cx_dxzh"/>
+					</div>
+					<input type="hidden" id="xlcx"/>
+					<input type="button" value="查询" class="sdui-btn sdui-btn-blue" onclick="cxbtn()"/>
+				</div>
+				<div class="content sdGrid">
+					
+					<div>
+						<span class="sdui-btn sdui-btn-warm" onclick="addNrsq()">内容授权</span>
+					</div>
+					<div class="sqlb">	        
+	        
+	                </div>
+	                
+				</div>
+			</div>
+		</div>
+
+		<script src="../../components/sdui/js/jquery-1.9.1.min.js"></script>
+		<script src="../../components/sdui/js/bootstrap.min.js"></script>
+		<script src="../../components/sdui/js/bootstrap-paginator.js"></script>
+		<script src="../../components/layer/layer.js"></script>
+		<script src="../../components/sdui/sdui.js"></script>
+		<script src="../../components/ractivejs/ractive.js"></script>
+		<script src="../../js/common/constants.js"></script>
+		<script src="../../js/common/common.js"></script>
+		<script src="../../components/store/storejson2.min.js"></script>
+		
+		<script id="first-select" type="text/ractive">
+			<div id="first" class="hp-nrgl-select">
+			<label class="sdui-label">{{mc}}</label>
+			<select class="sdui-select"  value="{{first}}" on-change="firstChange">
+				<option value=""></option>
+				{{#list}}
+				<option value="{{id}}">{{flmc}}</option>
+				{{/list}}
+			</select>
+			</div>
+		</script>
+		
+		<script src="../../js/admin/nrgl/nrsq.js"></script>
+	</body>
+
+</html>

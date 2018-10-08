@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.admin.dao.TGlptXtglLogMapper">
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.admin.entity.TGlptXtglLog">
+		<result column="ywmc" property="ywmc" />
+		<result column="ywbh" property="ywbh" />
+		<result column="ywb" property="ywb" />
+		<result column="rzms" property="rzms" />
+		<result column="czrmc" property="czrmc" />
+	</resultMap>
+	<!-- 查询所有日志 -->
+	<select id="selectByLoglist" resultType="com.admin.view.RzxxView" parameterType="com.admin.param.ParamLogxx">
+	select log.*,glyxx.yhmc yhmc,log.operate_time zcsj
+	from t_glpt_xtgl_log log
+	left join t_glpt_glygl_glyxx glyxx on log.operater_code = glyxx.zh
+	where log.delflag <![CDATA[<>]]> 'D'
+	<if test="ywmc !=null and ywmc != ''">
+		and log.ywmc LIKE CONCAT(CONCAT('%', #{ywmc}), '%')
+	</if>
+	<if test="ywbh !=null and ywbh != ''">
+		and log.ywbh = #{ywbh}
+	</if>
+	<if test="ywb !=null and ywb != ''">
+		and log.ywb = #{ywb}
+	</if>
+	<if test="operaterCode !=null and operaterCode != ''">
+		and (log.operater_code LIKE CONCAT(CONCAT('%', #{operaterCode}), '%') or glyxx.yhmc LIKE CONCAT(CONCAT('%', #{operaterCode}), '%'))
+	</if>
+	<if test="czkssj !=null and czkssj != ''">
+		and DATE_FORMAT(log.operate_time,'%Y-%m-%d') <![CDATA[>=]]>DATE_FORMAT( #{czkssj},'%Y-%m-%d')
+	</if>
+	<if test="czjssj !=null and czjssj != ''">
+		and DATE_FORMAT(log.operate_time,'%Y-%m-%d') <![CDATA[<=]]> DATE_FORMAT( #{czjssj},'%Y-%m-%d')
+	</if>
+	order by log.create_time desc
+	</select>
+</mapper>

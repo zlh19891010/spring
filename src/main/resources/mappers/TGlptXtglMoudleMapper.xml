@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.admin.dao.xtgl.TGlptXtglMoudleMapper">
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.admin.view.ViewTGlptXtglMoudle">
+		<result column="parent_id" property="parentId" />
+		<result column="module_name" property="moduleName" />
+		<result column="module_code" property="moduleCode" />
+		<result column="module_level" property="moduleLevel" />
+		<result column="menu_id" property="menuId" />
+		<result column="css_path" property="cssPath" />
+		<result column="system_code" property="systemCode" />
+		<result column="tree_path" property="treePath" />
+		<result column="status" property="status" />
+		<result column="display_order" property="displayOrder" />
+	</resultMap>
+	
+	<resultMap id="BaseResultMapMoudleView" type="com.admin.view.ViewTGlptXtglMoudle">
+		<result column="parent_id" property="parentId" />
+		<result column="module_name" property="moduleName" />
+		<result column="module_code" property="moduleCode" />
+		<result column="module_level" property="moduleLevel" />
+		<result column="menu_id" property="menuId" />
+		<result column="css_path" property="cssPath" />
+		<result column="system_code" property="systemCode" />
+		<result column="tree_path" property="treePath" />
+		<result column="status" property="status" />
+		<result column="display_order" property="displayOrder" />
+		<result column="czjb" property="czjb" />
+	</resultMap>
+	
+
+	<!-- 查询拥有权限的菜单信息-liucheng -->
+	<select id="findMoudleList" resultMap="BaseResultMapMoudleView">
+		select moudle.id,moudle.parent_id,moudle.module_name,moudle.module_code,moudle.module_level,moudle.menu_id,
+		moudle.css_path,moudle.system_code,moudle.tree_path,moudle.status,moudle.display_order ,jsyqxdygx.czjb
+			from t_glpt_xtgl_moudle as moudle 
+			LEFT JOIN t_glpt_jsgl_jsyqxdygx as jsyqxdygx 
+			ON moudle.id =jsyqxdygx.qx_code
+			where jsyqxdygx.delflag !='D' and moudle.delflag !='D'
+			<if test="jsgs != null and jsgs != ''">
+				and jsyqxdygx.jsgs =#{jsgs}
+			</if>
+			<if test="jsId != null and jsId != ''">
+			     and jsyqxdygx.js_id =#{jsId}
+			</if>
+			<if test="systemCode != null and systemCode != ''">
+				and moudle.system_code =#{systemCode}
+			</if>
+			<if test="status != null and status != ''">
+			      <![CDATA[ and moudle.STATUS =#{status} ]]>
+			</if>
+	</select>
+
+	<!-- 查询所有菜单-liucheng -->
+	<select id="getMoudleList" resultMap="BaseResultMap">
+		select * from t_glpt_xtgl_moudle where delflag !='D'
+		<if test="systemCode != null and systemCode != ''">
+			and system_code =#{systemCode}
+		</if>
+		<if test="status != null and status != ''">
+		      <![CDATA[ and STATUS =#{status} ]]>
+		</if>
+	</select>
+
+
+	<select id="getParentModule" resultMap="BaseResultMap"
+		parameterType="com.admin.entity.TGlptXtglMoudle">
+		select * from t_glpt_xtgl_moudle where delflag !='D' and parent_id is
+		null
+
+		<if test="systemCode != null and systemCode != ''">
+			and system_code =#{systemCode}
+		</if>
+		<if test="status != null and status != ''">
+		      <![CDATA[ and status =#{status} ]]>
+		</if>
+	</select>
+
+</mapper>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>添加新闻</title>
+	<link rel="stylesheet" type="text/css" href="../../css/common/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/admin/mhgl/mhgl.css"/>
+</head>
+<body>
+<h1 class="hp-title"><a href="javascript:void(0)" class="return pull-left" onclick="history.back(-1)"> 返回</a>添加新闻</h1>
+<div class="mhgl-tjxw">
+	<dl class="form-dl">
+		<dt>标    题</dt>
+		<dd>
+			<input type="text" class="input-text" />
+			<div class="mhgl-zd">
+				<label for="zd">置顶新闻</label>
+				<div class="hp-check">
+					<input type="checkbox" class="hp-checkbox" id="zd" />
+					<i class="hp-checki"></i>
+				</div>
+			</div>
+		</dd>
+		<dt>摘    要</dt>
+		<dd>
+			<textarea class="input-text"> </textarea>
+		</dd>
+		<dt>新闻主图</dt>
+		<dd>
+			<div class="mhgl-uploader">
+				<div class="mhgl-uploader-box">
+					点击上传图片
+				</div>
+			</div>
+			<span class="fs-10 mhgl-xwtp-sm ml-20">banner部分主图1280*632 px ，新闻列表 部分410*250 px</span>
+		</dd>
+		<dt>新闻详情</dt>
+		<dd>
+			<script id='xwxq' name='xwxq' type='text/plain'></script>
+		</dd>
+	</dl>
+</div>
+<div class="hp-center">
+	<a href="javascript:void(0)" class="hp-btn hp-cancel-btn">取消</a>
+	<a href="javascript:void(0)" class="hp-btn ml-20">提交</a>
+</div>
+<script src="../../js/common/jquery-1.10.2.js"></script>
+<script src="../../components/ueditor/ueditor.config.js"></script>
+<script src="../../components/ueditor/ueditor.all.min.js"></script>
+<script>
+	$(function(){
+		 var ue = UE.getEditor('xwxq', {
+		 	toolbars: [
+		        ['fontfamily', 'fontsize', 'forecolor', 'bold', 'italic', 'underline', 'justifyleft', 'justifycenter', 'justifyright', 'link']
+		    ],
+		    initialFrameHeight : 100,
+		    autoHeightEnabled: true,
+		    autoFloatEnabled: true
+		 });
+	})
+</script>
+</body>
+</html>

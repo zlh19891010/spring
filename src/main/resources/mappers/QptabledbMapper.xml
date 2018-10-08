@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.admin.dao.room.QptabledbMapper">
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.admin.entity.room.Qptabledb">
+		<id column="GUID" property="guid" />
+		<result column="Data" property="Data" />
+		<result column="Time" property="Time" />
+	</resultMap>
+
+
+     <select id="selectRooms" parameterType="com.admin.param.ParamRoom" resultType="com.admin.view.ViewRoom">
+          select GUID,Data,Time from qptabledb
+          <where>
+               1=1
+               <if test="czkssj !=null and czkssj !=''">
+                    and  Time <![CDATA[>= ]]> #{czkssj} 
+               </if>
+               <if test="czjssj !=null and czjssj !=''">
+                    and  Time <![CDATA[<= ]]> #{czjssj} 
+               </if>
+          </where>
+          order by Time desc
+     </select>
+</mapper>

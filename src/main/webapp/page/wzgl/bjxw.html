@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>编辑新闻</title>
+    <link href="../../components/webuploader-0.1.5/webuploader.css" type="text/css" rel="stylesheet"/>
+    <link href="../../css/common/common.css" type="text/css" rel="stylesheet"/>
+    <link href="../../css/admin/mhgl/mhgl.css" type="text/css" rel="stylesheet"/>
+    <link href="../../components/layer/skin/layer.css" type="text/css" rel="stylesheet">
+    <link href="../../components/sdui/sdui.css" type="text/css" rel="stylesheet">
+    <link href="../../css/admin/admin_common.css" type="text/css" rel="stylesheet"/>
+    <style>
+        #xwzt {
+            position: relative;
+            margin-bottom: -15px;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="tjxw-content"></div>
+<script src="../../js/common/jquery-1.10.2.js"></script>
+<script src="../../components/sdui/js/bootstrap.min.js"></script>
+<script src="../../components/sdui/js/bootstrap-paginator.js"></script>
+<script src="../../components/layer/layer.js"></script>
+<script src="../../components/sdui/sdui.js"></script>
+<script src="../../components/ractivejs/ractive.js"></script>
+<script src="../../components/store/storejson2.min.js"></script>
+<script src="../../components/webuploader-0.1.5/webuploader.js"></script>
+<script src="../../js/common/constants.js"></script>
+<script src="../../js/common/common.js"></script>
+<script id="tjxw-template" type="text/ractive">
+    <h1 class="hp-title"><a href="javascript:void(0)" class="return pull-left" on-click="backXwList"> 返回</a>编辑新闻</h1>
+    <div class="mhgl-tjxw">
+        <dl class="form-dl">
+            <dt>标 题</dt>
+            <dd>
+                <input type="text" class="input-text" value="{{xwxx.bt}}" maxlength="25"/>
+                <div class="mhgl-zd" style="display: none;">
+				    <label for="zd">置顶新闻</label>
+				    <div class="hp-check">
+					    <input id="zd" type="checkbox" class="hp-checkbox" value="1"/>
+					    <i class="hp-checki"></i>
+				    </div>
+			    </div>
+            </dd>
+            <dt>摘 要</dt>
+            <dd>
+                <textarea class="input-text" maxlength="100">{{xwxx.zy}}</textarea>
+            </dd>
+            <dt>新闻主图<span style="position: relative; left: -30px; top: -15px;">（1280px*630px）</span></dt>
+            <dd>
+                <img id="xwzt" src="{{fileAddress}}{{xwxx.fjdz}}" width="205px" height="125px"/>
+                <div class="mhgl-uploader">
+                    <div id="picker" class="mhgl-uploader-box">
+                        点击上传图片
+                    </div>
+                </div>
+                <!-- <span class="fs-10 mhgl-xwtp-sm ml-20">banner部分主图1280*632 px ，新闻列表 部分410*250 px</span> -->
+            </dd>
+            <dt>新闻详情</dt>
+            <dd>
+                {{{ueditorDom}}}
+            </dd>
+        </dl>
+    </div>
+    <div class="hp-center">
+        <a href="javascript:void(0)" class="hp-btn ml-20" on-click="save" sign="0">保存</a>
+        <a href="javascript:void(0)" class="hp-btn hp-cancel-btn" on-click="save" sign="1">发布</a>
+        <a href="javascript:void(0)" class="hp-btn hp-cancel-btn" on-click="cancel">取消</a>
+    </div>
+</script>
+<script src="../../js/admin/wzgl/bjxw.js"></script>
+</body>
+</html>

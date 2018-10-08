@@ -1,0 +1,80 @@
+.lm-box {
+	height: 48px;
+	line-height: 48px;
+	background-color: #40baa8;
+	position: relative;
+}
+
+.sdui-label,
+.sdui-select {
+	font-size: 14px;
+	margin-right: 3px;
+}
+
+.lm-box>h4 {
+	font-size: 18px;
+	color: white;
+	font-weight: 400;
+	text-align: center;
+}
+
+.return {
+	margin: 0px -20px;
+	text-indent: 20px;
+	background: url(../../img/common/cj_return.png) no-repeat left center;
+	font-size: 16px;
+	left: 26px;
+	position: absolute;
+	color: white;
+	/*
+	background: url(img/return_icon.png) left center no-repeat;
+	padding-left: 16px;
+	color: #000000;*/
+}
+
+
+/*次级按钮*/
+
+.sdui-btn-cyan {
+	background-image: url(../../img/admin/cj_save.png);
+	border: none;
+}
+
+.cj-btn-lgreen {
+	width: 282px;
+	height: 40px;
+	color: #fff;
+	background: url(../../img/operation/btn_lgreen.png) no-repeat;
+}
+
+
+/****/
+
+.sctx {
+	width: 140px;
+	height: 140px;
+	text-align: center;
+}
+
+.ellips {
+	height: 28px;
+	width: 150px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	display: inline-block;
+}
+
+.hp-rzxx-czsj {
+	float: left;
+	margin-right: 52px;
+	display: inline-block;
+	width: 31.4%;
+}
+.hp-rzxx-czsj .sdui-input {
+    width: 35%;
+}
+
+.hp-rzxx-search {
+	margin-top: 10px;
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.admin.dao.xtgl.TGlptXtglFkxxMapper">
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.admin.entity.TGlptXtglFkxx">
+		<result column="xxbt" property="xxbt" />
+		<result column="fklx" property="fklx" />
+		<result column="fknr" property="fknr" />
+		<result column="fkzt" property="fkzt" />
+		<result column="fkrzh" property="fkrzh" />
+		<result column="fkrmc" property="fkrmc" />
+		<result column="fksj" property="fksj" />
+		<result column="hfrzh" property="hfrzh" />
+		<result column="hfrmc" property="hfrmc" />
+		<result column="hfnr" property="hfnr" />
+		<result column="hfsj" property="hfsj" />
+	</resultMap>
+
+	<select id="selectFkxxList" parameterType="com.admin.param.ParamFkxx" resultType="com.admin.entity.TGlptXtglFkxx">
+    	SELECT *
+    	FROM t_glpt_xtgl_fkxx
+    	WHERE delflag <![CDATA[<>]]> 'D'
+    	<if test="xxbt != null and xxbt != '' " >
+      		AND xxbt LIKE CONCAT(CONCAT('%', #{xxbt}), '%')
+  		</if>  
+  		<if test="fkzt != null and fkzt != '' " >
+      		AND fkzt =  #{fkzt}
+  		</if>
+  		<if test="fklx != null and fklx != '' " >
+      		and fklx = #{fklx}
+  		</if>
+  		<if test="fkkssj !=null and fkkssj != ''">
+		and DATE_FORMAT(fksj,'%Y-%m-%d') <![CDATA[>=]]>DATE_FORMAT( #{fkkssj},'%Y-%m-%d')
+		</if>
+		<if test="fkjssj !=null and fkjssj != ''">
+			and DATE_FORMAT(fksj,'%Y-%m-%d') <![CDATA[<=]]> DATE_FORMAT( #{fkjssj},'%Y-%m-%d')
+		</if>
+  		order by create_time desc
+	</select>
+</mapper>

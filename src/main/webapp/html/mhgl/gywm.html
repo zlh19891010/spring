@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>关于我们</title>
+	<link rel="stylesheet" type="text/css" href="../../css/common/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/admin/mhgl/mhgl.css"/>
+</head>
+<body>
+<h1 class="hp-title">关于我们</h1>
+<div class="mhgl-jrwm">
+	<div class="mhgl-item">
+		<h3>BANNER主图<span>(1280*295px)</span></h3>
+		<div class="mhgl-uploader">
+			<div class="mhgl-uploader-box">
+				点击上传图片
+			</div>
+		</div>
+	</div>
+	<div class="mhgl-item">
+		<h3>公司信息（中文）</h3>
+		<script id='xwxq' name='xwxq' type='text/plain'></script>
+	</div>
+	<div class="mhgl-item mhgl-bg mhgl-khxx">
+		<h3>
+			客户信息
+			<a href="javascript:void(0)" class="hp-btn hp-cancel-btn pull-right">添加新客户</a>
+		</h3>
+		<ul>
+			<li>
+				<div class="mhgl-khxx-img pull-left">
+					<img src="../../img/admin/kh.png" />
+					<div class="mhgl-khtx-change">
+						点击更换图片
+					</div>
+				</div>
+				<div class="mhgl-khxx-box">
+					<dl class="form-dl">
+						<dt>名称</dt>
+						<dd><input type="text" class="input-text" value="云艺通"></dd>
+						<dt>简介</dt>
+						<dd><textarea class="input-text">云艺通简介云艺通简介云艺通简介云艺通简介云艺通简介云艺通简介云艺通简介云艺通简介云艺通简介云艺通简介云艺通简介云艺通简介云艺通简介云艺通简介</textarea></dd>
+					</dl>
+					<a href="javascript:void(0)" class="mhgl-icon mhgl-sc3"></a>
+				</div>
+			</li>
+			<li>
+				<div class="mhgl-khxx-img pull-left">
+					<img src="../../img/admin/kh.png" />
+					<div class="mhgl-khtx-change">
+						点击更换图片
+					</div>
+				</div>
+				<div class="mhgl-khxx-box">
+					<dl class="form-dl">
+						<dt>名称</dt>
+						<dd><input type="text" class="input-text" value="云艺通"></dd>
+						<dt>简介</dt>
+						<dd><textarea class="input-text">云艺通简介云艺通简介云艺通简介云艺通简介云艺通简介云艺通简介云艺通简介云艺通简介云艺通简介云艺通简介云艺通简介云艺通简介云艺通简介云艺通简介</textarea></dd>
+					</dl>
+					<a href="javascript:void(0)" class="mhgl-icon mhgl-sc3"></a>
+				</div>
+			</li>
+			<li>
+				<div class="mhgl-khxx-img pull-left">
+					<div class="mhgl-uploader">
+						<div class="mhgl-uploader-box">
+							点击上传图片
+						</div>
+					</div>
+				</div>
+				<div class="mhgl-khxx-box">
+					<dl class="form-dl">
+						<dt>名称</dt>
+						<dd><input type="text" class="input-text"></dd>
+						<dt>简介</dt>
+						<dd><textarea class="input-text"></textarea></dd>
+					</dl>
+					<a href="javascript:void(0)" class="mhgl-icon mhgl-sc3"></a>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="hp-center">
+		<a href="javascript:void(0)" class="hp-btn hp-cancel-btn">取消</a>
+		<a href="javascript:void(0)" class="hp-btn ml-20">提交</a>
+	</div>
+</div>
+<script src="../../js/common/jquery-1.10.2.js"></script>
+<script src="../../components/ueditor/ueditor.config.js"></script>
+<script src="../../components/ueditor/ueditor.all.min.js"></script>
+<script>
+	$(function(){
+		 var ue = UE.getEditor('xwxq', {
+		 	toolbars: [
+		        ['fontfamily', 'fontsize', 'forecolor', 'bold', 'italic', 'underline', 'justifyleft', 'justifycenter', 'justifyright', 'link']
+		    ],
+		    initialFrameHeight : 200,
+		    autoHeightEnabled: true,
+		    autoFloatEnabled: true
+		 });
+	})
+</script>
+</body>
+</html>
